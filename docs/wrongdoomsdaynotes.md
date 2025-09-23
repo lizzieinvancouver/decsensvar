@@ -1,5 +1,25 @@
 Started 28 August 2025
 
+
+
+### Meeting: 2 September 2025
+
+* Keep appealing to the CLT but add enough structure to problem that you can predict stuff
+* Sounds good to me!
+* In statistics, information is defined as the inverse of variation
+* ESS is the ratio of the variances 
+* Bloom dates will tell us less about the underlying biology (field will need to rely more on experiments)
+* You don't have to get the temperature right, it just needs to be consistently off
+* People were focusing on the mean; they should be focusing on the variance
+
+I should ask about:
+* Getting figures: Can he pick two years for the conceptual?
+* You're sending R code for boxplot/quantile figure (SE of the SE is okay? Andrew is on paper, let's write something up and see if he is interested)
+* Include the Bayesian model! 
+* Him getting climate data (ERA5: The API is easy enough to use, how to request ERA5 for many years (you can only request one year at a time?))  
+* GitHub name: jauerbach
+* Meeting again when? 
+
 ### Email exhange 28 August 2025 regarding BES abstract
 
 Me: Good query on what's breaking down ... I am not sure. I guess the model

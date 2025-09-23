@@ -7,3 +7,11 @@ I pulled the lilac data from: https://v3.datadryad.org/dataset/doi:10.5061/dryad
 I renamed to:
 * data/lilac/lilacdata.xlsx
 * data/lilac/READMElilacdata.xlsx
+
+On 23 September I added data sent to me by Auerbach on 16 Sep 2025 (but I sent a lot of it to him):
+* charrier/
+* cherry/
+* germany/
+* oak/
+* dailytemps_jantoapr.csv
+

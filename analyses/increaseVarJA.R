@@ -1,0 +1,86 @@
+## Sent from Auerbach on 16 Sept 2025 ##
+
+library("tidyverse")
+
+# INCREASING VARIANCE 
+
+setwd("/Users/jauerbach/Dropbox/Wolkovich/increasing variance/analysis/")
+climate <- read_csv("data/dailytemps_jantoapr.csv") 
+climate_feb <-
+	climate %>%
+	mutate(month = format(Date, "%m")) %>% 
+	filter(month == "02") %>%
+	group_by(lat, long, year) %>% 
+	summarize(Tavg = mean(Tavg))
+
+# GERMANY
+
+germany <- read_csv("data/germany/fagsyl_decsens_1950-2010.csv")
+
+get_climate <- function(i) {
+	yi <- germany$year[i]
+	idx <- climate_feb$year == yi
+	if (!any(idx)) return(NA_real_)
+	d2 <- (climate_feb$lat[idx] - germany$lat[i])^2 +
+		(climate_feb$long[idx] - germany$long[i])^2 j <- which.min(d2)
+	climate_feb$Tavg[idx][j]
+}
+germany$Tavg <- vapply(seq_len(nrow(germany)), get_climate, numeric(1)) 
+germany$quantile <- cut(germany$Tavg, quantile(germany$Tavg, probs = c(0, .25, .75, 1)),
+	include.lowest = TRUE, right = TRUE)
+
+c4 <- function(n) sqrt(2/(n-1)) * exp(lgamma(n/2) - lgamma((n-1)/2))
+
+germany %>% group_by(quantile) %>% 
+	summarize(
+	n = n(),
+	mean = mean(lo),
+	sd = sd(lo),
+	se_sd = sd * sqrt(1 - c4(n)^2))
+
+# UK
+
+uk <- read_csv("data/oak/Marsham-Combes_UK.csv")
+
+uk_temp <- read_csv("data/oak/meantemp_monthly_totals.csv")
+uk %>%
+	dplyr::select(year, oak) %>%
+	na.omit() %>%
+	left_join(uk_temp %>% dplyr::select(year, Feb)) %>% 
+	mutate(quantile = cut(.$Feb, quantile(.$Feb, probs = c(0, .25, .75, 1)),
+		include.lowest = TRUE, right = TRUE)) %>% 
+	group_by(quantile) %>%
+	summarize(
+		n = n(),
+	mean = mean(oak),
+	sd = sd(oak),
+	se_sd = sd * sqrt(1 - c4(n)^2))
+
+# WASHINGTON DC
+dc_temp <- read_csv("/Users/jauerbach/Dropbox/Wolkovich/increasing variance/3664654.csv") 
+
+dc_temp <-
+	dc_temp %>%
+	mutate(temp = TMAX / 2 + TMIN / 2,
+		temp = ifelse(temp < 32, 0, temp),
+		month = format(DATE, "%B"),
+		doy = as.numeric(format(DATE, "%j")),
+		year = as.numeric(format(DATE, "%Y")))%>%
+	group_by(year) %>% 
+	replace_na(list(temp = 0))
+
+tibble(year = 1959:2024) %>% 
+	left_join(aggregate(temp ~ year,
+		data = dc_temp[dc_temp$month == "February",], mean)) %>% 
+	mutate(winter_temp = cut(temp, 3,
+		include.lowest = TRUE), 
+		bdoy = sapply( 1959:2024,
+		function(year)
+		which.max(cumsum(dc_temp$temp[dc_temp$year == year]) > 3200))) %>%
+group_by(`February tempreature` = winter_temp) %>% 
+summarize(`number of years` = n(),
+	`mean bloom date` = mean(bdoy), 
+	`standard deviation` = sd(bdoy), 
+	`standard error of standard deviation` =
+	`standard deviation` * sqrt(1 - c4(`number of years`)^2)) %>% 
+arrange(desc(`mean bloom date`)
