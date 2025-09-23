@@ -1,11 +1,13 @@
-## Sent from Auerbach on 16 Sept 2025 ##
+## Started 23 September 2025 ##
+## By Lizzie ##
+## Cribbing off increaseVarJA.R ##
+
+setwd("~/Documents/git/projects/treegarden/decsensvar/analyses")
 
 library("tidyverse")
 
-# INCREASING VARIANCE 
-
-setwd("/Users/jauerbach/Dropbox/Wolkovich/increasing variance/analysis/")
-climate <- read_csv("data/dailytemps_jantoapr.csv") 
+## PEP725 (Germany)
+climate <- read_csv("input/germany/dailytemps_jantoapr.csv") 
 climate_feb <-
 	climate %>%
 	mutate(month = format(Date, "%m")) %>% 
@@ -13,26 +15,41 @@ climate_feb <-
 	group_by(lat, long, year) %>% 
 	summarize(Tavg = mean(Tavg))
 
-# GERMANY
+fagsyl <- read_csv("input/germany/fagsyl_decsens_1950-2010.csv")
 
-germany <- read_csv("data/germany/fagsyl_decsens_1950-2010.csv")
-
-get_climate <- function(i) {
-	yi <- germany$year[i]
+# Better version ...
+get_climate <- function(i, dfphen) {
+	yi <- dfphen[["year"]][i]
 	idx <- climate_feb$year == yi
 	if (!any(idx)) return(NA_real_)
-	d2 <- (climate_feb$lat[idx] - germany$lat[i])^2 +
-		(climate_feb$long[idx] - germany$long[i])^2 
-		j <- which.min(d2)
+	d2 <- (climate_feb$lat[idx] - dfphen[["lat"]][i])^2 +
+		(climate_feb$long[idx] - dfphen[["long"]][i])^2 
+	j <- which.min(d2)
 	climate_feb$Tavg[idx][j]
 }
-germany$Tavg <- vapply(seq_len(nrow(germany)), get_climate, numeric(1)) 
-germany$quantile <- cut(germany$Tavg, quantile(germany$Tavg, probs = c(0, .25, .75, 1)),
+
+fagsyl$Tavg <- vapply(seq_len(nrow(fagsyl)), get_climate, numeric(1), dfphen=fagsyl) 
+fagsyl$quantile <- cut(fagsyl$Tavg, quantile(fagsyl$Tavg, probs = c(0, .25, .75, 1)),
 	include.lowest = TRUE, right = TRUE)
 
 c4 <- function(n) sqrt(2/(n-1)) * exp(lgamma(n/2) - lgamma((n-1)/2))
 
-germany %>% group_by(quantile) %>% 
+fagsyl %>% group_by(quantile) %>% 
+	summarize(
+	n = n(),
+	mean = mean(lo),
+	sd = sd(lo),
+	se_sd = sd * sqrt(1 - c4(n)^2))
+
+# Repeat for betpen
+betpen <- read_csv("input/germany/betpen_decsens_1950-2010.csv")
+betpen$Tavg <- vapply(seq_len(nrow(betpen)), get_climate, numeric(1), dfphen=betpen) 
+betpen$quantile <- cut(betpen$Tavg, quantile(betpen$Tavg, probs = c(0, .25, .75, 1)),
+	include.lowest = TRUE, right = TRUE)
+
+c4 <- function(n) sqrt(2/(n-1)) * exp(lgamma(n/2) - lgamma((n-1)/2))
+
+betpen %>% group_by(quantile) %>% 
 	summarize(
 	n = n(),
 	mean = mean(lo),
@@ -41,9 +58,9 @@ germany %>% group_by(quantile) %>%
 
 # UK
 
-uk <- read_csv("data/oak/Marsham-Combes_UK.csv")
+uk <- read_csv("input/ukoak/Marsham-Combes_UK.csv")
 
-uk_temp <- read_csv("data/oak/meantemp_monthly_totals.csv")
+uk_temp <- read_csv("input/ukoak/meantemp_monthly_totals.csv")
 uk %>%
 	dplyr::select(year, oak) %>%
 	na.omit() %>%
@@ -58,7 +75,7 @@ uk %>%
 	se_sd = sd * sqrt(1 - c4(n)^2))
 
 # WASHINGTON DC
-dc_temp <- read_csv("/Users/jauerbach/Dropbox/Wolkovich/increasing variance/3664654.csv") 
+dc_temp <- read_csv("input/cherry/3664654.csv") 
 
 dc_temp <-
 	dc_temp %>%

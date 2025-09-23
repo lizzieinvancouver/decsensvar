@@ -1,6 +1,28 @@
 Started 28 August 2025
 
+### Meeting: 23 September 2025
 
+1. Code from him ...
+* What is C4 f(x)? It's the SE of the SD. 
+* Why not also do Kyoto for cherries? (He will add.)
+* Should I also try temporal windows? 
+* Fagsyl: Why different than supp? 
+2. Paper from him ...
+* I like the idea of using experiments and observational data ... how do we use the experiments? 
+* 'Plants evolved to minimize variance produced by microclimate in a population' -- add in ref to counter and co-gradient... 
+* 'Winter' vs. 'spring' (I should ask Ben Cook)
+* Experiments need to include temperature variation! Charrier is not great, but they see clones bloom far apart which is expected from constant temperatures (like winter)
+* Plants take advantage of 'superconsistency' (plants are like statisticians)
+* Asympotatically, the start of bloom does not matter (we were discussing Gusewell)
+* We assume the temperature curve shifts up... 
+* Variance effects are due to thresholding on 0 and autocorrelation (do we need it?)
+* Differente effects are signal noise ... in spring the signal grows but the noise does not, in the winter the signal and noise are similar. 
+* What is the data underlying the conceptual figure? It's simulated .... Maybe he could fit to the climate data (we discussed, he was semi-open to it)
+* We're talking about WITHIN year variance now (that's all the current math), not between year variance (which is what I looked at before) ... we're conditioning on small temperatures in current observational work so we're assuming it works as a proxy for within-year. 
+3. Misc
+* Should we discuss with Gelman? I will mention it to him. 
+4. The Bayesian model always works! (The one from EFI.)
+* See here: https://github.com/eco4cast/Statistical-Methods-Seminar-Series/tree/main/auerbach-randomwalks
 
 ### Meeting: 2 September 2025
 
