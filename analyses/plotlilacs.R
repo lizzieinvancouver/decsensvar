@@ -176,10 +176,9 @@ new <- new %>%
   )
 
 gammy <- ggplot(new, aes(feb_mean, sd)) +
-  theme_bw() +
+  theme_bw( base_size = 16) +
   theme(panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank(),
-    base_size = 16) +
+    panel.grid.minor = element_blank()) +
   geom_ribbon(aes(ymin = sd_lo, ymax = sd_hi), alpha = 0.2) +
   geom_line() + 
   xlab("February temperatures") +
