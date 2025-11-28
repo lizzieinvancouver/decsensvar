@@ -1,0 +1,103 @@
+\documentclass[11pt]{article}
+\usepackage[top=1.00in, bottom=1.0in, left=1in, right=1in]{geometry}
+\renewcommand{\baselinestretch}{1.1}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{parskip}
+
+\def\labelitemi{--}
+\parindent=0pt
+
+\begin{document}
+\renewcommand{\refname}{\CHead{}}
+
+{\Large How warmer days make plant biology less predictable}
+
+E. M. Wolkovich$^{1,a}$ \&  J. L. Auerbach$^{2}$\\
+
+$^1$Forest \& Conservation Sciences, Faculty of Forestry, University of British Columbia, Vancouver, British Columbia, Canada\\
+$^2$Department of Statistics, Columbia University, New York, NY 10027, USA\\
+$^a$e.wolkovich@ubc.ca\\
+
+% To do
+% ADDCITES (see below)
+
+\section*{Overview}
+
+\begin{itemize}
+\item A major concern is that increasing warming will fundamentally alter biological processes, making forecasting, mitigation, and adaptation more difficult. 
+\item Plant phenology—the timing of recurring life history events, such as leafout and flowering—has been routinely cited as an example, with a growing literature claiming that in response to warming, plants have slowed down, become more variable, or less predictable. ADDCITES 
+\item Here we present new findings using the theory of stopped random walks to show why spring events can become more variable with continued warming.
+\item Using datasets from across the Northern hemisphere, we find support for this result, which suggests spring events may become less predictable with continued warming. 
+\end{itemize}
+
+\section*{Background}
+
+\begin{itemize}
+\item Plant phenological events in the spring, such as leafout and flowering of trees and shrubs, are triggered by accumulated warmth (forcing).
+\item Because of this thermal sum model (of which growing degree days is a common example) plant events happen more quickly at warmer temperatures in both controlled experiments (Figure 1) and in recent decades with anthropogenic warming. 
+\item This thermal sum model is non-linear on an untransformed scale (Figure 1), which may explain recent slow-downs in advances of spring phenology. ADDCITES
+\end{itemize}
+
+\section*{Thermal sum model as stopped random walk}
+
+\begin{itemize}
+\item The thermal sum (growing degree day) model is well-described by theory of stopped random walks, which depends strongly on the temperature regime over which plants accumulate forcing. 
+\item Based on this model (using analytical solutions to the model, not shown), variance in spring events depends critically on whether temperatures accumulate during periods of relatively flat temperatures or during periods when temperatures rise linearly (Figure 2). 
+\item During periods when temperatures are relatively flat (e.g. most temperate climates in the winter or experiments with constant `forcing'), spring events have high variance as the error of the model plays a large role.
+\item During periods when temperatures are approximately linear (e.g. most temperate climates in the spring), the role of error in the model is dramatically reduced and spring events should show very low variance. 
+\item Thus when the temperature threshold is large relative to the daily fluctuation in temperatures, dates of spring events (given the same underlying temperature regime and required thermal sum) during periods of increasing temperatures have a negligible variance compared to the mean bloom date. In contrast, bloom dates during flatter temperature regimes have a growing variance, amplifying microclimate variation.
+\end{itemize}
+
+\section*{Desynchronizing plant events}
+
+\begin{itemize}
+\item The thermal sum model thus may explain why cherry blossoms (and other spring events) across different microclimates bloom near simultaneously, as it suggests such effects may be negligible, but the model also predicts that variance may increase with warming. 
+% Our main finding is that the linear increase of average temperatures during the spring months makes microclimate variation negligible, resulting in buds with near simultaneous blooms. But as temperatures warm, blooms happen in the winter region where average temperatures do not increase and microclimate variation is not negligble, resulting in the desynchronization of blooms or a scattered spring.
+\item As temperatures warm, blooms may happen in the flatter temperature periods (Figure 2) where average temperatures do not increase and microclimate variation is not negligible, resulting in the desynchronization of blooms or a `scattered spring.'
+\end{itemize}
+
+\section*{Increasing variance in spring events}
+
+Supporting this theory from stopped random walks, we tested for shifts in variance across different datasets of spring events. We use February for consistency across datasets (other months produce similar results), splitting the years of data into three quantiles of temperatures, and estimating the standard deviation of event dates and its errors for each quantile.
+
+We found increasing variance with warmer temperatures in all datasets we studied (Figure 3). ADDCITES
+
+Using a very large dataset of lilacs from across the United States (ADDCITES), we estimated the shift in variance independent of the changing mean temperature using a GAM, and found increasing variance as February temperatures pass 12 \degree C. 
+
+\section*{Global implications}
+
+As many biological events are triggered by accumulated exposure, our results have wide-reaching implications. 
+
+\begin{itemize}
+\item We show that, under normal conditions, the model predicts both declining sensitivity (ADDCITES) and declining variance with warming. 
+\item However, we also show that excessive warming can produce a new normal in which the variance actually increases. 
+\item The data confirm that climate change is making many biological systems less predictable, with consequences for crops, carbon sequestration and thus climate change itself. 
+\item Further, decades of experiments focused on maintaining controlled constant temperatures may fail to predict shifts in variance with increasing temperatures. 
+\end{itemize}
+
+\citep{ospreebbms}
+
+\bibliographystyle{/Users/Lizzie/Documents/EndnoteRelated/Bibtex/styles/besjournals}
+\bibliography{/Users/Lizzie/Documents/git/bibtex/LizzieMainMinimal}
+
+\end{document}
+
+
+% From decsens supp
+Controlled experiments across a wide temperature range show a non-linear response to temperature.} Here we use data from \citet{Charrier:2011aa}, one of the few studies covering a wide range of temperatures in a fully controlled experiment. Data are from a growth chamber experiment of tree branch cuttings of  walnut trees (\emph{Juglans regia}), taken from the field on 29 January 2009 and exposed to five different temperatures with a 16 hour photoperiod.
+
+
+Simulated daily temperatures: flat winter vs. linear spring seasonal mean (dashed) and mean + AR(1) noise (grey)
+
+
+\clearpage
+\section{Figures}
+
+\begin{figure}[h!]
+\includegraphics[width=0.4\textwidth]{..//..//..//..//Professional/images/ColylusVineFruit2.png}
+\caption{I am a caption.} 
+\label{fig:figname}
+\end{figure}
