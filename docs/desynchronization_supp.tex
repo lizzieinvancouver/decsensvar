@@ -1,3 +1,146 @@
+\section{Summary of analytical solution}\label{mathystuff}
+
+To fix ideas, consider the day a bud blooms at a given location. We
+model the effective temperature experienced by that bud on day \(i\) by
+a linear trend plus microclimate noise, \begin{equation}
+X_i = \alpha + \beta\, i + \epsilon_i,
+\end{equation} where \(\alpha\) is a baseline level, \(\beta\) is a
+within-season warming rate, and \(\{\epsilon_i\}_{i\ge 1}\) are
+independent and identically distributed with
+\(\mathbb{E}[\epsilon_i]=0\) and \(\mathrm{Var}(\epsilon_i)=\sigma^2\),
+representing idiosyncratic variation at that bud such as due to the
+day-to-day microclimate.
+
+Let \begin{equation}
+Z_n \;=\; \sum_{i=1}^n X_i
+\qquad\text{and}\qquad
+\nu(t) \;=\; \min\{m:\, Z_m>t\}
+\end{equation} denote cumulative temperature by day \(n\) and the
+observed bloom date, respectively, where \(t>0\) is a plant-specific
+tempearture-sum threshold. Thus \(\nu(t)\) is the hitting time at which
+cumulative temperatures first exceed the threshold.
+
+Standard results for stopped random walks yield asymptotic normal
+approximations for \(\nu(t)\), with behavior governed by the parameters
+\(\alpha\) and \(\beta\). We consider two cases.
+
+\paragraph{Regime 1: constant drift ($\beta=0$)}
+
+When the drift is approximately constant and positive, \begin{equation}
+\nu(t)\ \dot{\sim}\ \mathrm{Normal}\!\left(\frac{t}{\alpha},\ \frac{\sigma^2\,t}{\alpha^{3}}\right),
+\label{eq:nu_beta0}
+\end{equation} see Gut (2011) and Gut (2009, chap. 3).
+
+\paragraph{Regime 2: increasing drift ($\beta>0$)}
+
+When average temperatures increase, the hitting time satisfies
+\begin{equation}
+\nu(t)\ \dot{\sim}\ \mathrm{Normal}\!\left(\sqrt{\frac{2t}{\beta}} - \frac{\alpha}{\beta} + \frac{1}{2},\ \frac{\sigma^2}{\beta^{3/2}\sqrt{2t}}\right),
+\label{eq:nu_beta_pos}
+\end{equation} with the derivation sketched in Appendix A.1 and
+simulations confirming the derivations in Appendix A.3. The functional
+central limit theorem and linearization argument underlying these
+results hold somewhat generally, and thus similar limits can be derived
+when the \(\{\epsilon_i\}_{i\ge 1}\) are weakly correlated or the
+temperature trajectory is not linear but sufficiently.
+
+From equations \eqref{eq:nu_beta0}--\eqref{eq:nu_beta_pos}, we make two
+observations. Finding 1: there is a nonlinear relationship between
+warming and the mean timing of springtime events, and warming can
+advance springtime events at an increasing rate. Finding 2: the two
+regimes are not equally sensitive to the idiosyncratic variation, and
+thus warming can increase the variation of springtime events, thereby
+scattering spring. We now discuss both findings in greater detail.
+
+\subsection{2.1 Finding 1: warming can advance springtime events at an
+increasing
+rate}\label{finding-1-warming-can-advance-springtime-events-at-an-increasing-rate}
+
+In both regimes, the expected bloom date is a nonlinear function of the
+warming parameters.
+
+\paragraph{Regime 1: constant drift ($\beta=0$)}
+
+From \eqref{eq:nu_beta0}, \begin{equation}
+\mathbb{E}[\nu(t)] \approx \frac{t}{\alpha},
+\qquad
+\mathrm{Var}(\nu(t)) \approx \frac{\sigma^2\,t}{\alpha^3}.
+\end{equation} Increasing baseline temperatures (larger \(\alpha\))
+advances the expected bloom date, but the marginal advance diminishes
+since \begin{equation}
+\frac{\partial}{\partial \alpha}\,\mathbb{E}[\nu(t)] \approx -\frac{t}{\alpha^2},
+\end{equation} where the magnitude decreases as \(\alpha\) grows.
+
+\paragraph{Regime 2: increasing drift ($\beta>0$)}
+
+From \eqref{eq:nu_beta_pos}, when \(t\) is large, \begin{equation}
+\mathbb{E}[\nu(t)] \approx \sqrt{\frac{2t}{\beta}},
+\qquad
+\mathrm{Var}(\nu(t)) \approx \frac{\sigma^2}{\beta^{3/2}\sqrt{2t}}.
+\end{equation} Increasing the within-regime warming rate (larger
+\(\beta\)) also advances the expected bloom date with diminishing
+returns since \begin{equation}
+\frac{\partial}{\partial \beta}\,\mathbb{E}[\nu(t)]
+\approx
+-\frac{1}{2}\sqrt{\frac{2t}{\beta^{3}}}.
+\end{equation} However, if warming climates shift the bloom date from
+regime 2 to regime 1, then the rate of advancement can increase,
+particularly if increases in \(\alpha\) outpace increases in \(\beta\).
+
+\subsection{2.2 Finding 2: warming can scatter spring
+events}\label{finding-2-warming-can-scatter-spring-events}
+
+Equations \eqref{eq:nu_beta0}--\eqref{eq:nu_beta_pos} also clarify how
+warming affects dispersion. Holding the regime fixed, warming reduces
+variance. That is, \(\mathrm{Var}(\nu(t))\) decreases with \(\alpha\) in
+\eqref{eq:nu_beta0} and with \(\beta\) in \eqref{eq:nu_beta_pos}.
+However, just as in Section 2.1, warming can change which regime is
+relevant at the realized bloom date. When an event is advanced
+sufficiently early, microclimate fluctuations play a larger role in
+determining the hitting time.
+
+One way to quantify sensitivity to microclimate variation is through the
+(squared) coefficient of variation, \[
+\mathrm{CV}^2 \;=\; \frac{\mathrm{Var}(\nu(t))}{\mathbb{E}[\nu(t)]^2}.
+\] In regime 1, \(\mathbb{E}[\nu(t)]\approx t/\alpha\) and
+\(\mathrm{Var}(\nu(t))\approx \sigma^2 t/\alpha^3\), so
+\begin{equation*}
+\mathrm{CV}^2_{1}
+\;=\;
+\frac{\mathrm{Var}(\nu(t))}{\mathbb{E}[\nu(t)]^2}
+\;\approx\;
+\frac{\sigma^2 t/\alpha^3}{(t/\alpha)^2}
+\;=\;
+\frac{\sigma^2}{\alpha\,t}.
+\end{equation*} In regime 2,
+\(\mathbb{E}[\nu(t)]\approx \sqrt{2t/\beta}\) and
+\(\mathrm{Var}(\nu(t))\approx \sigma^2/(\beta^{3/2}\sqrt{2t})\), hence
+\begin{equation*}
+\mathrm{CV}^2_{2}
+\;=\;
+\frac{\mathrm{Var}(\nu(t))}{\mathbb{E}[\nu(t)]^2}
+\;\approx\;
+\frac{\sigma^2/(\beta^{3/2}\sqrt{2t})}{(2t/\beta)}
+\;=\;
+\frac{\sigma^2}{\sqrt{\beta} \, (2t)^{3/2}}.
+\end{equation*} Both expressions increase when deterministic
+accumulation is weaker relative to the microclimate scale \(\sigma\)
+(e.g., smaller \(\alpha\) and/or smaller effective \(\beta\)).
+Consequently, warming tends to reduce variability within a given
+seasonal regime by strengthening deterministic forcing.
+
+To compare regimes, note that \begin{equation*}
+\frac{\mathrm{CV}^2_{1}}{\mathrm{CV}^2_{2}}
+\;\approx\;
+\frac{\sigma^2/(\alpha t)}{\sigma^2/(\sqrt{\beta} \, (2t)^{3/2})}
+\;=\;
+\frac{\sqrt{\beta} \, 2^{3/2}}{\alpha}\,\sqrt{t}.
+\end{equation*} Thus, since \(\alpha\) and \(\beta\) are nearly always
+greater than \(0\), the regime 1 becomes arbitrarily more sensitive to
+microclimate fluctuations than regime 1 for large \(t\). This produces a
+more variable, less synchronized and thus ``scattered'' spring when
+warming shifts threshold crossings from regime 2 to regime 1.
+
 \subsection{Experimental Data}\label{experimental-data}
 
 We first consider a controlled experiment on walnut trees

@@ -3,12 +3,23 @@
 This paper formalizes this idea. We decompose the daily effective
 temperature into a systematic component reflecting the local climate and
 an idiosyncratic component reflecting microclimate variation. Bloom
-occurs at a hitting time, the date on which the cumulative sum first
+occurs at a hitting time, [the date on which the cumulative sum first
 crosses a plant-specific temperature threshold. This representation
 places biological timing problems within the domain of stochastic
 process theory, where the distribution of hitting times can be
 characterized asymptotically, greatly simplifying the statistical laws
-that describe the behavior of temperature-triggered biological events.
+that describe the behavior of temperature-triggered biological events.]
+
+A central implication of this framework is that synchrony depends on how
+quickly temperatures are changing at the time the threshold is reached.
+For example, many temperate climates exhibit two different regimes when
+flowers first bloom in the spring. In the first regime---roughly the
+winter months following the winter solstice (January--February)---average daily
+temperatures are approximately constant over time, so cumulative
+temperature grows at an approximately linear rate. In the second
+regime---roughly the spring months around the equinox
+(March--April)---average daily temperatures increase approximately
+linearly over time, so cumulative temperatures grows quadratically.
 
 % Maybe add below to caption of Figure 1? 
 Figure 1 visualizes both regimes. The horizontal dashed line corresponds
@@ -21,6 +32,19 @@ fluctuations in daily temperature (solid line) around the average
 (dashed line), which creates variation in the event times. The extent to
 which an ecosystem is coordianted depends on the strength of the signal
 relative to the noise.
+
+To see how, note that the cumulative temperature can be divided into the
+cumulative signal (the sum of the averages) plus the cumulative noise
+(the sum of the random deviations). When the distribution of the noise
+is roughly the same in both regimes, the quadratic signal in regime 2
+can much more quickly overwhelm the noise when compared to the linear
+signal in regime 1. For this reason, nearby buds tend to cross the
+threshold within a narrow time window when events occur in regime 2. In
+contrast, when thresholds are reached in the regime 1, cumulative noise
+can remain relatively influential so that small microclimate differences
+translate into larger differences in threshold-crossing times.
+
+%%
 
 The remainder of the paper makes this intuition precise. In this
 section, briefly review the literatures of stopped random walks and
@@ -42,7 +66,10 @@ plants in his Letters addressed to HRH the Grand Duke of Saxe Coburg and
 Gotha (Quetelet 1849, Letter Number 33), which Kotz and Johnson list
 among one of eleven major breakthroughs in statistics prior to 1900.
 Quetlet stressed the importance of idiosyncratic variation, which we
-also emphasize in this paper. 
+also emphasize in this paper. The law was well known throughout the
+nineteenth century, influencing statisticians such as Francis Galton and
+Florence Nightingale and waning with the rise of mathematical statistics
+(Hacking 1990, 62). 
 
 The law entered modern phenology through Quetelet's collaborator Charles
 Fran\c{c}ois Antoine Morren, who coined the term phenology in an 1849
@@ -64,3 +91,61 @@ functionals. See for example Woodroofe (1982) and Gut (2012).
 
 \subsection{1.2 Summary of Main
 Findings}\label{summary-of-main-findings}
+
+
+%% Stuff I tried harder to add but did not fit
+
+% I like this but I don't think we can build a paper around microclimate variation given our current understanding of it (it has been studied and the evidence is not that convincing but it has not been studied well) -- it fits much better as a discussion point than something in the introduction 
+% Careful: an idiosyncratic component reflecting microclimate variation
+Yet coordination based on cumulative temperatures does not perfectly
+synchronize springtime events. Bloom dates vary even among nearby buds
+on the same tree or within the same grove. A leading source of this
+variation is due to microclimates. The effective temperature experienced
+by a bud depends on a litany of factors such as airflow, sun and water
+exposure, and animal and human activity. These features introduce
+idiosyncratic variation around a broader seasonal pattern so that the
+cumulative temperature experienced by each bud is better viewed as a
+random walk rather than a deterministic sum.
+
+
+Warming advances threshold-triggered events because the cumulative total
+reaches the target sooner. Typically, one would expect the rate of
+advancement to diminish as temperatures warm. Indeed, when traveling a
+fixed distance, one has to double the speed to half the travel time so
+that the relationship between speed and time is a hyperbola.
+
+The twist is that warming can change which aspects of the temperature
+drives the timing of threshold-triggered events. If average
+temperatures increase day over day as it does for springtime events in
+temperate climates near the equinox, the temperature rate not the
+baseline level of temperatures largely determined the bloom date. In
+contrast, if average temperatures are relatively flat day over day as
+they are in temperate climates closer to the solstice, the baseline
+temperature determines the boom date. Thus, as warming moves springtime
+events closer to the solstice, the rate at which their timing occurs can
+increase, accelerating the advancement of spring
+
+The second finding concerns spread rather than the average. Even if
+warming makes the mean bloom date earlier, it does not necessarily make
+timing more predictable. The date depends on both the average
+temperature trend and idosynctatic variation induced in part by
+microclimate factors such as shade, wind, soil moisture, urban heat, and
+other factors that vary even within a single site. [When average
+temperatures rise quickly and steadily, as when closer to the equinox,
+those local fluctuations are relatively small compared with the strong
+average temperature ``signal,'' so nearby buds tend to cross the
+threshold within a narrow window. When average temperatures are
+relatively constant, as when closer to the solstice, the seasonal signal
+is weaker, and small local differences can have outsized effects. For
+example, one bud may cross after an early warm spell while another must
+wait for the next, widening the range of dates.]
+
+Therefore, warming can both increase or decrease advancement and
+variability depending on where in the seasonal cycle the threshold is
+reached. In particular, if warming advances an event into an earlier
+period with weaker accumulation, microclimate noise has more influence,
+and synchrony can break down. [This regime shift produces a ``scattered
+spring'' when climate change moves events earlier on average while
+simultaneously reducing coordination across individuals and locations,
+making spring less tightly synchronized even as it arrives sooner.]
+
