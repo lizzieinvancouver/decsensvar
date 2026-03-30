@@ -1,0 +1,66 @@
+% Removed 29 March 2029
+% From Introduction 
+This paper formalizes this idea. We decompose the daily effective
+temperature into a systematic component reflecting the local climate and
+an idiosyncratic component reflecting microclimate variation. Bloom
+occurs at a hitting time, the date on which the cumulative sum first
+crosses a plant-specific temperature threshold. This representation
+places biological timing problems within the domain of stochastic
+process theory, where the distribution of hitting times can be
+characterized asymptotically, greatly simplifying the statistical laws
+that describe the behavior of temperature-triggered biological events.
+
+% Maybe add below to caption of Figure 1? 
+Figure 1 visualizes both regimes. The horizontal dashed line corresponds
+with regime 1 (approximately constant average daily temperatures, linear
+cumulative temperatures), while the upward-sloping dashed line
+corresponds with regime 2 (approximately linear average daily
+temperatures, quadratic cumulative temperatures). These dashed lines are
+the ``signal'' that coordinates ecosystems. The ``noise'' is the
+fluctuations in daily temperature (solid line) around the average
+(dashed line), which creates variation in the event times. The extent to
+which an ecosystem is coordianted depends on the strength of the signal
+relative to the noise.
+
+The remainder of the paper makes this intuition precise. In this
+section, briefly review the literatures of stopped random walks and
+ecology, and we state our two main findings in that context. In Section
+2, we present the hitting time model and derive asymptotic
+approximations under the two regimes. In Section 3, we present several
+datasets confirming our findings empirically. In Section 4, we conclude
+with a discussion. A sketch of the derivations, additional figures, and
+simulations are contained in the Appendix A.1.
+
+\subsection{1.1 Literature}\label{literature}
+
+The observation that the timing of many biological processes are
+determined by cumulative temperatures is largely credited to René
+Réaumur, an early adopter of the thermometer in the mid-eighteenth
+century. Adolphe Quetelet was the first to study the phenomenon
+extensively, devoting an entire chapter to the law of the flowering
+plants in his Letters addressed to HRH the Grand Duke of Saxe Coburg and
+Gotha (Quetelet 1849, Letter Number 33), which Kotz and Johnson list
+among one of eleven major breakthroughs in statistics prior to 1900.
+Quetlet stressed the importance of idiosyncratic variation, which we
+also emphasize in this paper. 
+
+The law entered modern phenology through Quetelet's collaborator Charles
+Fran\c{c}ois Antoine Morren, who coined the term phenology in an 1849
+public lecture to describe the systematic study of periodically
+recurring life-cycle events. [Today, the law is used largely unchanged
+over two centuries. Scientists predict event times by tracking
+accumulated heat above a base temperature.] This methodology is now
+codified in the growing-degree-day (GDD) or temperature-sum model and
+its variants.
+
+[At the same time, the mathematical tools for analyzing stopped random
+walks were being developed in probability and statistics.] Random-walk
+models were formalized and popularized in the early twentieth century by
+Pearson (1905) and Wald (1992). A central milestone for inference with
+random indices is Anscombe's 1952 limit theory for sequential
+estimation, which helped motivate a broad ``stopped random walk''
+methodology for deriving asymptotics of hitting times and related
+functionals. See for example Woodroofe (1982) and Gut (2012).
+
+\subsection{1.2 Summary of Main
+Findings}\label{summary-of-main-findings}

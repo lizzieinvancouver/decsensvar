@@ -104,7 +104,7 @@
 
 \title{Scattered Spring: How Temperature Synchronizes Ecosystems and its
 Consequences for Climate Change}
-\author{Jonathan Auerbach, Andrew Gelman, and Elizabeth Wolkovich}
+\author{Jonathan Auerbach, Andrew Gelman, and E. M. Wolkovich}
 \date{March 17, 2025}
 
 \begin{document}
@@ -126,27 +126,34 @@ Consequences for Climate Change}
 A wide variety of biological processes are triggered by cumulative temperatures. For example, the law of flowering plants states that a bud blooms once the temperature sum exceeds a threshold. Similar temperature-triggered mechanisms govern many other aspects of plant development, as well as insect emergence, hibernation, and migration. In this way, cumulative temperatures coordinate the timing of ecological events within an ecosystem. But how reliable is temperature-based coordination---and is that reliability impacted by climate change? \newline
 
 To answer these questions, we model temperature-triggered biological processes as stopped random walks. Cumulative temperature determines the position of the walk, and the occurrence of the biological event is the stopping time. This framework yields two theory-driven implications for how warming alters the timing and synchrony of seasonal events. First, the relationship between temperature and the expected event time is nonlinear. As temperatures increase, the average springtime event such as flowering occurs earlier, but the rate at which they advance can diminish or even accelerate. Second, warming affects not only the expected time but its variability. As temperatures increase and springtime events shift from the equinox toward the solstice, springtime events become less coordinated, producing a more variable or “scattered” spring. We verify both implications empirically.
-\end{minipage}
+\end{minipage}f
 \end{center}
 
 \normalsize
 
 \vspace{2em}
+% TODO
+% Say ...
+% (Scientists) if you're testing chilling --  you need to understand THIS to test for any regime change
+% This is a simple explanation (no chilling needed)
+% alpha does NOT matter in regime 1 (if each bud has a different alpha it does not matter) -- good experiment to do!
 
-\section{1. Introduction}\label{introduction}
+\section{Introduction}\label{introduction}
 
 Many biological events are triggered not by the temperature on a single
 day, but by the temperature accumulated over many days. A canonical
 example is the law of the flowering plants, which states that a bud
 blooms in the spring once cumulative temperatures exceed a
 plant-specific threshold. This and similar mechanisms synchronize a wide
-variety of seasonal events across an ecosystem---for instance, ensuring
+variety of seasonal events in ecosystems---for instance, ensuring
 that pollinators emerge when flowers are in bloom. They also support an
 array of forecasting tools in which scientists track cumulative
 temperature or ``growing degree days'' to predict harvest dates, manage
 pest emergence, and assess how shifting temperature patterns reshape
-ecosystems under climate change.
+ecological communities with climate change.
 
+% Add here or below -- shifting phenology with CC, slowdown, increasing variance, weird events .... 
+% Careful: an idiosyncratic component reflecting microclimate variation
 Yet coordination based on cumulative temperatures does not perfectly
 synchronize springtime events. Bloom dates vary even among nearby buds
 on the same tree or within the same grove. A leading source of this
@@ -157,37 +164,36 @@ idiosyncratic variation around a broader seasonal pattern so that the
 cumulative temperature experienced by each bud is better viewed as a
 random walk rather than a deterministic sum.
 
-This paper formalizes this idea. We decompose the daily effective
-temperature into a systematic component reflecting the local climate and
-an idiosyncratic component reflecting microclimate variation. Bloom
-occurs at a hitting time, the date on which the cumulative sum first
-crosses a plant-specific temperature threshold. This representation
-places biological timing problems within the domain of stochastic
-process theory, where the distribution of hitting times can be
-characterized asymptotically, greatly simplifying the statistical laws
-that describe the behavior of temperature-triggered biological events.
+% Maybe add below here?
+The law was well known throughout the
+nineteenth century, influencing statisticians such as Francis Galton and
+Florence Nightingale and waning with the rise of mathematical statistics
+(Hacking 1990, 62). Today, the law is used largely unchanged
+over two centuries. Scientists predict event times by tracking
+accumulated heat above a base temperature.  At the same time, the mathematical tools for analyzing stopped random
+walks were being developed in probability and statistics. 
+
+Despite the shared mathematical structure, few have connected growing
+degree-day models and the modern limit theory of stopped random walks.
+Our main contribution is to treat temperature-sum phenology as a stopped
+random walk and apply asymptotic theory to yield interpretable,
+theory-driven implications for climate change, which we now highlight
+
+% Add some stuff and end on:
+Our results show how climate change can (i) move spring time events earlier at an increasing rate and (ii) increase the dispersions of their timings across buds and nearby locations, producing less synchronized events as they arrive earlier.
+
+\section{Results \& Discussion}\label{resultsdiscuss}
 
 A central implication of this framework is that synchrony depends on how
 quickly temperatures are changing at the time the threshold is reached.
 For example, many temperate climates exhibit two different regimes when
 flowers first bloom in the spring. In the first regime---roughly the
-winter months following the solstice (January--February)---average daily
+winter months following the winter solstice (January--February)---average daily
 temperatures are approximately constant over time, so cumulative
 temperature grows at an approximately linear rate. In the second
 regime---roughly the spring months around the equinox
 (March--April)---average daily temperatures increase approximately
 linearly over time, so cumulative temperatures grows quadratically.
-
-Figure 1 visualizes both regimes. The horizontal dashed line corresponds
-with regime 1 (approximately constant average daily temperatures, linear
-cumulative temperatures), while the upward-sloping dashed line
-corresponds with regime 2 (approximately linear average daily
-temperatures, quadratic cumulative temperatures). These dashed lines are
-the ``signal'' that coordinates ecosystems. The ``noise'' is the
-fluctuations in daily temperature (solid line) around the average
-(dashed line), which creates variation in the event times. The extent to
-which an ecosystem is coordianted depends on the strength of the signal
-relative to the noise.
 
 To see how, note that the cumulative temperature can be divided into the
 cumulative signal (the sum of the averages) plus the cumulative noise
@@ -209,14 +215,6 @@ springtime events potentially at a faster rate and (ii) reduces
 synchrony across nearby locations, producing a more variable and less
 coordinated onset of spring even as it arrives sooner.
 
-The remainder of the paper makes this intuition precise. In this
-section, briefly review the literatures of stopped random walks and
-ecology, and we state our two main findings in that context. In Section
-2, we present the hitting time model and derive asymptotic
-approximations under the two regimes. In Section 3, we present several
-datasets confirming our findings empirically. In Section 4, we conclude
-with a discussion. A sketch of the derivations, additional figures, and
-simulations are contained in the Appendix A.1.
 
 \begin{figure}
 \centering
@@ -226,63 +224,23 @@ on whether temperature is accumulated during one of two regimes, 1. a
 flat winter or 2. a linear spring.}
 \end{figure}
 
-\subsection{1.1 Literature}\label{literature}
 
-The observation that the timing of many biological processes are
-determined by cumulative temperatures is largely credited to René
-Réaumur, an early adopter of the thermometer in the mid-eighteenth
-century. Adolphe Quetelet was the first to study the phenomenon
-extensively, devoting an entire chapter to the law of the flowering
-plants in his Letters addressed to HRH the Grand Duke of Saxe Coburg and
-Gotha (Quetelet 1849, Letter Number 33), which Kotz and Johnson list
-among one of eleven major breakthroughs in statistics prior to 1900.
-Quetlet stressed the importance of idiosyncratic variation, which we
-also emphasize in this paper. The law was well known throughout the
-nineteenth century, influencing statisticians such as Francis Galton and
-Florence Nightingale and waning with the rise of mathematical statistics
-(Hacking 1990, 62).
-
-The law entered modern phenology through Quetelet's collaborator Charles
-Fran\c{c}ois Antoine Morren, who coined the term phenology in an 1849
-public lecture to describe the systematic study of periodically
-recurring life-cycle events. Today, the law is used largely unchanged
-over two centuries. Scientists predict event times by tracking
-accumulated heat above a base temperature. This methodology is now
-codified in the growing-degree-day (GDD) or temperature-sum model and
-its variants.
-
-At the same time, the mathematical tools for analyzing stopped random
-walks were being developed in probability and statistics. Random-walk
-models were formalized and popularized in the early twentieth century by
-Pearson (1905) and Wald (1992). A central milestone for inference with
-random indices is Anscombe's 1952 limit theory for sequential
-estimation, which helped motivate a broad ``stopped random walk''
-methodology for deriving asymptotics of hitting times and related
-functionals. See for example Woodroofe (1982) and Gut (2012).
-
-Despite the shared mathematical structure, few have connected growing
-degree-day models and the modern limit theory of stopped random walks.
-Our main contribution is to treat temperature-sum phenology as a stopped
-random walk and apply asymptotic theory to yield interpretable,
-theory-driven implications for climate change, which we now highlight
-
-\subsection{1.2 Summary of Main
-Findings}\label{summary-of-main-findings}
+% START HERE for cutting ... editing out Main Findings ... 
 
 Warming advances threshold-triggered events because the cumulative total
 reaches the target sooner. Typically, one would expect the rate of
 advancement to diminish as temperatures warm. Indeed, when traveling a
-fixed distance, one has to double the speed to half the tavel time so
+fixed distance, one has to double the speed to half the travel time so
 that the relationship between speed and time is a hyperbola.
 
 The twist is that warming can change which aspects of the temperature
-drives the timming of threshold-triggered events. If average
+drives the timing of threshold-triggered events. If average
 temperatures increase day over day as it does for springtime events in
 temperate climates near the equinox, the temperature rate not the
 baseline level of temperatures largely determined the bloom date. In
 contrast, if average temperatures are relatively flat day over day as
 they are in temperate climates closer to the solstice, the baseline
-tempeature determines the boom date. Thus, as warming moves springtime
+temperature determines the boom date. Thus, as warming moves springtime
 events closer to the solstice, the rate at which their timing occurs can
 increase, accelerating the advancement of spring
 
@@ -463,61 +421,7 @@ demonstrate the shift between regimes. Unfortuantely, we are unable to
 find an experiment that demonstrates regime 2 or the shift between
 regimes.
 
-\subsection{3.1 Experimental Data}\label{experimental-data}
 
-We first consider a controlled experiment on walnut trees
-(\textit{Juglans}\textasciitilde sp.) conducted by Charrier et al.
-(2011). The data examines 30 trees comprising 6 genotypes at 2
-locations. In November of the study year, stems were sampled from each
-tree and cut into 7 centimeter segments containing a single bud. All
-segments were chilled at \(4^\circ\)C and then transferred to constant
-``forcing'' environments with temperatures set at one of \(5,10,15,20,\)
-or \(25^\circ\)C. For each temperature, the outcome is the response
-time, the time (in days) until budburst determined from the date at
-which 50\% of buds reached stage 15 of the BBCH scale.
-
-This experiment isolates the winter regime because temperature is held
-constant over time. Recall that in such cases, cumulative forcing grows
-approximately linearly, \[
-Z_n \approx \alpha n + \sum_{i=1}^n e_i,
-\] so that the hitting time \(\nu(t)\) satisfies the approximation \[
-\nu(t)\ \dot{\sim}\ \mathrm{Normal}\!\left(\frac{t}{\alpha},\ \frac{\sigma^2 t}{\alpha^3}\right),
-\] implying that increasing \(\alpha\) should (i) reduce the mean time
-to budburst and (ii) reduce dispersion. In addition, the squared
-coefficient of variation, \[
-\mathrm{CV}^2=\frac{\mathrm{Var}(\nu(t))}{\mathbb{E}[\nu(t)]^2},
-\] provides a unit-free measure of sensitivity to stochastic
-fluctuations, which should decrease as \(\alpha\) increases.
-
-Table \ref{tab:walnut_forcing} reports the mean and standard deviation
-of the response times across the 30 stems at each forcing temperature,
-along with the sensitivity measure \(\mathrm{CV}^2\). The pattern is
-consistent with the regime 1 model. Higher forcing temperatures
-substantially advance budburst (the mean falls sharply with \(\alpha\)),
-and the dispersion of budburst timing is smaller at warmer forcing
-temperatures. Thus, in an experimental setting, the stopped-random-walk
-approximation captures the basic comparative statics of
-constant-temperature forcing on both the level and variability of
-budburst times. (The sensitivty does decline from \(\alpha = 20\) to
-\(\alpha = 25\). The reason for low sensitivity for \(\alpha = 5\) and
-\(10\) is unclear and may reflect censoring.)
-
-\begin{table}[t]
-\centering
-\caption{Summary data from the Walnut forcing experiment [@charrier2011budburst].}
-\label{tab:walnut_forcing}
-\begin{tabular}{rrrrr}
-\toprule
-$\alpha$ & $n$ & mean & sd & $\mathrm{cv}^2$ \\
-\midrule
- 5  & 30 & 178 & 27.28 & 0.0236 \\
-10  & 30 &  88 & 12.44 & 0.0199 \\
-15  & 30 &  39 & 11.33 & 0.0831 \\
-20  & 30 &  26 &  7.67 & 0.0851 \\
-25  & 30 &  20 &  4.45 & 0.0480 \\
-\bottomrule
-\end{tabular}
-\end{table}
 
 \subsection{3.2 Observational Evidence}\label{observational-evidence}
 

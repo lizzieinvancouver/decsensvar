@@ -1,0 +1,55 @@
+\subsection{Experimental Data}\label{experimental-data}
+
+We first consider a controlled experiment on walnut trees
+(\textit{Juglans}\textasciitilde sp.) conducted by Charrier et al.
+(2011). The data examines 30 trees comprising 6 genotypes at 2
+locations. In November of the study year, stems were sampled from each
+tree and cut into 7 centimeter segments containing a single bud. All
+segments were chilled at \(4^\circ\)C and then transferred to constant
+``forcing'' environments with temperatures set at one of \(5,10,15,20,\)
+or \(25^\circ\)C. For each temperature, the outcome is the response
+time, the time (in days) until budburst determined from the date at
+which 50\% of buds reached stage 15 of the BBCH scale.
+
+This experiment isolates the winter regime because temperature is held
+constant over time. Recall that in such cases, cumulative forcing grows
+approximately linearly, \[
+Z_n \approx \alpha n + \sum_{i=1}^n e_i,
+\] so that the hitting time \(\nu(t)\) satisfies the approximation \[
+\nu(t)\ \dot{\sim}\ \mathrm{Normal}\!\left(\frac{t}{\alpha},\ \frac{\sigma^2 t}{\alpha^3}\right),
+\] implying that increasing \(\alpha\) should (i) reduce the mean time
+to budburst and (ii) reduce dispersion. In addition, the squared
+coefficient of variation, \[
+\mathrm{CV}^2=\frac{\mathrm{Var}(\nu(t))}{\mathbb{E}[\nu(t)]^2},
+\] provides a unit-free measure of sensitivity to stochastic
+fluctuations, which should decrease as \(\alpha\) increases.
+
+Table \ref{tab:walnut_forcing} reports the mean and standard deviation
+of the response times across the 30 stems at each forcing temperature,
+along with the sensitivity measure \(\mathrm{CV}^2\). The pattern is
+consistent with the regime 1 model. Higher forcing temperatures
+substantially advance budburst (the mean falls sharply with \(\alpha\)),
+and the dispersion of budburst timing is smaller at warmer forcing
+temperatures. Thus, in an experimental setting, the stopped-random-walk
+approximation captures the basic comparative statics of
+constant-temperature forcing on both the level and variability of
+budburst times. (The sensitivty does decline from \(\alpha = 20\) to
+\(\alpha = 25\). The reason for low sensitivity for \(\alpha = 5\) and
+\(10\) is unclear and may reflect censoring.)
+
+\begin{table}[t]
+\centering
+\caption{Summary data from the Walnut forcing experiment [@charrier2011budburst].}
+\label{tab:walnut_forcing}
+\begin{tabular}{rrrrr}
+\toprule
+$\alpha$ & $n$ & mean & sd & $\mathrm{cv}^2$ \\
+\midrule
+ 5  & 30 & 178 & 27.28 & 0.0236 \\
+10  & 30 &  88 & 12.44 & 0.0199 \\
+15  & 30 &  39 & 11.33 & 0.0831 \\
+20  & 30 &  26 &  7.67 & 0.0851 \\
+25  & 30 &  20 &  4.45 & 0.0480 \\
+\bottomrule
+\end{tabular}
+\end{table}
