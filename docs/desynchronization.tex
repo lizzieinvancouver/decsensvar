@@ -122,11 +122,12 @@ Consequences for Climate Change}
 \vspace{1em}
 
 \begin{center}
-\begin{minipage}{.9\linewidth}
-A wide variety of biological processes are triggered by cumulative temperatures. For example, the law of flowering plants states that a bud blooms once the temperature sum exceeds a threshold. Similar temperature-triggered mechanisms govern many other aspects of plant development, as well as insect emergence, hibernation, and migration. In this way, cumulative temperatures coordinate the timing of ecological events within an ecosystem. But how reliable is temperature-based coordination---and is that reliability impacted by climate change? \newline
+\begin{minipage}{0.9\linewidth}
+A wide variety of biological processes are triggered by cumulative temperatures. Many plant events, such as leafout and flowering, occur once the temperature sum exceeds a threshold. In this way, cumulative temperatures may coordinate the timing of ecological events within a species and potentially ecosystem. But increasing reports of slowing responses to warming, increasing variance in the timing of spring events and other anomalies have raised questions about how reliable this temperature-based coordination is with anthropogenic climate change. Researchers have proposed a suite of varying hypotheses to explain these findings, all of which add complexity beyond a simple model of events triggered by cumulative temperatures. Yet this research has not fully evaluated predictions from the simple model. 
+% Similar temperature-triggered mechanisms govern many other aspects of plant development, as well as insect emergence, hibernation, and migration.  \newline
 
-To answer these questions, we model temperature-triggered biological processes as stopped random walks. Cumulative temperature determines the position of the walk, and the occurrence of the biological event is the stopping time. This framework yields two theory-driven implications for how warming alters the timing and synchrony of seasonal events. First, the relationship between temperature and the expected event time is nonlinear. As temperatures increase, the average springtime event such as flowering occurs earlier, but the rate at which they advance can diminish or even accelerate. Second, warming affects not only the expected time but its variability. As temperatures increase and springtime events shift from the equinox toward the solstice, springtime events become less coordinated, producing a more variable or “scattered” spring. We verify both implications empirically.
-\end{minipage}f
+Here, we address this gap by using renewal theory to model temperature-triggered biological processes as stopped random walks. Cumulative temperature determines the position of the walk, and the occurrence of the biological event is the stopping time. This framework yields two theory-driven implications for how warming alters the timing and synchrony of seasonal events. First, the relationship between temperature and the expected event time is nonlinear. As temperatures increase, the average springtime event such as flowering occurs earlier, but the rate at which they advance can diminish or even accelerate. Second, warming affects not only the expected time but its variability. As temperatures increase and springtime events shift from the equinox toward the solstice, springtime events become less coordinated, producing a more variable or “scattered” spring. We verify both implications empirically using experimental and observational data. 
+\end{minipage}
 \end{center}
 
 \normalsize
@@ -152,12 +153,12 @@ temperature or ``growing degree days'' to predict harvest dates, manage
 pest emergence, and assess how shifting temperature patterns reshape
 ecological communities with climate change.
 
-Shifts to earlier biological events---earlier phenology---had been the clearest `fingerprint' of anthropogenic climate change across both natural and managed systems, but have recently become less predictable (CITES). In recent decades phenological advances have decelerated, advancing less with each degree of warming (CITES). With this, variance in the timing of phenological events has variable declined or increased, without a clear model to predict these shifts (CITES). At the same time, previously unknown or rare phenological events appear more common (CITES). While research has provided myriad explanations for these events---often with directly contrasting predictions and logic (CITES)---no work has examined predictions from the existing cumulative sum model fully. 
+Shifts to earlier biological events---earlier phenology---has been the clearest `fingerprint' of anthropogenic climate change across both natural and managed systems, but have recently become less predictable. In recent decades phenological advances have decelerated, advancing less with each degree of warming (\citep{fu2015declining}). With this, variance in the timing of phenological events has appeared to both decline or increase, without a clear pattern (\citep{vitasse2018global,stemkovski2023disorder}). At the same time, previously unknown or rare phenological events appear more common (\citep{chuine2025living}). While research has provided myriad explanations for these events---often with directly contrasting predictions and logic (\citep{fu2015declining,wolkovich2021simple,gao2024thermal})---no work has examined predictions from the existing cumulative sum model fully. 
 
 Scientists have used a basic cumulative sum model for over two centuries, but have rarely if ever integrated the relevant mathematical tools developed in probability and statistics over past decades relevant to this model---specifically renewal theory designed for analyzing stopped random walks. Despite the shared mathematical structure, few have connected growing
 degree-day models and the modern limit theory of stopped random walks. % Our main contribution is to treat temperature-sum phenology as a stopped random walk and apply asymptotic theory to yield interpretable, theory-driven implications for climate change ...
 
-Here we draw on renewal theory to predict how events triggered by a cumulative temperature sum will shift with warming. Our model predicts observed advances as well as shifts in variance. We show predictions depend critically on characteristics of the underlying temperature regime---variance in the timing of biological events can decrease or increase with warming depending on whether temperatures during the period of accumulation are stationary (as in the winter and summer) or increasing (as in the spring). Taken together our results show how climate change can (i) move spring events earlier at an increasing rate and (ii) increase the variance of their timings, producing less synchronized events as they arrive earlier.
+Here we draw on renewal theory to predict how events triggered by a cumulative temperature sum will shift with warming. Our model predicts observed advances as well as shifts in variance. We show predictions depend critically on characteristics of the underlying temperature regime---variance in the timing of biological events can decrease or increase with warming depending on whether temperatures during the period of accumulation are stationary (as in the winter and summer) or increasing (as in the spring). Taken together our results show how climate change can (i) move spring events earlier at an increasing or decelerating rate, and (ii) increase the variance of their timings, producing less synchronized events as they arrive earlier.
 
 \section{Results \& Discussion}\label{resultsdiscuss}
 
@@ -166,18 +167,18 @@ crosses a plant-specific temperature threshold. This
 places biological timing problems within the domain of stochastic
 process theory, allowing us to asymptotically characterize the distribution of event timings (hitting times) and thus predict temperature-triggered biological events. 
 
-We model effective temperatures ($X_i$)---the temperatures experienced by a plant bud at a given location---as a baseline temperature ($\alpha$) with a within-season warming rate (\(\{\epsilon_i\}_{i\ge 1}\)) commonly seen in the spring months (Fig 1) and some noise ($\epsilon_i$, thus $X_i = \alpha + \beta\, i + \epsilon_i,$).  Noise in this formulation could represent many biological aspects depending on the scale and our developing understanding of what triggers spring plant events; for example, in our focus on the bud-level it represents idiosyncratic variation at that bud, which could be driven potentially by microclimate variation (CITES), including bud color variation (CITES), or internal differences that vary when the bud stats accumulating temperatures (CITEmolecularchillpapers). Bloom occurs on the day ($n$) the cumulative temperature ($Z_n \;=\; \sum_{i=1}^n X_i$ where \(t>0\) is a plant-specific
+We model effective temperatures ($X_i$)---the temperatures experienced by a plant bud at a given location---as a baseline temperature ($\alpha$) with a within-season warming rate (\(\{\epsilon_i\}_{i\ge 1}\)) commonly seen in the spring months (Fig 1) and some noise ($\epsilon_i$, thus $X_i = \alpha + \beta\, i + \epsilon_i,$).  Noise in this formulation could represent many biological aspects depending on the scale and our developing understanding of what triggers spring plant events. For example, in our focus on the bud-level it represents idiosyncratic variation at that bud, which could be driven potentially by microclimate variation (\citep{schwartz2014separating}), including bud color variation (\citep{peaucelle2022accurate}), or internal differences that vary when the bud starts accumulating temperatures (CITESmolecularchillpapers). Bloom occurs on the day ($n$) the cumulative temperature ($Z_n \;=\; \sum_{i=1}^n X_i$ where \(t>0\) is a plant-specific
 tempearture-sum threshold; $\nu(t) \;=\; \min\{m:\, Z_m>t\}$). Thus \(\nu(t)\) is the bloom date---and the hitting time at which
 cumulative temperatures first exceed the threshold. Standard results for stopped random walks yield asymptotic normal
 approximations for \(\nu(t)\), with behavior governed by the parameters
 \(\alpha\) and \(\beta\). 
 
 A central implication of this framework is that predictions depend strongly on the underlying temperature regime during which the plant accumulates temperature. When plants accumulate temperatures during times when temperature is relatively flat (stationary, common in winter months following the winter solstice) cumulative
-temperature grows at an approximately linear rate; thus the expected bloom date advances with climate change in step with increasing baseline temperatures ($\mathbb{E}[\nu(t)] \approx \frac{t}{\alpha}$, for example) as is often expected in the literature (CITES). In contrast, plants may accumulate temperatures mainly during the spring months when average daily temperatures increase approximately linearly over time and thus cumulative temperatures grow quadratically. In this regime, bloom date advances as a function of the rate of within-season warming ($\mathbb{E}[\nu(t)] \approx \sqrt{\frac{2t}{\beta}$)---that is, how quickly spring temperatures increase. 
+temperature grows at an approximately linear rate; thus the expected bloom date advances with climate change in step with increasing baseline temperatures ($\mathbb{E}[\nu(t)] \approx \frac{t}{\alpha}$) as is often expected in the literature (\citep{vitasse2022great}). In contrast, when plants may accumulate temperatures mainly during the spring months when average daily temperatures increase approximately linearly over time and thus cumulative temperatures grow quadratically. In this regime, bloom date advances as a function of the rate of within-season warming ($\mathbb{E}[\nu(t)] \approx \sqrt{\frac{2t}{\beta}$)---that is, how quickly spring temperatures increase. 
 
-In both regimes, increasing temperatures advance bloom dates in a non-linear function, similar to shifts in a suite of recent papers (CITES). Based on either regime, increasing temperatures advance bloom dates with diminishing advances as the rate of warming (to the baseline temperature, $\alpha$ or within-season rate, $\beta$) increases relative to the size of the total threshold (for the stationary regime: $\frac{\partial}{\partial \alpha}\,\mathbb{E}[\nu(t)] \approx -\frac{t}{\alpha^2}$; for the within-season increasing temperatures regime: $\frac{\partial}{\partial \beta}\,\mathbb{E}[\nu(t)]
+In both regimes, increasing temperatures advance bloom dates in a non-linear function, similar to shifts in a suite of recent papers (\citep{fu2015declining,wolkovich2021simple}). Based on either regime, increasing temperatures advance bloom dates with diminishing advances as the rate of warming (to the baseline temperature, $\alpha$ or within-season rate, $\beta$) increases relative to the size of the total threshold (for the stationary regime: $\frac{\partial}{\partial \alpha}\,\mathbb{E}[\nu(t)] \approx -\frac{t}{\alpha^2}$; for the within-season increasing temperatures regime: $\frac{\partial}{\partial \beta}\,\mathbb{E}[\nu(t)]
 \approx
--\frac{1}{2}\sqrt{\frac{2t}{\beta^{3}}}$). Additionally, if climate change shifts the period when plants accumulate temperatures from the non-stationary springtime period (near the spring equinox) to the more stationary period earlier in the year (near the winter solstice) then advances may actually increase,
+-\frac{1}{2}\sqrt{\frac{2t}{\beta^{3}}}$). If climate change shifts the period when plants accumulate temperatures from the non-stationary springtime period (near the spring equinox) to the more stationary period earlier in the year (near the winter solstice) then advances may actually increase,
 particularly if increases in the baseline (\(\alpha\)) outpace increases in the within-season rate (\(\beta\)).
 
 \iffalse % Maybe add some of this above? Or move the whole idea of shifting regimes below. 
@@ -193,9 +194,17 @@ events closer to the solstice, the rate at which their timing occurs can
 increase, accelerating the advancement of spring.
 \fi
 
-Importantly, these two temperature regimes make very different predictions for the synchrony of events---that is the variance in event timings within the same year and location. Both predict decreased variance with warming (stationary regime: $\mathrm{Var}(\nu(t)) \approx \frac{\sigma^2\,t}{\alpha^3}$; non-stationary regime: $\mathrm{Var}(\nu(t)) \approx \frac{\sigma^2}{\beta^{3/2}\sqrt{2t}}$), but the influence of noise is strikingly different. In the non-stationary regime---common in the spring---noise is quickly overwhelmed by the effect of increasing within-season temperatures. This effectively acts to synchronize plants (and buds within plants) with the same thermal threshold (aka GDD) requirement---making small difference in microclimate or other idiosyncratic effects negligible. In contrast, under the stationary regime---common in winter---noise
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{desynchronization_files/figure-latex/two_regimes-1.pdf}}
+\caption{The timing of springtime events in temparate climates depends
+on whether temperature is accumulated during one of two regimes, 1. a
+flat winter or 2. a linear spring.}
+\end{figure}
+
+Importantly, these two temperature regimes make very different predictions for the synchrony of events---that is the variance in event timings within the same year and location. Both predict decreased variance with warming (stationary regime: $\mathrm{Var}(\nu(t)) \approx \frac{\sigma^2\,t}{\alpha^3}$; non-stationary regime: $\mathrm{Var}(\nu(t)) \approx \frac{\sigma^2}{\beta^{3/2}\sqrt{2t}}$), but the influence of noise is strikingly different. In the non-stationary regime---common in the spring---noise is quickly overwhelmed by the effect of increasing within-season temperatures. This effectively acts to synchronize plants (and buds within plants) with the same thermal threshold (aka GDD) requirement---making small differences in microclimate or other idiosyncratic effects negligible. In contrast, under the stationary regime---common in winter---noise
 can remain relatively influential so that small microclimate differences
-translate into larger differences in threshold-crossing times. This prediction fits well with experiments conducted under constant temperature regimes, which find increasing variance with decreasing baseline temperatures (CITES). In such experiments, buds often have extremely variable budburst timings, exactly as our model predicts (see Appendix). 
+translate into larger differences in threshold-crossing times. This prediction fits well with experiments conducted under constant temperature regimes, which find increasing variance with decreasing baseline temperatures (\citep{Charrier:2011aa}). In such experiments, buds often have extremely variable budburst timings, exactly as our model predicts (see Appendix). 
 
 \iffalse % Maybe add some of this above?
 When average
@@ -221,51 +230,72 @@ spring'' when climate change moves events earlier on average while
 simultaneously reducing coordination across individuals and locations,
 making spring less tightly synchronized even as it arrives sooner.
 
-
-
-
-Such a regime-shift would also cause major shifts in the variance. ...
-
-% JA original text ... 
-
-
-
-
-\begin{figure}
-\centering
-\pandocbounded{\includegraphics[keepaspectratio]{desynchronization_files/figure-latex/two_regimes-1.pdf}}
-\caption{The timing of springtime events in temparate climates depends
-on whether temperature is accumulated during one of two regimes, 1. a
-flat winter or 2. a linear spring.}
-\end{figure}
-
-
-% START HERE for cutting ... editing out Main Findings ... 
-
-
-\section{3. Application}\label{application}
-
-We apply the two models described in Section 2 to two datasets. The
-first is dataset is from an experiment conducted by Charrier et al.
-(2011), which demonstrates regime 1. The second is a large dataset of
-nearly 24,000 observations from Rosemartin et al. (2015), which
-demonstrate the shift between regimes. Unfortuantely, we are unable to
-find an experiment that demonstrates regime 2 or the shift between
-regimes.
-
-
-
-
-\subsection{3.2 Observational Evidence}\label{observational-evidence}
-
-We now consider data from the historical lilac--honeysuckle phenology
+Whether warming leads to a
+more synchronized or more ``scattered'' spring therefore depends on the
+local joint evolution of \((\alpha,\beta)\) and on the threshold \(t\)
+relevant for a given species and life-cycle event. In this sense, the
+stopped-random-walk framework offers a simple way to translate spatially
+varying climate change into spatially varying predictions about both the
+advancement of spring and the stability of ecosystem coordination. We examine this using data from the historical lilac--honeysuckle phenology
 network compiled by Rosemartin et al. (2015), which contains leafing and
 flowering dates collected across the continental United States from
 1956--2014 for purple common lilac (\textit{Syringa vulgaris}), a cloned
 lilac cultivar (\textit{S.},\(\times\),\textit{chinensis} `Red
 Rothomagensis'), and two cloned honeysuckle cultivars
 (\textit{Lonicera tatarica} Arnold Red and \textit{L. korolkowii}
-Zabeli). We focus site that recorded the phenophase full bloom and are
+Zabeli).
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{desynchronization_files/figure-latex/lilac_te_mean-1} \caption{Mean and log standard deviation of lilac bloom dates (n = 23,864) by baseline temperatures ($\alpha$) and within-season temperature increases ($\beta$) estimated by a generalized additive model. The left
+figure shows the mean generally decreases at an increasing rate as
+\(\alpha\) and \(\beta\) increase---although increases are possible when
+\(\beta\) is large. The standard deviation can increase or decrease,
+again depending on the relative values of \(\alpha\) or \(\beta\).}
+\label{fig:lilac_te_mean}
+\end{figure}
+
+
+The exact effect on an ecosystem depends on how exactly the baseline (\(\alpha\)) and increasing within season
+(\(\beta\)) temperatures change. In some locations, climate change may manifest
+primarily as higher winter temperatures (an increase in \(\alpha\)) with
+relatively little change in the rate at which temperatures rise during
+spring (a modest change in \(\beta\)). In others, winter temperatures
+may change less while spring transitions steepen (a larger increase in
+\(\beta\)). Because the mean and variance of the hitting time depend
+differently on \(\alpha\) and \(\beta\), these distinct warming profiles
+can produce different phenological responses even when average annual
+warming is similar.
+
+To test if baseline winter and increasing spring temperatures shift flowering times as predicted by our model, we first bin sites and years within a grid of \(\alpha\) (rows) and \(\beta\) (columns) and calculate
+the mean and standard deviation of the observed bloom date (number of
+days since January 1) within each bin. We also checked these results by replacing the
+binning with a smooth, nonparametric estimate of the conditional mean
+and dispersion using generalized additive models (GAM), see Hastie and
+Tibshirani (1986) and Wood (2017). 
+
+Across both approaches (binning and GAM) shifts in bloom dates across varying baseline winter and increasing spring temperatures generally supported our model predictions. 
+First, holding \(\alpha\) fixed, larger \(\beta\) is associated with
+earlier mean bloom dates, which generally but not always advance at a
+decreasing rate. The same is true for holding \(\beta\) fixed, and
+increasing \(\alpha\). Holding \(\alpha\) at its largest value, the
+influence of \(\beta\) is considerably smaller. This reflects the
+accuracy of predictions when plants accumulate all temperatures under a stationary climate where increasing temperatures (\(\beta\)) plays no role.
+
+Consistent
+with the theory, dispersion generally declined with higher increasing spring temperatures (i.e., as  \(\beta\) increases
+within each \(\alpha\) row). This occurs because when baseline temperatures (\(\alpha\)) are held fixed, the percent of buds that bloom in the stationary climate is unchanged, and the
+buds that makes it to the increasing temperature regime have a lower variance. However, holding
+\(\beta\) fixed and increasing \(\alpha\) produces a regime shift in
+which more buds bloom under the stationary climate regime and thus the bloom date dispersion
+increases. This is the ``scattered spring'' predicted from our model. Warmer winters advance bloom dates in to an earlier portion of the seasonal cycle in which forcing is effectively flatter and cumulative temperatures grow more slowly. We find similar results in the GAM (Figure 2, which show the mean (left) and
+log standard deviation (right) plotted again alpha and beta). 
+
+Our results do not exclude the possibility of chilling ... 
+
+
+\subsection{Methods}\label{methods}
+
+We focus site that recorded the phenophase full bloom and are
 within 10 miles of a GHCND site with complete temperature records,
 resulting in \(23,864\) observations.
 
@@ -283,29 +313,17 @@ in New York (Year 1982) is a good example of a bloom between regimes 1
 and 2, which had an average bloom date of March 18 with a standard
 deviation of 27.
 
-The \(\alpha\) and \(\beta\) typically increase over time as climates
-warm as demonstrated by Figures 3 and 4 in the Appendix A.2. Each figure
-shows \(\alpha\) and \(\beta\) (points) for the nine sites in which
-observations were made for the most number of years. The solid lines are
-regression lines and the grey intervals are 95 percent confidence bands.
+We fit a two-parameter
+Gaussian location--scale model using the \texttt{gaulss} function from
+\texttt{mgcv}: \[
+\mu(\alpha,\beta)=\mathbb{E}[\nu(\tau) \mid \alpha,\beta],\qquad
+\sigma(\alpha,\beta)=\mathrm{SD}(\nu(\tau) \mid \alpha,\beta),
+\] where both \(\mu\) and \(\sigma\) are modeled with tensor-product
+splines with basis dimension k = 10. This approach uses all observations
+while allowing flexible interactions between the two temperature
+summaries.
 
-To confirm the predictions from Section 2, we first bin sites and years
-within a grid of \(\alpha\) (rows) and \(\beta\) (columns) and calculate
-the mean and standard deviation of the observed bloom date (number of
-days since January 1) within each bin. Table \ref{tab:mean_bloom_bins}
-shows the mean bloom dates by \((\alpha,\beta)\) bin, chosen from the
-\(\alpha\) and \(\beta\) quartiles. Note that although the model in
-Section 2 assumes \(\beta\ge 0\), the empirical estimates of \(\beta\)
-may be near-zero or even negative in anomalous years. We therefore treat
-the lowest \(\beta\) bin as an approximately no increase category.
-
-Several patterns match the predictions of the model from Section 2.
-First, holding \(\alpha\) fixed, larger \(\beta\) is associated with
-earlier mean bloom dates, which generally but not always advance at a
-decrasing rate. The same is true for holding \(\beta\) fixed, and
-increasing \(\alpha\). Holding \(\alpha\) at its largest value, the
-influence of \(\beta\) is considerably smaller. This reflects the
-accuracy of regime 1 where \(\beta\) plays no role.
+%%
 
 \begin{table}[t]
 \centering
@@ -324,15 +342,6 @@ $(4,\,16.4]$    & 105.13 & 106.46 & 105.26 & 102.67 \\
 \end{tabular}
 \end{table}
 
-Table \ref{tab:sd_bloom_bins} reports the standard deviation by bin
-(chosen based on the quartiles of \(\alpha\) and \(\beta\)). Consistent
-with the theory, dispersion generally declines as \(\beta\) increases
-within each \(\alpha\) row. This occurs because when \(\alpha\) is
-fixed, the percent of buds that bloom in regmine 1 is unchanged, and the
-buds that makes it to regime 2 have a lower variance. However, holding
-\(\beta\) fixed and increasing \(\alpha\) produces a regime shift in
-which more buds bloom under regimes 1 and thus the bloom date dispersion
-increases. This is the ``scattered spring'' predicted in Section 2.
 
 \begin{table}[t]
 \centering
@@ -351,75 +360,8 @@ $(4,\,16.4]$    & 22.78 & 19.84 & 17.23 & 14.76 \\
 \end{tabular}
 \end{table}
 
-Aggregating by quartiles makes it difficult to determine the rate at
-which the mean and variance of the bloom times are increasing and can
-potentially result in aggregation bias. For this reason, we check Tables
-\ref{tab:mean_bloom_bins}--\ref{tab:sd_bloom_bins} by replacing the
-binning with a smooth, nonparametric estimate of the conditional mean
-and dispersion using generalized additive models, see Hastie and
-Tibshirani (1986) and Wood (2017). Specifically, we fit a two-parameter
-Gaussian location--scale model using the \texttt{gaulss} function from
-\texttt{mgcv}: \[
-\mu(\alpha,\beta)=\mathbb{E}[\nu(\tau) \mid \alpha,\beta],\qquad
-\sigma(\alpha,\beta)=\mathrm{SD}(\nu(\tau) \mid \alpha,\beta),
-\] where both \(\mu\) and \(\sigma\) are modeled with tensor-product
-splines with basis dimension k = 10. This approach uses all observations
-while allowing flexible interactions between the two temperature
-summaries.
 
-The results are displayed in Figure 2, which show the mean (left) and
-log standard deviation (right) plotted again alpha and beta. The left
-figure shows the mean generally decreases at an increasing rate as
-\(\alpha\) and \(\beta\) increase---although increases are possible when
-\(\beta\) is large. The standard deviation can increase or decrease,
-again depending on the relative values of \(\alpha\) or \(\beta\).
-
-\begin{figure}
-\includegraphics[width=1\linewidth]{desynchronization_files/figure-latex/lilac_te_mean-1} \caption{Mean and log standard deviation of lilac bloom dates (n = 23,864) by alpha and beta estimated by a generalized additive model.}\label{fig:lilac_te_mean}
-\end{figure}
-
-\section{4. Discussion}\label{discussion}
-
-In this paper, we show that when biological processes use cumulative
-tempreatures to coordinate the timing of events, that coordination
-depends on whether average temperatures are increasing or not. As bloom
-dates advance into regions in which average temepratures do not increase
-much day today, microclimate variation plays a much more important role,
-reducing ecosystem syncrony and scattering spring over a longer time
-period.
-
-The exact effect on an ecosystem depends on how exactly \(\alpha\) and
-\(\beta\) change. In some locations, climate change may manifest
-primarily as higher winter temperatures (an increase in \(\alpha\)) with
-relatively little change in the rate at which temperatures rise during
-spring (a modest change in \(\beta\)). In others, winter temperatures
-may change less while spring transitions steepen (a larger increase in
-\(\beta\)). Because the mean and variance of the hitting time depend
-differently on \(\alpha\) and \(\beta\), these distinct warming profiles
-can produce different phenological responses even when average annual
-warming is similar.
-
-Variation in \(\alpha\) and \(\beta\) levels are shown in Figures 2-3 in
-Appendix A.2. We chose the nine sites in the lilac dataset described in
-Section 3.2 with the longest data collections. In many cases, alpha has
-increased but beta has stayed the same. The result is the increased
-variance and decreased syncrony that we documented in Sections 2 and 3.
-
-This heterogeneity matters most for synchrony. Within a fixed seasonal
-regime (regime 1 or 2), higher \(\alpha\) in winter or higher \(\beta\)
-in spring tends to reduce dispersion. However, increases in \(\alpha\)
-can also shift threshold crossings earlier in the calendar, potentially
-moving events from regime 2 into regime 2, where microclimate
-variability has greater influence on timing. Whether warming leads to a
-more synchronized or more ``scattered'' spring therefore depends on the
-local joint evolution of \((\alpha,\beta)\) and on the threshold \(t\)
-relevant for a given species and life-cycle event. In this sense, the
-stopped-random-walk framework offers a simple way to translate spatially
-varying climate change into spatially varying predictions about both the
-advancement of spring and the stability of ecosystem coordination.
-
-\section{References}\label{references}
-
+\newpage
 \phantomsection\label{refs}
 \begin{CSLReferences}{1}{0}
 \bibitem[\citeproctext]{ref-charrier2011budburst}
@@ -484,10 +426,266 @@ with r}. chapman; hall/CRC.
 Woodroofe, Michael. 1982. \emph{Nonlinear Renewal Theory in Sequential
 Analysis}. SIAM.
 
+\bibitem{fu2015declining}
+Yongshuo~H Fu, Hongfang Zhao, Shilong Piao, Marc Peaucelle, Shushi Peng, Guiyun
+  Zhou, Philippe Ciais, Mengtian Huang, Annette Menzel, Josep Pe{\~n}uelas,
+  et~al.
+\newblock Declining global warming effects on the phenology of spring leaf
+  unfolding.
+\newblock {\em Nature}, 526(7571):104--107, 2015.
+
+\bibitem{vitasse2018global}
+Yann Vitasse, Constant Signarbieux, and Yongshuo~H Fu.
+\newblock Global warming leads to more uniform spring phenology across
+  elevations.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  115(5):1004--1008, 2018.
+
+\bibitem{stemkovski2023disorder}
+Michael Stemkovski, James~R Bell, Elizabeth~R Ellwood, Brian~D Inouye, Hiromi
+  Kobori, Sang~Don Lee, Trevor Lloyd-Evans, Richard~B Primack, Barbara Templ,
+  and William~D Pearse.
+\newblock Disorder or a new order: how climate change affects phenological
+  variability.
+\newblock {\em Ecology}, 104(1):e3846, 2023.
+
+\bibitem{chuine2025living}
+Isabelle Chuine, I{\~n}aki Garcia~de Cortazar-Atauri, Fr{\'e}d{\'e}ric Jean,
+  and Colin Van~Reeth.
+\newblock Living things are showing increasing anomalies in their seasonal
+  activity, which could disrupt the dynamics of biodiversity and ecosystems.
+\newblock {\em Scientific Reports}, 15(1):32860, 2025.
+
+\bibitem{wolkovich2021simple}
+EM~Wolkovich, J~Auerbach, CJ~Chamberlain, DM~Buonaiuto, AK~Ettinger,
+  I~Morales-Castilla, and A~Gelman.
+\newblock A simple explanation for declining temperature sensitivity with
+  warming.
+\newblock {\em Global Change Biology}, 27(20):4947--4949, 2021.
+
+\bibitem{gao2024thermal}
+Xiaojie Gao, Andrew~D Richardson, Mark~A Friedl, Minkyu Moon, and Josh~M Gray.
+\newblock Thermal forcing versus chilling? misspecification of temperature
+  controls in spring phenology models.
+\newblock {\em Global Ecology and Biogeography}, 33(12):e13932, 2024.
+
+\bibitem{schwartz2014separating}
+Mark~D Schwartz, Jonathan~M Hanes, and Liang Liang.
+\newblock Separating temperature from other factors in phenological
+  measurements.
+\newblock {\em International journal of biometeorology}, 58(7):1699--1704,
+  2014.
+
+\bibitem{peaucelle2022accurate}
+Marc Peaucelle, Josep Penuelas, and Hans Verbeeck.
+\newblock Accurate phenology analyses require bud traits and energy budgets.
+\newblock {\em Nature Plants}, 8(8):915--922, 2022.
+
+
 \end{CSLReferences}
 
 \newpage
 
+\section{Summary of analytical solution}\label{mathystuff}
+
+To fix ideas, consider the day a bud blooms at a given location. We
+model the effective temperature experienced by that bud on day \(i\) by
+a linear trend plus microclimate noise, \begin{equation}
+X_i = \alpha + \beta\, i + \epsilon_i,
+\end{equation} where \(\alpha\) is a baseline level, \(\beta\) is a
+within-season warming rate, and \(\{\epsilon_i\}_{i\ge 1}\) are
+independent and identically distributed with
+\(\mathbb{E}[\epsilon_i]=0\) and \(\mathrm{Var}(\epsilon_i)=\sigma^2\),
+representing idiosyncratic variation at that bud such as due to the
+day-to-day microclimate.
+
+Let \begin{equation}
+Z_n \;=\; \sum_{i=1}^n X_i
+\qquad\text{and}\qquad
+\nu(t) \;=\; \min\{m:\, Z_m>t\}
+\end{equation} denote cumulative temperature by day \(n\) and the
+observed bloom date, respectively, where \(t>0\) is a plant-specific
+tempearture-sum threshold. Thus \(\nu(t)\) is the hitting time at which
+cumulative temperatures first exceed the threshold.
+
+Standard results for stopped random walks yield asymptotic normal
+approximations for \(\nu(t)\), with behavior governed by the parameters
+\(\alpha\) and \(\beta\). We consider two cases.
+
+\paragraph{Regime 1: constant drift ($\beta=0$)}
+
+When the drift is approximately constant and positive, \begin{equation}
+\nu(t)\ \dot{\sim}\ \mathrm{Normal}\!\left(\frac{t}{\alpha},\ \frac{\sigma^2\,t}{\alpha^{3}}\right),
+\label{eq:nu_beta0}
+\end{equation} see Gut (2011) and Gut (2009, chap. 3).
+
+\paragraph{Regime 2: increasing drift ($\beta>0$)}
+
+When average temperatures increase, the hitting time satisfies
+\begin{equation}
+\nu(t)\ \dot{\sim}\ \mathrm{Normal}\!\left(\sqrt{\frac{2t}{\beta}} - \frac{\alpha}{\beta} + \frac{1}{2},\ \frac{\sigma^2}{\beta^{3/2}\sqrt{2t}}\right),
+\label{eq:nu_beta_pos}
+\end{equation} with the derivation sketched in Appendix A.1 and
+simulations confirming the derivations in Appendix A.3. The functional
+central limit theorem and linearization argument underlying these
+results hold somewhat generally, and thus similar limits can be derived
+when the \(\{\epsilon_i\}_{i\ge 1}\) are weakly correlated or the
+temperature trajectory is not linear but sufficiently.
+
+From equations \eqref{eq:nu_beta0}--\eqref{eq:nu_beta_pos}, we make two
+observations. Finding 1: there is a nonlinear relationship between
+warming and the mean timing of springtime events, and warming can
+advance springtime events at an increasing rate. Finding 2: the two
+regimes are not equally sensitive to the idiosyncratic variation, and
+thus warming can increase the variation of springtime events, thereby
+scattering spring. We now discuss both findings in greater detail.
+
+\subsection{2.1 Finding 1: warming can advance springtime events at an
+increasing
+rate}\label{finding-1-warming-can-advance-springtime-events-at-an-increasing-rate}
+
+In both regimes, the expected bloom date is a nonlinear function of the
+warming parameters.
+
+\paragraph{Regime 1: constant drift ($\beta=0$)}
+
+From \eqref{eq:nu_beta0}, \begin{equation}
+\mathbb{E}[\nu(t)] \approx \frac{t}{\alpha},
+\qquad
+\mathrm{Var}(\nu(t)) \approx \frac{\sigma^2\,t}{\alpha^3}.
+\end{equation} Increasing baseline temperatures (larger \(\alpha\))
+advances the expected bloom date, but the marginal advance diminishes
+since \begin{equation}
+\frac{\partial}{\partial \alpha}\,\mathbb{E}[\nu(t)] \approx -\frac{t}{\alpha^2},
+\end{equation} where the magnitude decreases as \(\alpha\) grows.
+
+\paragraph{Regime 2: increasing drift ($\beta>0$)}
+
+From \eqref{eq:nu_beta_pos}, when \(t\) is large, \begin{equation}
+\mathbb{E}[\nu(t)] \approx \sqrt{\frac{2t}{\beta}},
+\qquad
+\mathrm{Var}(\nu(t)) \approx \frac{\sigma^2}{\beta^{3/2}\sqrt{2t}}.
+\end{equation} Increasing the within-regime warming rate (larger
+\(\beta\)) also advances the expected bloom date with diminishing
+returns since \begin{equation}
+\frac{\partial}{\partial \beta}\,\mathbb{E}[\nu(t)]
+\approx
+-\frac{1}{2}\sqrt{\frac{2t}{\beta^{3}}}.
+\end{equation} However, if warming climates shift the bloom date from
+regime 2 to regime 1, then the rate of advancement can increase,
+particularly if increases in \(\alpha\) outpace increases in \(\beta\).
+
+\subsection{2.2 Finding 2: warming can scatter spring
+events}\label{finding-2-warming-can-scatter-spring-events}
+
+Equations \eqref{eq:nu_beta0}--\eqref{eq:nu_beta_pos} also clarify how
+warming affects dispersion. Holding the regime fixed, warming reduces
+variance. That is, \(\mathrm{Var}(\nu(t))\) decreases with \(\alpha\) in
+\eqref{eq:nu_beta0} and with \(\beta\) in \eqref{eq:nu_beta_pos}.
+However, just as in Section 2.1, warming can change which regime is
+relevant at the realized bloom date. When an event is advanced
+sufficiently early, microclimate fluctuations play a larger role in
+determining the hitting time.
+
+One way to quantify sensitivity to microclimate variation is through the
+(squared) coefficient of variation, \[
+\mathrm{CV}^2 \;=\; \frac{\mathrm{Var}(\nu(t))}{\mathbb{E}[\nu(t)]^2}.
+\] In regime 1, \(\mathbb{E}[\nu(t)]\approx t/\alpha\) and
+\(\mathrm{Var}(\nu(t))\approx \sigma^2 t/\alpha^3\), so
+\begin{equation*}
+\mathrm{CV}^2_{1}
+\;=\;
+\frac{\mathrm{Var}(\nu(t))}{\mathbb{E}[\nu(t)]^2}
+\;\approx\;
+\frac{\sigma^2 t/\alpha^3}{(t/\alpha)^2}
+\;=\;
+\frac{\sigma^2}{\alpha\,t}.
+\end{equation*} In regime 2,
+\(\mathbb{E}[\nu(t)]\approx \sqrt{2t/\beta}\) and
+\(\mathrm{Var}(\nu(t))\approx \sigma^2/(\beta^{3/2}\sqrt{2t})\), hence
+\begin{equation*}
+\mathrm{CV}^2_{2}
+\;=\;
+\frac{\mathrm{Var}(\nu(t))}{\mathbb{E}[\nu(t)]^2}
+\;\approx\;
+\frac{\sigma^2/(\beta^{3/2}\sqrt{2t})}{(2t/\beta)}
+\;=\;
+\frac{\sigma^2}{\sqrt{\beta} \, (2t)^{3/2}}.
+\end{equation*} Both expressions increase when deterministic
+accumulation is weaker relative to the microclimate scale \(\sigma\)
+(e.g., smaller \(\alpha\) and/or smaller effective \(\beta\)).
+Consequently, warming tends to reduce variability within a given
+seasonal regime by strengthening deterministic forcing.
+
+To compare regimes, note that \begin{equation*}
+\frac{\mathrm{CV}^2_{1}}{\mathrm{CV}^2_{2}}
+\;\approx\;
+\frac{\sigma^2/(\alpha t)}{\sigma^2/(\sqrt{\beta} \, (2t)^{3/2})}
+\;=\;
+\frac{\sqrt{\beta} \, 2^{3/2}}{\alpha}\,\sqrt{t}.
+\end{equation*} Thus, since \(\alpha\) and \(\beta\) are nearly always
+greater than \(0\), the regime 1 becomes arbitrarily more sensitive to
+microclimate fluctuations than regime 1 for large \(t\). This produces a
+more variable, less synchronized and thus ``scattered'' spring when
+warming shifts threshold crossings from regime 2 to regime 1.
+
+\subsection{Experimental Data}\label{experimental-data}
+
+We first consider a controlled experiment on walnut trees
+(\textit{Juglans}\textasciitilde sp.) conducted by Charrier et al.
+(2011). The data examines 30 trees comprising 6 genotypes at 2
+locations. In November of the study year, stems were sampled from each
+tree and cut into 7 centimeter segments containing a single bud. All
+segments were chilled at \(4^\circ\)C and then transferred to constant
+``forcing'' environments with temperatures set at one of \(5,10,15,20,\)
+or \(25^\circ\)C. For each temperature, the outcome is the response
+time, the time (in days) until budburst determined from the date at
+which 50\% of buds reached stage 15 of the BBCH scale.
+
+This experiment isolates the winter regime because temperature is held
+constant over time. Recall that in such cases, cumulative forcing grows
+approximately linearly, \[
+Z_n \approx \alpha n + \sum_{i=1}^n e_i,
+\] so that the hitting time \(\nu(t)\) satisfies the approximation \[
+\nu(t)\ \dot{\sim}\ \mathrm{Normal}\!\left(\frac{t}{\alpha},\ \frac{\sigma^2 t}{\alpha^3}\right),
+\] implying that increasing \(\alpha\) should (i) reduce the mean time
+to budburst and (ii) reduce dispersion. In addition, the squared
+coefficient of variation, \[
+\mathrm{CV}^2=\frac{\mathrm{Var}(\nu(t))}{\mathbb{E}[\nu(t)]^2},
+\] provides a unit-free measure of sensitivity to stochastic
+fluctuations, which should decrease as \(\alpha\) increases.
+
+Table \ref{tab:walnut_forcing} reports the mean and standard deviation
+of the response times across the 30 stems at each forcing temperature,
+along with the sensitivity measure \(\mathrm{CV}^2\). The pattern is
+consistent with the regime 1 model. Higher forcing temperatures
+substantially advance budburst (the mean falls sharply with \(\alpha\)),
+and the dispersion of budburst timing is smaller at warmer forcing
+temperatures. Thus, in an experimental setting, the stopped-random-walk
+approximation captures the basic comparative statics of
+constant-temperature forcing on both the level and variability of
+budburst times. (The sensitivty does decline from \(\alpha = 20\) to
+\(\alpha = 25\). The reason for low sensitivity for \(\alpha = 5\) and
+\(10\) is unclear and may reflect censoring.)
+
+\begin{table}[t]
+\centering
+\caption{Summary data from the Walnut forcing experiment [@charrier2011budburst].}
+\label{tab:walnut_forcing}
+\begin{tabular}{rrrrr}
+\toprule
+$\alpha$ & $n$ & mean & sd & $\mathrm{cv}^2$ \\
+\midrule
+ 5  & 30 & 178 & 27.28 & 0.0236 \\
+10  & 30 &  88 & 12.44 & 0.0199 \\
+15  & 30 &  39 & 11.33 & 0.0831 \\
+20  & 30 &  26 &  7.67 & 0.0851 \\
+25  & 30 &  20 &  4.45 & 0.0480 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\newpage
 \section{A. Appendix}\label{a.-appendix}
 
 \subsection{A.1 Sketch of Theoretical
