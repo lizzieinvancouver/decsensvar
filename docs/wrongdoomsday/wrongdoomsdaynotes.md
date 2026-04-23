@@ -1,5 +1,40 @@
 Started 28 August 2025
 
+
+## Emails about new draft (April 2026)
+
+See also: notposting/emails
+
+* 14 April 2026 email 1:
+
+ See attached. I added a bib and added/replaced some figures including Charrier et al. I also did some edits for flow and clarity. Again, I only edited up to the references.
+
+    I kept the common lilac. The chineses look similar but are noiser require more smoothing, which make the plots look less nonlinear.
+    done
+    done
+    I would just cut the first section `Summary of analytical solution.` (pages 11 to 14). You just need 15- 23, Alternative approaches (which could just be a section called additional tables), sketch of theoretical  results, and additional figures.
+    done
+
+
+Re chilling, that's your call since I can't really speak for the biology. I mentioned that the experiment holds photoperiod and chilling fixed and still sees the nonlinear relationship predicted by the theory. I also point out in the conclusion
+
+* 14 April 2026 email 2: 
+Sorry—in addition I meant to mention that I used the attached data [dwsl.csv] for Charrier with datasetID "charrier11" and study "exp2". Let me know if I should use the data you linked instead. 
+
+* 8 April 2026
+
+ Thanks Lizzie! Attached are some edits up until the references. The major change was limiting the analysis to purple lilac but updated the historic sites to 2025  (see below). To answer your questions.
+
+   1.  I think the most rigorous analysis would use a single species with the same full bloom definition (e.g. vulgaris up to 2010). If you want to include results up to today, it might be reasonable to only use sites that participated before 2010—which givens about 10,000 observations. In that case, including/excluding 2010-2025 doesn't change the analysis. (Would it be better to use the chinensis clones?)
+  2.   I wrote it with rmarkdown which I guess took my bib file and hard coded the bib items at the end. I added the natbib package so \cite should now link to the references. You can give me your bib if you want.
+    I changed the threshold to tau. phi is also fine. You can just find and replace tau with phi.
+ 3.    That's fine with me. In 2021, we derived the mean and showed in was nonlinear. In this paper, we derive the asymptotic distribution for large tau. Re shortening the Appendix: Is everything after the references (i.e. "Summary fo analytical solution") part of the appendix? I can combine this with the theoretical results.
+  4.   See marginal plots attached using data from 1955-2025 as described in 1. (I limited the analysis to vulgaris with sites that started participating before 2010, about 10,616 observations. I changed the angle and increased the smoothing (set gamma to 3) to better see the trends.
+
+
+
+## Older ...
+
 ### Meeting: 23 September 2025
 
 1. Code from him ...
