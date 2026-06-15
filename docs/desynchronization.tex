@@ -102,12 +102,7 @@
 \usepackage{ulem}
 \usepackage{natbib}
 
-
-%emw7June: I think anything like 'its implications' and 'its consequences' sounds a little boring (not flashy enough). I think PNAS does not enforce style rules at the start so we could swicth to the old title, or try something else .. some ideas:
-% Scattered spring: How temperatures near the equinox synchronize spring biological events
-% How climate change may desynchronize spring events by shifting temperature regimes 
-% Scattered spring and how climate change may disrupt synchrony of spring biological events 
-\title{\textbf{How temperatures near the equinox synchronize spring biological events and its implications for climate change}\\[1em]}
+\title{\textbf{Scattered spring: How climate change disrupts the synchrony of biological events }\\[1em]}
 
 \author{
 Jonathan Auerbach\footnotemark[1]\\
@@ -127,7 +122,7 @@ E. M. Wolkovich\footnotemark[3]\\
 \textit{Vancouver, BC Canada} \\[1em]
 }
 
-\date{(Dated: June 3, 2026)}
+\date{(Dated: June 11, 2026)}
 
 \begin{document}
 
@@ -135,7 +130,7 @@ E. M. Wolkovich\footnotemark[3]\\
 \maketitle
 
 \begin{quote} %200 words
-Many biological processes, including plant leafout and flowering, occur once cumulative temperatures reach a threshold---the thermal-sum model. In this way, temperatures coordinate the timing of biological events. But growing evidence suggests that as climates warm, both the advancement of spring has slowed (declining sensitivity) and the variance in the timing of spring events has increased (declining synchrony)---raising questions about the resilience of temperature-based coordination to anthropogenic climate change. To answer these questions, researchers have modified the thermal-sum model by introducing additional factors and mechanisms, such as chilling and photoperiod. We show such complexity is not necessary and can be explained by the thermal sum model. Using experimental and real-world data we find current trends of declining sensitivity and synchrony are exactly as predicted. In particular, the model predicts that as temperatures continue to increase and springtime events shift from the equinox toward the winter solstice, those events will become less synchronized and more variable, a phenomenon we refer to as a scattered spring. By 2100, our results predict much of the American South will experience a scattered spring under a high-warming scenario, with the typical time between spring flowering events increasing from roughly one week to one month.
+Many biological processes, including plant leafout and flowering, occur once cumulative temperatures reach a threshold (the thermal-sum model). In this way, temperature is thought to coordinate the timing of biological events. But growing evidence suggests that as climates warm, both the advancement of spring has slowed (declining sensitivity) and the variance in the timing of spring events has increased (declining synchrony)---raising questions about the resilience of temperature-based coordination to anthropogenic climate change. To answer these questions, researchers have modified the thermal-sum model by introducing additional factors and mechanisms, such as chilling and photoperiod. We show such complexity is not necessary to explain current trends of sensitivity and synchrony. Using experimental and real-world data, we find these trends are exactly as predicted by the thermal-sum model. In particular, the model predicts that as temperatures continue to increase and springtime events shift from the equinox toward the winter solstice, those events will become less synchronized and more variable, a phenomenon we refer to as a scattered spring. By 2100, our results predict much of the American South will experience a scattered spring under a high-warming scenario, with the average time between spring flowering events in many locations increasing by several weeks. %JA: Here we say complexity is not necessary, while in the introduction we say it may not be necessary.
 \end{quote}
 
 \vspace{2em}
@@ -147,7 +142,7 @@ Many biological processes, including plant leafout and flowering, occur once cum
 
 \section{Introduction}\label{introduction}
 
-Many biological events are triggered not by temperature on a single day, but by temperature accumulated over many days \citep{larcher1980}. The long-standing and widespread `thermal-sum' model states that the buds of flowering plants, for example, first bloom in the spring once cumulative temperatures exceed a plant-specific threshold \citep{quetelet1849letters, chuinearees}. This mechanism is thought to synchronize a wide variety of seasonal events within an ecosystem---for instance, ensuring that pollinators emerge when flowers are in bloom  \citep{schwartzbook}. It also supports an array of forecasting tools in which scientists track cumulative temperatures or `growing degree days' to predict harvest dates, manage pest emergence, and assess how changing temperature patterns reshape ecological communities \citep{schwartzbook}.
+Many biological events are triggered not by temperature on a single day, but by temperature accumulated over many days \citep{larcher1980}. The long-standing and widespread `thermal-sum' model states that the bud of a flowering plant, for example, first blooms in the spring once cumulative temperatures exceed a plant-specific threshold \citep{quetelet1849letters, chuinearees}. This mechanism is thought to synchronize a wide variety of seasonal events within an ecosystem---for instance, ensuring that pollinators emerge when flowers are in bloom  \citep{schwartzbook}. It also supports an array of forecasting tools in which scientists track cumulative temperatures or `growing degree days' to predict harvest dates, manage pest emergence, and assess how changing temperature patterns reshape ecological communities \citep{schwartzbook}.
 
 Shifts in the timing of biological events have been among the clearest fingerprints of anthropogenic climate change across both natural and managed systems \citep{ipcc2022}. But researchers have struggled to fully predict or explain these shifts in recent years. One puzzle is that while the timing of many biological events has moved earlier (i.e., advanced) as climates warm, the rate of advancement has slowed \citep{fu2015declining}. We refer to this pattern in which events appear less sensitive to additional warming as `declining sensitivity.'
 
@@ -160,100 +155,120 @@ Here we show that the thermal-sum model is an example of a stopped random walk, 
 
 \section{Results \& Discussion}\label{resultsdiscuss}
 
-The thermal-sum model states that a biological event occurs when cumulative temperature reaches a threshold. This model is an example of a stopped random walk where the cumulative temperature is the position of the walk and the biological event occurs when the walk reaches a threshold. 
+The thermal-sum model states that a biological event occurs when cumulative temperature reaches a threshold. This model is an example of a stopped random walk where the cumulative temperature is the position of the walk, and the biological event occurs when the walk reaches a threshold. 
 
 Consider the timing of a specific biological event, such as the bloom date of a bud. Let $X_i$ denote the effective temperature experienced by that bud on day $i$. We model $X_i$ under two temperature regimes (Figure \ref{fig:model}).
 
 \begin{figure*}[t]
 \centering
 \pandocbounded{\includegraphics[keepaspectratio]{desynchronization_files/figure-latex/two_regimes-1.pdf}}
-\caption{We model the daily temperature (solid line) as trend (dashed line) plus noise. The timing of springtime events in temperate climates depends on whether temperature is accumulated during one of two regimes, 1. the stationary temperature regime (relatively flat near the winter solstice), which we refer to as `winter temperatures,' or 2. the increasing temperature regime (relatively linear near the spring equinox), which we refer to as `spring warming.' We assume the effective temperature experienced by the bud is positive since biological limit prevents plants from accumulating very low temperatures, taken here to be $0^{\circ}C$ \citep{larcher1980} although this is easily adjusted.} %JA: this sentence is already in the Methods section and could be cut here.
+\caption{We model the daily temperature (solid line) as trend (dashed line) plus noise. The timing of springtime events in temperate climates depends on whether temperature is accumulated during one of two regimes, 1. the winter regime (relatively flat average temperatures near the winter solstice, which we refer to as `winter temperatures'), or 2. the spring regime (relatively linear average temperatures near the spring equinox, which we refer to as `spring warming'). We assume the effective temperature experienced by the bud is positive since biological limit prevents plants from accumulating very low temperatures, taken here to be $0^{\circ}$C \citep{larcher1980} although this is easily adjusted.}
 \label{fig:model}
 \end{figure*}
 
-The first regime is the stationary temperature regime in which the average daily temperature is approximately constant at some level $\alpha>0$. This regime is often observed in the winter months following the solstice, and we refer to $\alpha$ as `winter temperatures.'  The second regime is the increasing temperature regime in which the average daily temperature rises at a constant rate $\beta>0$. This regime is often observed in the spring months closer to the equinox, and we refer to $\beta$ as `spring warming.'  
+The first regime is the `winter regime' in which the average daily temperature is approximately constant at some level $\alpha>0$. This regime is often observed in the winter months following the solstice, and we refer to $\alpha$ as the `winter temperature.'  The second regime is the `spring regime' in which the average daily temperature rises at a constant rate $\beta>0$. This regime is often observed in the spring months closer to the equinox, and we refer to $\beta$ as `spring warming.' 
 
-In either regime, effective temperature is modeled as average temperature plus noise $\epsilon_i$. That is, $X_i = \alpha + \beta i + \epsilon_i,$ where $\beta=0$ in the winter-temperature regime and $\beta>0$ in the spring-warming regime. We assume the $\epsilon_i$ are independent with mean $0$ and variance $\sigma^2$.
+In either regime, effective temperature is modeled as average temperature plus noise $\epsilon_i$. That is, $X_i = \alpha + \beta i + \epsilon_i,$ where $\beta=0$ in the winter regime and $\beta>0$ in the spring regime. We assume the $\epsilon_i$ are independent with mean $0$ and variance $\sigma^2$.
 
-Noise in this formulation can represent the influence of various biological factors, depending on the scale of analysis and on our evolving understanding of what triggers springtime events. At the bud level, it represents idiosyncratic variation specific to that bud, which could arise from microclimate differences \citep{schwartz2014separating}, bud color variation \citep{peaucelle2022accurate}, or internal biological differences that affect when the bud begins accumulating temperatures \citep{vanderschoot2014,pan2023epigenetic}. 
+Noise in this formulation can represent the influence of various biological factors, depending on the scale of analysis and on our evolving understanding of what triggers springtime events. At the bud level, it represents idiosyncratic variation specific to that bud, which could arise from microclimate differences \citep{schwartz2014separating}, bud color variation \citep{peaucelle2022accurate}, or internal biological differences that affect when the bud begins accumulating temperatures \citep{vanderschoot2014,pan2023epigenetic}.
 
-This two regime model in which temperatures switch from stationary to increasing well-describes both historic springtime temperature data (Figure \ref{fig:temp_plot-1}, Appendix A.2) and projected springtime temperature data (Figure \ref{fig:temp_plot-2}, Appendix A.2). Here we assume that warming occurs entirely in one of the two regimes, although similar results hold when warming occurs under both regimes (since in such cases the second regime dominates; see Appendix A.1 for details.)
+This two regime model in which average temperatures switch from constant to increasing well-describes both historic springtime temperature data (Figure \ref{fig:temp_plot-1}, Appendix A.2) and projected springtime temperature data (Figure \ref{fig:temp_plot-2}, Appendix A.2). Here we assume that warming occurs entirely in one of the two regimes, although similar results hold when warming occurs under both regimes (since in such cases the spring regime dominates, see Appendix A.1 for details.)
 
-The bloom date $\nu(\tau)$ is the day $n$ on which cumulative temperature $\sum_{i=1}^n X_i$ first reaches a plant-specific threshold $\tau>0$. This formulation is standard in growing degree day models and, more generally, the ``forcing'' component of many process-based models of plant phenology \citep{schwartzbook}. This formulation also allows us to use standard results for stopped random walks, which yield asymptotically normal approximations for the bloom date when the threshold is sufficiently large that accumulation occurs over many days.
+The bloom date $\nu(\tau)$ is the day $n$ on which the cumulative temperature $\sum_{i=1}^n X_i$ first reaches a plant-specific threshold $\tau>0$. This formulation is standard in growing degree day models and, more generally, the `forcing' component of many process-based models of plant phenology \citep{schwartzbook}. This formulation also allows us to use standard results for stopped random walks, which yield asymptotically normal approximations for the bloom date when the threshold is sufficiently large that accumulation occurs over many days.
 
-In the winter temperatures regime, average temperatures are constant during accumulation ($\beta = 0$), and cumulative temperature grows at an approximately linear rate. The average bloom date advances with climate change in step with increasing winter temperatures ($\mathbb{E}[\nu(\tau)] \approx \tau / \alpha$) as is often described in the literature \citep{vitasse2022great}. In the spring warming regime, average temperatures increase during accumulation ($\beta > 0$), and cumulative temperatures grow quadratically. In this regime, the average bloom date squared advances in step with spring warming ($\mathbb{E}[\nu(\tau)] \approx \sqrt{ 2 \tau / \beta}$). 
+In the winter regime, average temperatures are constant during accumulation ($\beta = 0$), and cumulative temperature grow at an approximately linear rate. The average bloom date advances with climate change in step with the winter temperature ($\mathbb{E}[\nu(\tau)] \approx \tau / \alpha$) as is often described in the literature \citep{vitasse2022great}. In the spring regime, average temperatures increase during accumulation ($\beta > 0$), and cumulative temperatures grow quadratically. In this regime, the average bloom date squared advances in step with spring warming ($\mathbb{E}[\nu(\tau)] \approx \sqrt{ 2 \tau / \beta}$). 
 
-Within either regime, the relationship between bloom dates and temperature is non-linear as observed in recent papers \citep{fu2015declining,wolkovich2021simple}. Indeed, both regimes predict declining sensitivity in that the average bloom date advances at a diminishing rate when warming increases as measured by the winter temperatures ($\alpha$) or spring warming ($\beta$).
+Within either regime, the relationship between bloom dates and temperature is non-linear as observed in recent papers \citep{fu2015declining,wolkovich2021simple}. Indeed, both regimes predict declining sensitivity in that the average bloom date advances at a diminishing rate when warming increases as measured by the winter temperature ($\alpha$) or spring warming ($\beta$).
 
-Importantly, the effects of warming within the two regimes make very different predictions regarding the synchrony of events---that is, the variance in event timings within the same year and location due to idiosyncratic differences described above such as microclimate. Both predict decreased variance with warming (for the winter temperatures regime: $\mathrm{Var}(\nu(\tau)) \approx \sigma^2 \, \tau / \alpha^3$; for the spring warming regime: $\mathrm{Var}(\nu(\tau)) \approx \sigma^2 / \sqrt{2 \beta^{3} \tau}$). But the overall size of the variance depends on whether the threshold $(\tau)$ is in the numerator or the denominator.
+Importantly, the effects of warming within the two regimes make very different predictions regarding the synchrony of events---that is, the variance in event timings within the same year and location due to idiosyncratic differences described above such as microclimate. Both predict decreased variance with warming ($\mathrm{Var}(\nu(\tau)) \approx \sigma^2 \, \tau / \alpha^3$ in the winter regime and $\mathrm{Var}(\nu(\tau)) \approx \sigma^2 / \sqrt{2 \beta^{3} \tau}$ in the spring regime). But the overall size of the variance depends on whether the threshold $(\tau)$ is in the numerator or the denominator.
 
-When the threshold $(\tau)$ is in the denominator as in the spring warming regime, the variance in event timings is small, reflecting the fact that noise is quickly overwhelmed by the quadratic increase in cumulative temperatures that occurs during spring warming. This is how temperatures near the equinox synchronize plants (and buds within plants) with the same threshold---by making idiosyncratic differences such as microclimate negligible. In contrast, when the threshold is in the numerator as in the winter temperatures regime, the variance is large, reflecting the fact that noise remains relatively influential in that idiosyncratic differences can translate into larger differences in threshold-crossing times. 
+When the threshold is in the denominator as in the spring regime, the variance in event timings is small, reflecting the fact that noise is quickly overwhelmed by the quadratic increase in cumulative temperatures that occurs during spring warming. This is how temperatures near the equinox synchronize plants (and buds within plants) with the same threshold---by making idiosyncratic differences such as microclimate negligible. In contrast, when the threshold is in the numerator as in the winter regime, the variance is large, reflecting the fact that noise remains relatively influential in that idiosyncratic differences can translate into larger differences in threshold-crossing times. 
 
-In this way, our results reveal the key mechanism that determines whether synchrony declines: the temperature regime under which accumulation occurs. When average temperatures increase day over day, as they often do near the equinox, springtime events tend to be tightly synchronized. But when warming shifts those events closer to the solstice, where average temperatures are comparatively stationary, event times become more variable. The shift in regimes is observable as a `scattered spring' in which, as springtime events advance, they become less synchronized. 
+In this way, our results reveal the key mechanism that determines whether synchrony declines: the temperature regime under which accumulation occurs. When average temperatures increase day over day, as they often do near the equinox, springtime events tend to be tightly synchronized. But when warming shifts those events closer to the solstice, where average temperatures are comparatively constant, event times become more variable. The shift in regimes is observable as a `scattered spring' in which, as springtime events advance, they become less synchronized. 
 
-%Not all warming scatters spring, however. Warming can lead to a more synchronized or more scattered spring depending on the specific values of $\alpha$, $\beta$, and $\tau$. In some locations, climate change may manifest primarily as higher winter temperatures (an increase in \(\alpha\)) with relatively little change in the rate at which temperatures rise during spring (a modest change in spring warming \(\beta\)). In others, winter temperatures may change less while spring transitions steepen (a larger increase in spring warming \(\beta\)). 
+Our results also show that the two most important aspects of temperature are the levels of winter temperature $(\alpha)$ and spring warming $(\beta)$. This simplification yields a simple and transparent framework for translating spatially varying climate change into spatially varying predictions of both the advancement of spring and its variability. 
 
-Our results also show that the two most important aspects of temperature are the level of winter temperatures $(\alpha)$ and spring warming $(\beta)$. This simplification yields a simple and transparent framework for translating spatially varying climate change into spatially varying predictions of both the advancement of spring and its variability.  
+To demonstrate the framework, we analyze bloom dates from the lilac--honeysuckle phenology network, compiled by \cite{rosemartin2015lilac} from sites across the continental United States between 1956--2014. We limit our analysis to the purple common lilac (\textit{Syringa vulgaris}) and the phenophase full bloom, and we update the dataset using USA National Phenology Network records from the same sites and species until 2025 \citep{switzer_etall:2025}. For each record, we estimate the winter temperature $(\alpha)$ and spring warming $(\beta)$. We then estimate the conditional mean and log standard deviation functions of the bloom date using a generalized additive model \citep{hastie1986generalized, wood2017generalized}. 
 
-To demonstrate the framework, we analyze bloom dates from the lilac--honeysuckle phenology network compiled by \cite{rosemartin2015lilac}, collected across the continental United States from 1956--2014. We limit our analysis to the purple common lilac (\textit{Syringa vulgaris}) and the phenophase full bloom, and we update the dataset using USA National Phenology Network records from the same sites and species until 2025 \citep{switzer_etall:2025}. For each record, we estimate winter temperatures $(\alpha)$ and spring warming $(\beta)$. We then estimate the conditional mean and log standard deviation functions of the bloom date using a generalized additive model \citep{hastie1986generalized, wood2017generalized} (Figures \ref{fig:lilac_te_mean1} and \ref{fig:lilac_te_mean2}). 
-
-We find that increasing either winter temperatures $(\alpha)$, spring warming $(\beta)$, or both has shifted lilac flowering times exactly as predicted (Figures \ref{fig:lilac_te_mean1} and \ref{fig:lilac_te_mean2}). Warming in either regime (increasing $\alpha$ or $\beta$) leads to earlier mean bloom dates, which advance at a decreasing rate (declining sensitivity). Warming in the winter temperatures regime only (increasing $\alpha$ and holding $\beta$ fixed) returns greater variance (higher log standard deviation, declining synchrony), while warming in the spring regime only (increasing $\beta$ while holding $\alpha$ fixed) returns lower variance (lower log standard deviation, increasing synchrony). This is the `scattered spring' predicted by the model: in the first case, plants are more likely to accumulate their thermal sum in the winter temperature regime, which results in a larger variance.
+We find that increasing either the winter temperature, spring warming, or both has shifted lilac flowering times exactly as predicted by the thermal-sum model (Figures \ref{fig:lilac_te}). Warming in either regime (increasing $\alpha$ or $\beta$) leads to earlier mean bloom dates, which advance at a decreasing rate (declining sensitivity). Warming in the winter regime only (increasing $\alpha$ and holding $\beta$ fixed) returns greater variance (higher log standard deviation, declining synchrony), while warming in the spring regime only (increasing $\beta$ while holding $\alpha$ fixed) returns lower variance (lower log standard deviation, increasing synchrony). This is the `scattered spring' predicted by the model: in the first case, plants are more likely to accumulate their thermal sum in the winter regime, which results in the larger variance.
 
 \begin{figure*}
-\includegraphics[width=1\linewidth]{desynchronization_files/figure-latex/lilac_te_mean-1} \caption{Mean and log standard deviation of lilac bloom dates (n = 10,613 from Rosemartin et al. 2015, updated to 2025 using USA National Phenology Network data) by winter temperatures $(\alpha)$ and spring warming $(\beta)$ as estimated by a generalized additive model. The mean (left) decreases as $\alpha$ and $\beta$ increase. The standard deviation (right) can increase or decrease depending on the relative values of $\alpha$ and $\beta$.} 
-\label{fig:lilac_te_mean1}
-\end{figure*}
+    \centering
 
-\begin{figure*}
-\includegraphics[width=1\linewidth]{desynchronization_files/figure-latex/lilac_te_mean-2} \caption{Mean (top) and log standard deviation (bottom) of lilac bloom dates (n = 10,613 from Rosemartin et al. 2015, updated to 2025 using USA NPN records) by winter temperatures $\alpha$ and spring warming $\beta$ as estimated by a generalized additive model. The top two figures show the mean generally decreases as \(\alpha\) increases holding \(\beta\) constant (left) and \(\beta\)  increases holding \(\alpha\) constant (right). The bottom two figures show the standard deviation can increase or decrease depending on whether \(\alpha\) increases with \(\beta\) held constant (left) or \(\beta\) increases with \(\alpha\) held constant (right).}
-\label{fig:lilac_te_mean2}
+    \begin{subfigure}[b]{0.9\textwidth}
+        \centering
+        \includegraphics[width=1\linewidth]{desynchronization_files/figure-latex/lilac_te_mean-1}
+        \caption{Bivariate plots showing mean (left) and log standard deviation (right) of lilac bloom dates as a function of winter temperature (\(\alpha\)) and spring warming (\(\beta \)).}
+    \end{subfigure}
+
+    \vspace{0.5em}
+
+    \begin{subfigure}[b]{0.9\textwidth}
+        \centering
+                \includegraphics[width=1\textwidth, trim=0 0 .8in 0, clip]{desynchronization_files/figure-latex/lilac_te_mean-2_t}
+        \caption{Cross-section plots showing mean (left) and log standard deviation (right) of lilac bloom dates as a function of winter temperature (\(\alpha\)) holding spring warming (\(\beta \)) constant (top) and as a function of spring warming (\(\beta \)) holding winter temperature (\(\alpha\)) constant (bottom).}
+    \end{subfigure}
+
+     \caption{Mean and log standard deviation of lilac bloom dates (n = 10,613 from Rosemartin et al. 2015, updated to 2025 using USA National Phenology Network data) by winter temperature $(\alpha)$ and spring warming $(\beta)$ as estimated by a generalized additive model. The estimated functions are shown as bivariate plots (a, top) and cross-sections (b, bottom). The bivariate plots show the mean decreases as $\alpha$ and $\beta$ increase (left), while the standard deviation can increase or decrease depending on the relative values of $\alpha$ and $\beta$ (right). The cross-section plots show the mean decreases both as \(\alpha\) increases holding \(\beta\) constant (top left) and as \(\beta\) increases holding \(\alpha\) constant (top right), while the standard deviation can increase or decrease depending on whether \(\alpha\) increases with \(\beta\) held constant (bottom left) or \(\beta\) increases with \(\alpha\) held constant (bottom right).}
+    \label{fig:lilac_te}
 \end{figure*}
  
-In this way, the thermal-sum model explains a wide variety of trends in the mean and variance of biological event times, challenging a growing body of work claiming such trends either invalidate the model or justify additional complexity \citep[e.g.,][]{fu2015declining,kovaleskipreprint}. For example, researchers have suggested that climate change may influence photoperiod or chilling (cool temperatures required to break endodormancy) and change the threshold of the thermal sum. %Additional complexities such as these can always be introduced to explain newly observed trends, but our results suggest these factors are secondary and may not need to be be modeled at all.  %JA: The experiment actually shows that photoperiod and chilling are important factors that determine the bloom date. Our point is that these dynamics are secondary. I would shorten this to simply ask, can additional factors explain changing sensitivity/synchrony? We can hit our opinions on how to model later. 
+In this way, the thermal-sum model explains a wide variety of trends in the mean and variance of biological event times, challenging a growing body of work claiming such trends either invalidate the model or justify additional complexity \citep[e.g.,][]{fu2015declining,kovaleskipreprint}. For example, researchers have suggested that climate change may influence photoperiod or chilling (cool temperatures required to break endodormancy), which in turn change the threshold of the thermal sum. 
 
 %The main trends can be explained by the simple thermal-model, which research suggests holds across many organisms \citep{chuinearees}.
-%emw7June: I think we just show a subset of the data, right? If so, we should clarify that in the appendix and potentially here; if you're just using the ones that say '*_hybrid" in the Tree column, then we could say \textit{Juglans regia x nigra} hybrids ... I think in the appendix we should also mention the data were used again here: https://onlinelibrary.wiley.com/doi/10.1111/pce.12935
-We show these that these additional factors are unnecessary by applying our framework to rare experimental data in which photoperiod and chilling are held fixed but temperatures vary. Leveraging results from \cite{Charrier:2011aa}, who tested the effect of different constant temperatures on walnut (\textit{Juglans regia} and \textit{Juglans regia x nigra} hybrids) tree budburst after the plants had experienced sufficient chilling to break endodormancy (stems were sampled from 30 trees, chilled at \(4^\circ\)C), we fit the model of the winter regimes (since temperatures are held constant, this experiment replicates this regime) using weighted least squares. The data show the exact nonlinear relationship in the mean and variance as predicted by the thermal-sum model (Figure \ref{fig:experiment}), further supporting the model can explain nonlinear trends, even under the extreme temperature range and controlled chilling and photoperiod conditions.
+%emw7June: I think we just show a subset of the data, right? If so, we should clarify that in the appendix and potentially here; if you're just using the ones that say '*_hybrid" in the Tree column, then we could say \textit{Juglans regia x nigra} hybrids ... I think in the appendix we should also mention the data were used again here: https://onlinelibrary.wiley.com/doi/10.1111/pce.12935 %JA11June: I reference this second paper now in the Appendix, we can include it here as well. Made edits but not sure if right—I shared the data w/ EMW on 6/9.
+We show that these additional factors are unnecessary by applying our framework to rare experimental data in which photoperiod and chilling are held fixed but temperatures vary. We leverage results from \cite{Charrier:2011aa}, who tested the effect of different constant temperatures on walnut (\textit{Juglans regia} and \textit{Juglans regia x nigra} hybrids) tree budburst after the plants had experienced sufficient chilling to break endodormancy (385 buds were observed on stems sampled from 15 trees, chilled at \(4^\circ\)C), and we fit the winter regime approximation to the thermal-sum model (since temperatures are held constant, this experiment replicates this regime) using weighted least squares. The data exhibit the exact nonlinear relationship in the mean and variance as predicted by the thermal-sum model (Figure \ref{fig:experiment}), establishing the sufficiency of the model even under an extreme temperature range and controlled chilling and photoperiod conditions. 
 
 \begin{figure*}[t]
-\includegraphics[width=1\linewidth]{desynchronization_files/figure-latex/experiment2} \caption{Mean time until budburst as a function of the average daily temperature ($\alpha$) in a controlled experiment conducted by Charrier et al. (2011) in which stems were sampled from 15 walnut trees (\textit{Juglans regia} and \textit{Juglans regia x nigra} hybrids) trees, chilled at \(4^\circ\)C, and then warmed in different temperatures environments (x-axis) with the same photoperiod conditions across temperatures until budburst. For each tree (facet), we show the observed data (points), mean (solid line), and 95\% prediction interval (outer grey region, approximately two standard deviations). The figure shows that the mean and variance are nonlinear functions of temperature even when biological factors such as chilling and photoperiod are held fixed. Both decrease with increasing temperatures as predicted by the thermal-sum model.}
-\label{fig:experiment} %emw7June:  we need to clean up the captions and figures ... reader do not know what 'facet' is and the letter means nothing so we should probably relabel as a, b, c etc and say each subplot or panel. 
+\includegraphics[width=1\linewidth]{desynchronization_files/figure-latex/experiment2} \caption{Mean time until budburst as a function of the average daily temperature ($\alpha$) in a controlled experiment conducted by Charrier et al. (2011) in which 385 buds were observed on stems sampled from 15 walnut trees (\textit{Juglans regia} and \textit{Juglans regia x nigra} hybrids) trees, chilled at \(4^\circ\)C, and then warmed in different temperatures environments (x-axis) with the same photoperiod conditions across temperatures until budburst. For each tree (panel), we show the observed dates (points), fitted mean (solid line), 95\% confidence interval (inner grey region, approximately two standard errors), and 95\% prediction interval (outer grey region, approximately two standard deviations). The figure shows that the mean and variance are nonlinear functions of temperature even when biological factors such as chilling and photoperiod are held fixed. Both decrease with increasing temperatures as predicted by the thermal-sum model.}
+\label{fig:experiment}
 \end{figure*}
 
-%emw7June: We don't 'conclude' much in biology ... 
-Our results show that the long-standing and widely-used thermal-sum model \citep{quetelet1849letters, chuinearees} explains observed shifts in the timing of biological events such as declining sensitivity and synchrony. This finding has two important consequences. First, it challenges an extensive body of work that has attempted to revise the thermal-sum model by adding additional factors or mechanisms \citep{fu2015declining,kovaleskipreprint}. These factors can influence the timing of biological events, but our work suggests they do not themselves explain variation in sensitivity and synchrony. Further, they may lead to inaccurate forecasts if they do not properly model the basic thermal sum model. 
+Our results show that the long-standing and widely-used thermal-sum model \citep{quetelet1849letters, chuinearees} explains observed shifts in the timing of biological events such as declining sensitivity and synchrony. This finding has two important consequences. First, it challenges an extensive body of work that has attempted to revise the thermal-sum model by adding additional factors or mechanisms \citep{fu2015declining,kovaleskipreprint}. These factors can influence the timing of biological events, but our work suggests they do not themselves explain current trends in sensitivity and synchrony. Further, they may lead to inaccurate forecasts if the factors are modeled incorrectly.
 
-To understand the role played by any additional factors, the basic relationship between event time and temperature must be modeled correctly. Indeed, the literature often assumes a linear relationship between temperature and event time with constant variance, which we have shown is inconsistent with the thermal-sum model. Our framework provides a simple and transparent way to encode the thermal-sum model, on top of which complexity may be added and better studied.
+To understand the role played by any additional factors, the basic relationship between event time and temperature must be modeled correctly. For example, the literature often assumes a linear relationship between temperature and event time with constant variance, which we have shown is inconsistent with the thermal-sum model. Our framework provides a simple and transparent way to encode the thermal-sum model, on top of which complexity may be added and better studied.
 
 %emw7June: Can you extract some numbers and replace: from a synchrony of days to over four weeks ... I think we need to spell out the change with #s
-The second consequence is that the thermal-sum model predicts a `scattered spring' or general desynchronization of springtime events as their timing moves closer to the winter solstice. We find that the synchrony of lilac bloom dates, a common indicator of spring, will decline rapidly---from a synchrony of days to over four weeks---in Southern United States by the year 2100 under scenario SSP5-8.5, although species with lower threshold $(\tau)$ may decline sooner (Figures \ref{fig:forecast_mean} and \ref{fig:forecast_var}). Indeed, absent some compensating mechanism, the long-standing and widespread thermal-sum model predicts that the timing of biological events across the ecosystem---from crops to forests, and from plants to insects---will in many cases become more variable, with potential cascading consequences for industry and natural ecosystems. %the standard deviation increases from a week to a month in parts of the Southern United States, a demonstration of the `scattered spring' that occurs when the temperature regime shifts. 
+The second consequence is that the thermal-sum model predicts a `scattered spring' or general desynchronization of springtime events as their timing moves closer to the winter solstice. We find that the synchrony of lilac bloom dates, a common indicator of spring, will decline in much of the Southern United States by the year 2100 under scenario SSP5-8.5. For example, were lilac planted across the South in 2050, the average time between blooms would be less than two weeks in 76\% of locations. By 2100, however, the average time would be less than two weeks in only 18\% of locations (Figure \ref{fig:forecast_south}, note that the synchrony of species with lower threshold $(\tau)$ may decline sooner). 
+
+Absent some compensating mechanism, the long-standing and widespread thermal-sum model predicts that the timing of biological events across the ecosystem---from crops to forests, and from plants to insects---will in many cases become more variable, with potential cascading consequences for industry and natural ecosystems.
 
 
 \begin{figure*}
-\includegraphics[width=1\linewidth]{desynchronization_files/figure-latex/forecast_mean_south} \caption{Predicted mean of lilac bloom dates in years 2050 and 2100 across the Southern United States under temperatures projected under the NEX-GDDP-CMIP6  high-warming scenario SSP5-8.5 \citep{thrasher2022nasa}. Lighter areas indicate earlier blooms due to higher temperatures. Under SSP5-8.5, the mean bloom date advances moderately between 2050 and 2100. Projections limited to the regions of observed lilac bloom dates.}
-\label{fig:forecast_mean_south}
-\end{figure*}
+    \centering
 
-\begin{figure*}
-\includegraphics[width=1\linewidth]{desynchronization_files/figure-latex/forecast_var_south} \caption{Predicted standard deviation of lilac bloom dates in years 2050 and 2100 (columns) across the Southern United States  under the NEX-GDDP-CMIP6 high-warming scenario SSP5-8.5 \citep{thrasher2022nasa}. Light areas indicate more variation (less synchrony) due to higher temperatures. Under SSP5-8.5, the standard deviation increases dramatically, in some locations from a few days to a month or more. These dramatic increase is due to a regime change that we refer to as a `scattered spring.' Projections limited to the regions of observed lilac bloom dates.}
-\label{fig:forecast_var_south}
-\end{figure*}
+    \begin{subfigure}[b]{0.9\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth, trim=1.37in 0 0 0, clip]{desynchronization_files/figure-latex/forecast_mean_south}
+    \end{subfigure}
 
+   \vspace{-4em}
+
+    \begin{subfigure}[b]{0.9\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth, trim=1.37in 0 0 0, clip]{desynchronization_files/figure-latex/forecast_var_south}
+    \end{subfigure}
+
+   \vspace{-2em}
+
+     \caption{Predicted mean (top) and standard deviation (bottom, log scale) of lilac bloom dates in years 2050 and 2100 across the Southern United States under temperatures projected under the NEX-GDDP-CMIP6  high-warming scenario SSP5-8.5 \citep{thrasher2022nasa}. Lighter areas indicate earlier blooms due to higher temperatures. Under SSP5-8.5, the mean bloom date advances moderately between 2050 and 2100. Projections limited to the regions of observed lilac bloom dates..}
+    \label{fig:forecast_south}
+\end{figure*}
 
 \subsection{Methods}\label{methods}
 
-Our observational data analysis considers all sites in the historical lilac--honeysuckle phenology network \citep{rosemartin2015lilac} that recorded the phenophase full bloom and were within 10 miles of a Global Historical Climatology Network daily (GHCNd)  site with sufficiently complete temperature records. We limit our analysis to common lilac (\textit{Syringa vulgaris}, including all observations made from 1955 to 2025 as recorded by the USA National Phenology Network. The data were retrieved using the \texttt{R} package \texttt{rnpn}, resulting in \(10,613\) observations. 
+Our observational data analysis considers all sites in the historical lilac--honeysuckle phenology network \citep{rosemartin2015lilac} that recorded the phenophase full bloom and were within 10 miles of a Global Historical Climatology Network daily (GHCNd)  site with sufficiently complete temperature records. We limit our analysis to common lilac (\textit{Syringa vulgaris}), including all observations made from 1955 to 2025 as recorded by the USA National Phenology Network. The data were retrieved using the \texttt{R} package \texttt{rnpn}, resulting in \(10,613\) observations. 
 
-For each observation, we estimate winter temperatures \((\alpha)\) using the average daily temperature between January and February, and we estimate spring warming \((\beta)\) using the slope of a linear regression model fit by regressing daily temperature on day index (i.e., $i=1$ for January 1, $i=2$ for January 2, etc.) over March and April (Figures \ref{fig:temp_plot-1}, \ref{fig:temp_alpha}, and \ref{fig:temp_beta}). Temperatures below \(0\) are set to \(0\), a common base temperature in growing degree day models. 
+For each observation, we estimate the winter temperature \((\alpha)\) using the average daily temperature between January and February, and we estimate spring warming \((\beta)\) using the slope of a linear regression model fit by regressing daily temperature on day index (i.e., $i=1$ for January 1, $i=2$ for January 2, etc.) over March and April (Figures \ref{fig:temp_plot-1}, \ref{fig:temp_alpha}, and \ref{fig:temp_beta}, Appendix A.2). Temperatures below \(0\) are set to \(0\), a common base temperature in growing degree day models. 
 
-We fit a two-parameter Gaussian location--scale model using the \texttt{gaulss} function from the \texttt{R} package \texttt{mgcv} in which we define 
+We then fit a two-parameter Gaussian location--scale model using the \texttt{gaulss} function from the \texttt{R} package \texttt{mgcv} in which we define 
 \begin{align*}
  \mu(\alpha,\beta)&=\mathbb{E}[\nu(\tau) \mid \alpha,\beta] \\[1em]
  \sigma(\alpha,\beta)&=\mathrm{SD}(\nu(\tau) \mid \alpha,\beta).
  \end{align*} 
- Both \(\mu\) and \(\sigma\) are modeled with tensor-product splines with basis dimension k = 10 (Figures \ref{fig:lilac_te_mean1} and \ref{fig:lilac_te_mean2}). 
+ Both \(\mu\) and \(\sigma\) are modeled with tensor-product splines with basis dimension k = 10 (Figure \ref{fig:lilac_te}). 
  
-We then calculate winter temperatures $(\tilde \alpha)$ and spring warming $(\tilde \beta)$ for the years 2050, 2075, and 2100 using the NEX-GDDP-CMIP6 temperature projections for two scenarios: SSP2-4.5 and SSP5-8.5 \citep{thrasher2022nasa} (Figure \ref{fig:temp_plot-2}). The projected mean $ \mu(\tilde \alpha,\tilde \beta)$ and standard deviation $\sigma(\tilde \alpha, \tilde \beta)$ (Figures \ref{fig:forecast_mean_south}, \ref{fig:forecast_var_south}, \ref{fig:forecast_mean}, and \ref{fig:forecast_var}).
+Finally, we calculate winter temperatures $(\tilde \alpha)$ and spring warming $(\tilde \beta)$ for the years 2025, 2050, 2075, and 2100 using the NEX-GDDP-CMIP6 temperature projections for two scenarios: SSP2-4.5 and SSP5-8.5 \citep{thrasher2022nasa} (Figure \ref{fig:temp_plot-2}). We also calculate the projected mean bloom date $ \mu(\tilde \alpha,\tilde \beta)$ and standard deviation $\sigma(\tilde \alpha, \tilde \beta)$ (Figure \ref{fig:forecast_south} and Figures \ref{fig:forecast_mean} and \ref{fig:forecast_var}, Appendix A.2).
 
 \bibliographystyle{apalike}
 \bibliography{desynchronization}
@@ -290,7 +305,7 @@ In the language of \cite{lai1977nonlinear}, \(\{Z_n\}\) is a
 perturbed random walk. That is, the random walk \(\{S_n\}\) is perturbed by the
 deterministic term \(\{\xi_n\}\). This setup yields two
 asymptotic regimes, corresponding to the empirical distinction between
-the winter temperatures regime in which \(\beta\approx 0\) and the spring warming regime in which \(\beta>0\).
+the winter regime in which \(\beta\approx 0\) and the spring regime in which \(\beta>0\).
 
 When \(\beta=0\), we apply the usual asymptotic argument for
 the hitting time of a random walk with constant positive drift as \(\tau \to \infty\), \[
@@ -315,12 +330,12 @@ about \(m(\tau)\) is approximately normal. Linearization of
 \(\tau\) is large. 
 
 We make two observations about this asymptotic approximation. First, we have written the cumulative sum as beginning on a known day \(i = 1\). 
-However, the approximation does not actually depend on the day the accumulation begins. This is because when \(\tau\) is sufficiently large, the first finite number of terms of the cumulative sum are negligible by comparison. For any start day \(a > 0\), \[\sum_{i=1}^{\nu(\tau)}X_i-\sum_{i=a}^{\nu(\tau)}X_i = \sum_{i=1}^{a-1}X_i = O_p(1).\]
+However, the approximation does not actually depend on the day the accumulation begins. This is because when \(\tau\) is sufficiently large, the first finite number of terms of the cumulative sum are negligible by comparison. For example, for any start day \(a > 0\), \[\sum_{i=1}^{\nu(\tau)}X_i-\sum_{i=a}^{\nu(\tau)}X_i = \sum_{i=1}^{a-1}X_i = O_p(1).\]
 
-Second, we have described accumulation as occurring entirely within one of two regimes. In practice, accumulation may begin near the end of regime 1 
-and continue into regime 2. In such cases, the event time will behave as occurring in regime 2 as long as a nontrivial amount of warming happens under 
-regime 2 (i.e., the percent of time in regime 2 does not go to 0 as \(\tau\) goes to infinity). This is because the quadratic accumulation in regime 2 will 
-dominate the contribution from regime 1 when \(\tau\) is sufficiently large. 
+Second, we have described accumulation as occurring entirely within one of two regimes. In practice, accumulation may begin near the end of the winter regime (\(\beta = 0 \)) 
+and continue into the spring regime (\(\beta > 0\)). In such cases, the event time will behave as occurring in the spring regime as long as a nontrivial amount of warming happens under 
+the spring regime (i.e., the percent of time in the spring regime does not go to 0 as \(\tau\) goes to infinity). This is because the quadratic accumulation in the spring regime will 
+dominate the contribution from the winter regime when \(\tau\) is sufficiently large. 
 Moreover, the linearization argument used to compute the variance shows that the asymptotic variance depends only on 
 the accumulation that occurs near the event time. That is, the variance only depends on the regime active when the event occurs.
 
@@ -328,15 +343,15 @@ the accumulation that occurs near the event time. That is, the variance only dep
 
 In addition to the model-based approach in the main text, we also examine the data using a binning approach.  
 Table \ref{tab:walnut_forcing} shows data from a controlled experiment on walnut trees
-(\textit{Juglans regia} and \textit{Juglans regia x nigra} hybrids) conducted by Charrier et al.
-(2011). The data examines 30 trees comprising 6 genotypes at 2
+(\textit{Juglans regia} and \textit{Juglans regia x nigra} hybrids) conducted by \cite{Charrier:2011aa}. 
+See also \cite{guillaume2018assessing}. The data reflect 385 buds from 15 trees comprising 6 genotypes at 2
 locations. In November of the study year, stems were sampled from each
 tree and cut into 7 centimeter segments containing a single bud. All
 segments were chilled at \(4^\circ\)C and then transferred to constant
-`forcing' environments with temperatures set at one of \(5,10,15,20,\)
+`forcing' environments with the air temperature set at one of \(5,10,15,20,\)
 or \(25^\circ\)C, denoted \(\alpha\). For each temperature, the outcome is the response
 time, the time (in days) until budburst determined from the date at
-which 50\% of buds reached stage 15 of the BBCH scale.
+which the buds reached stage 10 of the BBCH scale.
 
 
 \begin{table*}[t]
@@ -347,18 +362,18 @@ which 50\% of buds reached stage 15 of the BBCH scale.
 \toprule
 $\alpha$ & $n$ & mean & sd \\
 \midrule
- 5  & 30 & 178 & 27.28  \\
-10  & 30 &  88 & 12.44  \\
-15  & 30 &  39 & 11.33  \\
-20  & 30 &  26 &  7.67  \\
-25  & 30 &  20 &  4.45  \\
+ 5  & 69 & 172 & 34.6  \\
+10  & 86 &  88 & 17.1  \\
+15  & 76 &  42 & 13.2  \\
+20  & 77 &  26 &  8.4  \\
+25  & 77 &  21 &  7.4  \\
 \bottomrule
 \end{tabular}
 
 \vspace{2em}
 
 \centering
-\caption{Mean bloom date (day-of-year) bloom date (day-of-year) from lilac data (Rosemartin et al. 2015, updated to 2025 using USA NPN records) by winter level $\alpha$ (rows) and spring warming rate $\beta$ (columns).}
+\caption{Mean bloom date (day-of-year) of lilac (Rosemartin et al. 2015, updated to 2025 using USA NPN records) by winter temperatures ($\alpha$, rows) and spring warming ($\beta$, columns).}
 \label{tab:mean_bloom_bins}
 \begin{tabular}{lrrrr}
 \toprule
@@ -375,7 +390,7 @@ $(4.7,\,16.4]$    & 109.56 & 109.77 & 107.36 & 105.71 \\
 \vspace{2em}
 
 \centering
-\caption{Standard deviation of bloom date (day-of-year) from lilac data (Rosemartin et al. 2015, updated to 2025 using USA NPN records) by winter level $\alpha$ (rows) and spring warming rate $\beta$ (columns).}
+\caption{Standard deviation of lilac bloom date (days, Rosemartin et al. 2015, updated to 2025 using USA NPN records) by winter temperatures ($\alpha$, rows) and spring warming ($\beta$, columns).}
 \label{tab:sd_bloom_bins}
 \begin{tabular}{lrrrr}
 \toprule
@@ -390,30 +405,28 @@ $(4.7,\,16.4]$    & 19.39 & 17.06 & 15.31 & 12.35 \\
 \end{tabular}
 \end{table*}
 
-This experiment isolates the winter regime because temperature is held
-constant at level \(\alpha\)over time. To show consistency with this regime, Table 
+This experiment isolates the winter regime because the forcing temperature is held
+constant at level \(\alpha\) over time. To show consistency with this regime, Table 
 \ref{tab:walnut_forcing} reports the mean and standard deviation
 of the response times across the 30 stems at each forcing temperature.
-Higher forcing temperatures advance budburst at a decreasing rate 
-(the mean falls with \(\alpha\)), and the standard deviation of budburst timing is 
+Higher forcing temperatures advance budburst at a decreasing rate, 
+and the standard deviation of budburst timing is 
 smaller at warmer temperatures. Thus, in an experimental setting, the 
-asymptotic approximation captures the basic comparative statics of
-constant-temperature forcing on both the level and variability of
-budburst times. This pattern cannot be explained by chinning or photoperiod as these are held constant.
+thermal-sum model captures the relationship between
+constant-temperature forcing and the level and variability of
+budburst times. This pattern cannot be explained by chilling or photoperiod as these are held constant.
 
 Tables \ref{tab:mean_bloom_bins}-\ref{tab:sd_bloom_bins} show data from
 the historical lilac--honeysuckle phenology network described in the main text. 
 We bin sites and years within a grid of winter temperatures (\(\alpha\), rows) and spring warming (\(\beta\), columns) 
 and calculate the mean and standard deviation of the observed bloom date, as the number of days since January 1. 
-The results are consistent with Figures \ref{fig:lilac_te_mean1} and \ref{fig:lilac_te_mean2} in the main text.
+The results are consistent with Figure \ref{fig:lilac_te} in the main text.
 The mean and standard deviation are nonlinear functions of $\alpha$ and $\beta$. In particular, the standard deviation generally increases when
 $\alpha$ increases (holding $\beta$ fixed) and decreases when $\beta$ decreases (holding $\alpha$ fixed). 
 
 \subsection{A.3 Additional Figures}\label{a.3-additional-figures}
 
-The parameters \(\alpha\) and \(\beta\) are shown for nine sites in Figures \ref{fig:temp_plot-1}-\ref{fig:temp_beta} in Appendix A.3. Figure \ref{fig:temp_plot-1} shows nine randomly selected site-years and has the same interpretation as Figure 1. Site 14726 in New Mexico (Year 1969) is a good example of a bloom in the spring warming regime since relatively little temperature was accumulated during January and February. The average bloom date was May 8th with a standard deviation of 17 days. Site 14276 in New York (Year 1982) is a good example of a bloom between the winter temperatures and spring warming regimes, which had an average bloom date of March 18 with a standard deviation of 27. Figures \ref{fig:temp_alpha} and \ref{fig:temp_beta} show \(\alpha\) and \(\beta\) for the nine sites with the longest running records.
-
-Projected values of $\alpha$ and $\beta$ can be translated to projected bloom date distributions as we demonstrate in Figures \ref{fig:forecast_mean} and \ref{fig:forecast_var}. We calculate $\alpha$ and $\beta$ in the years 2050, 2075, and 2100 under temperature projections from NEX-GDDP-CMIP6 scenarios of moderate warming (SSP2-4.5) and high warming (SSP5-8.5) \citep{thrasher2022nasa}. We then estimate the mean and standard deviation of lilac bloom dates subject to those temperatures using the generalized additive model described above. 
+The winter temperature (\(\alpha\)) and spring warming (\(\beta\)) are shown for nine sites in Figures \ref{fig:temp_plot-1}-\ref{fig:temp_beta} in Appendix A.3. Figure \ref{fig:temp_plot-1} shows nine randomly selected site-years and has the same interpretation as Figure 1. Figures \ref{fig:temp_alpha} and \ref{fig:temp_beta} show \(\alpha\) and \(\beta\) for the nine sites with the longest running records. Figure \ref{fig:temp_plot-2} shows \(\alpha\) and \(\beta\) for two random sites in the years 2050, 2075, and 2100 under temperature projections from NEX-GDDP-CMIP6 scenarios of moderate warming (SSP2-4.5) and high warming (SSP5-8.5) \citep{thrasher2022nasa}. Figures \ref{fig:forecast_mean} and \ref{fig:forecast_var} show the projected mean and standard deviation of lilac bloom dates using the \(\alpha\) and \(\beta\) calculated from the NEX-GDDP-CMIP6 data and the generalized additive model described in the main text. 
 
 \vfill
 
@@ -458,12 +471,12 @@ longest running records as as measured by GHCND stations nearby.  Trend line cal
 \vfill
 
 \begin{figure*}
-\includegraphics[width=1\linewidth]{desynchronization_files/figure-latex/forecast_mean} \caption{Predicted mean of lilac bloom dates in years 2050, 2075, and 2100 (columns) across the continental United States under temperatures projected under two scenarios (rows) from NEX-GDDP-CMIP6 \citep{thrasher2022nasa} in which additional warming is moderate (top) or high (bottom). Lighter areas indicate earlier blooms due to higher temperatures. Under SSP2-4.5, the mean bloom date is largely constant between 2050 and 2100, while under SSP5-8.5, the mean bloom date advances moderately.}
+\includegraphics[width=1\linewidth]{desynchronization_files/figure-latex/forecast_mean} \caption{Predicted mean of lilac bloom dates in years 2025, 2050, 2075, and 2100 (columns) across the continental United States under temperatures projected under two scenarios (rows) from NEX-GDDP-CMIP6 \citep{thrasher2022nasa} in which additional warming is moderate (top) or high (bottom). Lighter areas indicate earlier blooms due to higher temperatures. Under SSP2-4.5, the mean bloom date is largely constant between 2050 and 2100, while under SSP5-8.5, the mean bloom date advances moderately.}
 \label{fig:forecast_mean}
 \end{figure*}
 
 \begin{figure*}
-\includegraphics[width=1\linewidth]{desynchronization_files/figure-latex/forecast_var} \caption{Predicted standard deviation of lilac bloom dates in years 2050, 2075, and 2100 (columns) across the continental United States under temperatures projected under two scenarios (rows) from NEX-GDDP-CMIP6 \citep{thrasher2022nasa} in which additional warming is moderate (top) or high (bottom). Light areas indicate more variation (less synchrony) due to higher temperatures. Under SSP2-4.5, the standard deviation is largely constant between 2050 and 2100, while under SSP5-8.5, the standard deviation increases dramatically, particularly in the Southeast and Southwest. These dramatic increase is due to a regime change that we refer to as a `scattered spring.'}
+\includegraphics[width=1\linewidth]{desynchronization_files/figure-latex/forecast_var} \caption{Predicted standard deviation of lilac bloom dates in years 2025, 2050, 2075, and 2100 (columns) across the continental United States under temperatures projected under two scenarios (rows) from NEX-GDDP-CMIP6 \citep{thrasher2022nasa} in which additional warming is moderate (top) or high (bottom). Light areas indicate more variation (less synchrony) due to higher temperatures. Under SSP2-4.5, the standard deviation is largely constant between 2050 and 2100, while under SSP5-8.5, the standard deviation increases dramatically, particularly in the Southeast and Southwest. These dramatic increase is due to a regime change that we refer to as a `scattered spring.'}
 \label{fig:forecast_var}
 \end{figure*}
 
@@ -472,8 +485,8 @@ longest running records as as measured by GHCND stations nearby.  Trend line cal
 \subsection{A.4 Simulations}\label{a.3-simulations}
 
 We run two simulations to verify the interpretation of our findings. The
-first checks the asymptotic approximation derived in Section A.1. The second
-checks the interpretation of the data in Section A.2.
+first checks the asymptotic approximation of the thermal-sum model derived in Section A.1. 
+The second checks the interpretation of the data in Section A.2.
 
 \subsubsection{Simulation 1}\label{simulation-1}
 
@@ -489,15 +502,15 @@ until the threshold \(\tau\) is reached, recording the corresponding
 hitting time \(\nu(\tau)\). We repeat this procedure \(R=10{,}000\) times
 for thresholds \(\tau = \{1000,2000\}\), \(\alpha = \{2, 4\}\) and
 \(\beta = \{0, 0.1 \}\). When \(\beta = 0\), the simulation matches the
-winter temperatures regime (regime 1), and when \(\beta = 0.1\), it matches the spring warming regime (regime 2).
+winter regime (regime 1), and when \(\beta = 0.1\), it matches the spring regime (regime 2).
 
 We then compare these simulations with the corresponding theoretical approximation.
-When \(\beta=0\), we use the winter temperatures regime approximation \[
+When \(\beta=0\), we use the winter regime approximation \[
 \nu(\tau)\ \dot{\sim}\ \mathrm{Normal}\!\left(\frac{\tau}{\alpha},\ \frac{\sigma^2 \tau}{\alpha^3}\right).
-\] When \(\beta>0\), we use the spring warming regime approximation \[
+\] When \(\beta>0\), we use the spring regime approximation \[
 \nu(\tau)\ \dot{\sim}\ \mathrm{Normal}\!\left(\sqrt{\frac{2\tau}{\beta}}-\frac{\alpha}{\beta}+\frac12,\ 
 \frac{\sigma^2}{\beta^{3/2}\sqrt{2\tau}}\right).
-\] For each setting we computed the standardized variable \[
+\] For each regime we computed the standardized variable \[
 z=\frac{\nu(\tau)-\mu}{\mathrm{sd}}.
 \] 
 
@@ -511,8 +524,8 @@ distributions.
 \begin{figure*}
 \centering
 \pandocbounded{\includegraphics[keepaspectratio]{desynchronization_files/figure-latex/simulation1-1.pdf}}
-\caption{Simulations comparing the distribution of bloom dates (histogram) with an asymptotic approximation (solid line) under two regimes: winter temperatures (stationary temperatures, top) and 
-spring warming (increasing temperatures, bottom).}
+\caption{Simulations comparing the distribution of bloom dates (histogram) with an asymptotic approximation (solid line) under two regimes: winter (top two rows) and 
+spring (bottom two rows).}
 \label{fig:simulations}
 \end{figure*}
 
@@ -532,11 +545,11 @@ X_i=\mu_i+\varepsilon_i,\qquad \varepsilon_i\sim \mathrm{Normal}(0,\sigma^2),
 \] We simulated \(R=10{,}000\) independent realizations of \(\nu(\tau)\)
 for each combination of \(\alpha\in\{4,8,10\}\),
 \(\beta\in\{0.2,0.4,0.8\}\), and \(\tau\in\{1000,2000\}\).
-We report the mean (top) and standard deviation (bottom) of \(\nu(\tau)\)
+We report the mean (left) and standard deviation (right) of \(\nu(\tau)\)
 in Tables \ref{tab:sim_mean_1000}-\ref{tab:sim_sd_2000},
 arranged with rows indexing \(\alpha\) and columns indexing \(\beta\).
 
-The results reproduce the qualitative patterns observed in the lilac
+The results reproduce the trends observed in the lilac
 data. Mean bloom dates decrease as either
 \(\alpha\) increases or \(\beta\) increases
 (Tables \ref{tab:sim_mean_1000} and
@@ -554,8 +567,8 @@ variability has greater influence.
 \begin{table*}[t]
 \centering
 \caption{Simulated mean and standard deviation of the bloom date
-$\nu(t)$ across $R=10{,}000$ replicates with thresholds $\tau\in\{1000,2000\}$. Rows index the winter
-level $\alpha$ and columns index the spring warming rate $\beta$.}
+$\nu(t)$ across $R=10{,}000$ replicates with thresholds $\tau\in\{1000,2000\}$. Rows denote the winter
+temperature ($\alpha$), and columns denote spring warming ($\beta$).}
 \label{tab:sim_piecewise_all}
 
 \setlength{\tabcolsep}{6pt}
@@ -577,21 +590,7 @@ $\alpha$ $\backslash$ $\beta$ & 0.2 & 0.4 & 0.8 \\
 
 \vspace{1.0em}
 
-\subcaption{sd, $\tau=1000$}
-\label{tab:sim_sd_1000}
-\begin{tabular}{lrrr}
-\toprule
-$\alpha$ $\backslash$ $\beta$ & 0.2 & 0.4 & 0.8 \\
-\midrule
-4  & 15.48 & 10.42 &  7.21 \\
-8  & 16.53 & 13.27 & 10.50 \\
-10 & 15.94 & 14.45 & 12.71 \\
-\bottomrule
-\end{tabular}
-\end{minipage}
-\hfill
-\begin{minipage}{0.49\linewidth}
-\centering
+
 \subcaption{mean, $\tau=2000$}
 \label{tab:sim_mean_2000}
 \begin{tabular}{lrrr}
@@ -604,6 +603,21 @@ $\alpha$ $\backslash$ $\beta$ & 0.2 & 0.4 & 0.8 \\
 \bottomrule
 \end{tabular}
 
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\linewidth}
+\centering
+\subcaption{sd, $\tau=1000$}
+\label{tab:sim_sd_1000}
+\begin{tabular}{lrrr}
+\toprule
+$\alpha$ $\backslash$ $\beta$ & 0.2 & 0.4 & 0.8 \\
+\midrule
+4  & 15.48 & 10.42 &  7.21 \\
+8  & 16.53 & 13.27 & 10.50 \\
+10 & 15.94 & 14.45 & 12.71 \\
+\bottomrule
+\end{tabular}
 \vspace{1.0em}
 
 \subcaption{sd, $\tau=2000$}
