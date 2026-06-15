@@ -1,30 +1,46 @@
-library("tidyverse")
-library("sf")
-library("tigris")
+library("dplyr")
+library("terra")
+library("tidyterra")
+library("rnaturalearth")
+library("ggplot2")
 
-# remove non US points
-pts_sf <- st_as_sf(predicted_df, coords = c("x", "y"), crs = 4326)
-states_sf <- states(cb = TRUE, resolution = "20m") %>%
-  filter(!STUSPS %in% c("AK", "HI", "PR")) %>%
-  st_transform(4326)
-pts_joined <- st_join(pts_sf, states_sf, join = st_within)
+setwd("~/Documents/git/projects/treegarden/decsensvar/analyses")
+load("input/make_map.RData")
 
+# points
+pts <- vect(
+  predicted_df,
+  geom = c("x", "y"),
+  crs = "EPSG:4326"
+)
 
-mean_plot <- ggplot(predicted_df %>% filter(!is.na(mean),
-                                            !is.na(pts_joined$STUSPS),
+# Get US states from Natural Earth and get CONUS
+states <- ne_states(
+  country = "United States of America",
+  returnclass = "sv"
+)
+conus <- states[!(states$postal %in% c("AK", "HI", "PR")), ]
+conus <- aggregate(conus)
+conus <- project(conus, crs(pts)) # ensure CRS matches
+
+inside <- !is.na(extract(conus, pts)[, 1])
+predicted_df_us <- predicted_df[inside, ]
+states_conus <- states[!(states$postal %in% c("AK", "HI", "PR")), ] # get the state boundaries back
+
+mean_plot <- ggplot(predicted_df_us %>% filter(!is.na(mean),
                                             x > min(lilac_fbloom$longitude),
                                             x < max(lilac_fbloom$longitude),
                                             y > min(lilac_fbloom$latitude),
                                             y < max(lilac_fbloom$latitude)), 
                     aes(x, y, fill = mean)) +
   geom_raster() +
-  geom_path(
-    data = states,
-    aes(long, lat, group = group),
-    inherit.aes = FALSE,
+  geom_spatvector(
+    data = conus,
+    fill = NA,
     color = "grey75",
-    linewidth = 0.15
-  ) +
+    linewidth = 0.15,
+    inherit.aes = FALSE
+  ) # EMW has the above running ... but not below. EMW hates spatial stuff. 
   coord_quickmap(
     xlim = range(lilac_fbloom$longitude),
     ylim = range(lilac_fbloom$latitude), 
