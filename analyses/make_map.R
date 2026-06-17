@@ -1,46 +1,33 @@
-library("dplyr")
-library("terra")
-library("tidyterra")
-library("rnaturalearth")
-library("ggplot2")
+library("tidyverse")
+library("sf")
+library("tigris")
 
-setwd("~/Documents/git/projects/treegarden/decsensvar/analyses")
-load("input/make_map.RData")
+setwd("~/Documents/git/projects/treegarden/decsensvar/analyses/figures")
+load("..//input/make_map.RData")
 
-# points
-pts <- vect(
-  predicted_df,
-  geom = c("x", "y"),
-  crs = "EPSG:4326"
-)
+# remove non US points
+pts_sf <- st_as_sf(predicted_df, coords = c("x", "y"), crs = 4326)
+states_sf <- states(cb = TRUE, resolution = "20m") %>%
+  filter(!STUSPS %in% c("AK", "HI", "PR")) %>%
+  st_transform(4326)
+pts_joined <- st_join(pts_sf, states_sf, join = st_within)
 
-# Get US states from Natural Earth and get CONUS
-states <- ne_states(
-  country = "United States of America",
-  returnclass = "sv"
-)
-conus <- states[!(states$postal %in% c("AK", "HI", "PR")), ]
-conus <- aggregate(conus)
-conus <- project(conus, crs(pts)) # ensure CRS matches
 
-inside <- !is.na(extract(conus, pts)[, 1])
-predicted_df_us <- predicted_df[inside, ]
-states_conus <- states[!(states$postal %in% c("AK", "HI", "PR")), ] # get the state boundaries back
-
-mean_plot <- ggplot(predicted_df_us %>% filter(!is.na(mean),
+mean_plot <- ggplot(predicted_df %>% filter(!is.na(mean),
+                                            !is.na(pts_joined$STUSPS),
                                             x > min(lilac_fbloom$longitude),
                                             x < max(lilac_fbloom$longitude),
                                             y > min(lilac_fbloom$latitude),
                                             y < max(lilac_fbloom$latitude)), 
                     aes(x, y, fill = mean)) +
   geom_raster() +
-  geom_spatvector(
-    data = conus,
-    fill = NA,
+  geom_path(
+    data = states,
+    aes(long, lat, group = group),
+    inherit.aes = FALSE,
     color = "grey75",
-    linewidth = 0.15,
-    inherit.aes = FALSE
-  ) # EMW has the above running ... but not below. EMW hates spatial stuff. 
+    linewidth = 0.15
+  ) +
   coord_quickmap(
     xlim = range(lilac_fbloom$longitude),
     ylim = range(lilac_fbloom$latitude), 
@@ -124,7 +111,131 @@ var_plot <- ggplot(predicted_df %>%
 
 ggsave("forecast_var.pdf", plot = var_plot,  height = 5, width = 10)
 
+# remove non US southern points (Lizzie)
+south_limit <-  49
+plot_df_below_south <- predicted_df %>%
+  filter(
+  scenario == "ssp585",
+  year %in% c(2050, 2100),
+    !is.na(mean),
+    !is.na(pts_joined$STUSPS),
+    x >= -125,
+    x <= -66.5,
+    y >= 24,
+    y <= south_limit
+  )
 
+mean_plot_south_alt <- ggplot(
+  plot_df_below_south ,
+  aes(x, y, fill = mean)
+) +
+  geom_raster() + #geom_tile
+  geom_path(
+    data = states,
+    aes(long, lat, group = group),
+    inherit.aes = FALSE,
+    color = "grey75",
+    linewidth = 0.15
+  ) +
+  coord_quickmap(
+    xlim = c(-125, -66.5),
+    ylim = c(24, south_limit),
+    expand = FALSE
+  ) +
+  facet_grid(
+    scenario ~ year, 
+    switch = "y",
+    labeller = labeller(
+      year = function(x) paste("Year", x),
+    )
+  ) +
+scale_fill_viridis_c(
+  name = "mean",
+  option = "rocket",
+  direction = -1,
+  guide = guide_colorbar(
+    direction = "vertical",
+    barheight = unit(30, "mm"),
+    barwidth  = unit(5, "mm")
+  )
+)+
+  theme_void() +
+theme(
+  legend.position = "left",
+  legend.direction = "vertical",
+  legend.box = "vertical",
+  panel.spacing = unit(0.1, "lines"),
+  strip.switch.pad.grid = unit(0.05, "lines"),
+  plot.margin = margin(2, 2, 2, 2),
+  # year labels pushed up
+  strip.text.x = element_text(
+    size = 11,
+    margin = margin(b = 8)
+  ),
+  # remove SSP label
+  strip.text.y.left = element_blank(),
+  strip.background.y = element_blank()
+)
+ggsave("forecast_mean_south_alt.pdf", plot = mean_plot_south_alt,  height = 5, width = 10)
+
+
+# var map
+mean_var_south_alt <- ggplot(plot_df_below_south %>% 
+                           filter(!is.na(var)),
+  aes(x, y, fill = log(sqrt(var)))) +
+  geom_raster() + #geom_tile
+  geom_path(
+    data = states,
+    aes(long, lat, group = group),
+    inherit.aes = FALSE,
+    color = "grey75",
+    linewidth = 0.15
+  ) +
+  coord_quickmap(
+    xlim = c(-125, -66.5),
+    ylim = c(24, south_limit),
+    expand = FALSE
+  ) +
+  facet_grid(
+    scenario ~ year, 
+    switch = "y",
+    labeller = labeller(
+      year = function(x) paste("Year", x),
+    )
+  ) +
+scale_fill_viridis_c(
+  name = "standard deviation",
+  option = "rocket",
+  breaks = log(c(10, 20, 30, 40)),
+  labels = c(10, 20, 30, 40),
+  direction = -1,
+  guide = guide_colorbar(
+    direction = "vertical",
+    barheight = unit(30, "mm"),
+    barwidth  = unit(5, "mm")
+  )
+) +
+  theme_void() +
+theme(
+  legend.position = "left",
+  legend.direction = "vertical",
+  legend.box = "vertical",
+  panel.spacing = unit(0.1, "lines"),
+  strip.switch.pad.grid = unit(0.05, "lines"),
+  plot.margin = margin(2, 2, 2, 2),
+  # year labels pushed up
+  strip.text.x = element_text(
+    size = 11,
+    margin = margin(b = 8)
+  ),
+  # remove SSP label
+  strip.text.y.left = element_blank(),
+  strip.background.y = element_blank()
+)
+ggsave("forecast_var_south_alt.pdf", plot = mean_var_south_alt,  height = 5, width = 10)
+
+
+## JA versions ... 
 # remove non US south points
 library("sf")
 library("tigris")
