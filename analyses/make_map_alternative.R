@@ -3,10 +3,14 @@ library(terra)
 library(rnaturalearth)
 
 setwd("/home/victor/projects/decsensvar/analyses/figures")
+# setwd("~/Documents/git/projects/treegarden/decsensvar/analyses/figures")
 load("..//input/make_map.RData")
 
 # prepare rasters of predictions
 predicted_df <- predicted_df[predicted_df$scenario == 'ssp585',]
+# rm locations where there is no lilac data 
+predicted_df <- predicted_df[predicted_df$x < max(lilac_fbloom$longitude),]
+predicted_df <- predicted_df[predicted_df$y > min(lilac_fbloom$latitude),]
 predicted_df$sd <- (sqrt(predicted_df$var))
 pred_mean <- rast(lapply(c(2050, 2100), function(y) {rast(predicted_df[predicted_df$year == y,c('x', 'y','mean')])}))
 names(pred_mean) <- c(2050, 2100)
