@@ -1,4 +1,4 @@
-
+rm(list = ls())
 library(terra)
 library(rnaturalearth)
 
@@ -8,6 +8,7 @@ load("..//input/make_map.RData")
 
 # prepare rasters of predictions
 predicted_df <- predicted_df[predicted_df$scenario == 'ssp585',]
+bg <- rast(predicted_df[predicted_df$year == '2050',c('x', 'y','mean')])
 # rm locations where there is no lilac data ... Lizzie added, but could be better I suspect
 predicted_df <- predicted_df[predicted_df$x < max(lilac_fbloom$longitude),]
 predicted_df <- predicted_df[predicted_df$y > min(lilac_fbloom$latitude),]
@@ -25,65 +26,69 @@ conus <- us[!us$name %in% c("Alaska", "Hawaii",
                             "Puerto Rico", "United States Virgin Islands",
                             "Commonwealth of the Northern Mariana Islands",
                             "Guam", "American Samoa"), ]
-conus <- simplifyGeom(conus, tolerance = 0.1)
 
 # to keep only lines 'inside'
 state_lines <- as.lines(conus)
 state_lines <- erase(state_lines, as.lines(aggregate(conus)))
 
-extent <- as.polygons(ext(pred_mean))
+extent <- as.polygons(ext(pred_mean)+10)
 outside_mask <- erase(extent, aggregate(conus))
 
-
+crs(bg) <- crs(conus)
 crs(pred_mean) <- crs(conus)
 crs(pred_sd) <- crs(conus)
+bg <- mask(bg, conus)
 pred_mean <- mask(pred_mean, conus)
 pred_sd <- mask(pred_sd, conus)
 
-pdf("plotterra_mean.pdf", height = 5, width = 10) 
+pdf("plotterra_mean.pdf", height = 3, width = 10)
 par(mfrow = c(1,2), oma = c(0,0,0,4))
 limits <- range(values(pred_mean), na.rm = TRUE)
-plot(pred_mean[[1]], zlim = limits, mar = c(0, 0.5, 0, 0.5),
+plot(bg, zlim = limits, mar = c(0, 0.5, 0, 0.5),
      legend = FALSE, box = FALSE, axes = FALSE, 
-     main = '2050' , cex.main = 0.9)
+     col = 'grey90', main = '2050' , cex.main = 0.9)
+plot(pred_mean[[1]], zlim = limits, legend = FALSE, add = T)
 plot(outside_mask, border = NA, col = 'white',
      legend = FALSE, box = FALSE, axes = FALSE, 
      add = TRUE)
-plot(pred_mean[[2]], zlim = limits, mar = c(0, 0.5, 0, 0.5),
-     legend = FALSE, box = FALSE, axes = FALSE,
-     main = '2100' , cex.main = 0.9)
+plot(bg, zlim = limits, mar = c(0, 0.5, 0, 0.5),
+     legend = FALSE, box = FALSE, axes = FALSE, 
+     col = 'grey90', main = '2100' , cex.main = 0.9)
+plot(pred_mean[[2]], zlim = limits, legend = FALSE, add = T)
 plot(outside_mask, border = NA, col = 'white',
      legend = FALSE, box = FALSE, axes = FALSE, 
      add = TRUE)
-plot(pred_mean[[1]], zlim = limits, plg = list(x = -62.5),
+plot(pred_mean[[1]], zlim = limits, plg = list(x = -62.5, size = 2),
      legend.only = TRUE, box = FALSE)
-mtext("Mean blooming date (DOY)", side = 4, line = 0.25, cex = 1)
+par(xpd = NA)
+text(x = -64, y = 35.75, "Mean blooming date (DOY)", srt = 90, adj = 0.5, cex = 0.9)
 dev.off()
 
-pdf("plotterra_sd.pdf", height = 5, width = 10) 
+
+pdf("plotterra_sd.pdf", height = 3, width = 10)
 par(mfrow = c(1,2), oma = c(0,0,0,4))
 limits <- log(range(values(pred_sd), na.rm = TRUE))
-plot(log(pred_sd[[1]]), zlim = limits,  mar = c(0, 0.5, 0, 0.5),
-     legend = FALSE, box = FALSE, axes = FALSE,
-     main = '2050' , cex.main = 0.9)
-plot(outside_mask, border = NA, col = 'white',
+plot(bg, zlim = limits, mar = c(0, 0.5, 0, 0.5),
      legend = FALSE, box = FALSE, axes = FALSE, 
-     add = TRUE)
-# lines(state_lines, col = 'white')
-plot(log(pred_logsd[[2]]), zlim = limits, mar = c(0, 0.5, 0, 0.5),
-     legend = FALSE, box = FALSE, axes = FALSE,
-     main = '2100' , cex.main = 0.9)
+     col = 'grey90', main = '2050' , cex.main = 0.9)
+plot(pred_logsd[[1]], zlim = limits, legend = FALSE, add = T, box = FALSE)
 plot(outside_mask, border = NA, col = 'white',
-     legend = FALSE, box = FALSE, axes = FALSE, 
+     legend = FALSE, box = FALSE, axes = FALSE,
      add = TRUE)
-# lines(state_lines, col = 'white')
+plot(bg, zlim = limits, mar = c(0, 0.5, 0, 0.5),
+     legend = FALSE, box = FALSE, axes = FALSE, 
+     col = 'grey90', main = '2100' , cex.main = 0.9)
+plot(pred_logsd[[2]], zlim = limits, legend = FALSE, add = T, box = FALSE)
+plot(outside_mask, border = NA, col = 'white',
+     legend = FALSE, box = FALSE, axes = FALSE,
+     add = TRUE)
 plot(pred_logsd[[1]], zlim = limits, 
-     plg = list(x = -67.5,
-                at = log(c(1, 5, 10, 20, 30, 40, 50)),
-                labels = c(1, 5, 10, 20, 30, 40, 50)),
+     plg = list(x = -62.5, size = 2, 
+                at = log(c(1, 5, 10, 20, 30)),
+                labels = c(1, 5, 10, 20, 30)),
      legend.only = TRUE, box = FALSE)
-mtext("Standard deviation (DOY)", side = 4, line = 0.25, cex = 1)
+par(xpd = NA)
+text(x = -64, y = 35.75, "Standard deviation (DOY)", srt = 90, adj = 0.5, cex = 0.9)
 dev.off()
-
 
 
