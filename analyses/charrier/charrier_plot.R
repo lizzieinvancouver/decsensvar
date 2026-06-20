@@ -4,7 +4,7 @@ library("readxl")
 setwd("~/Documents/git/projects/treegarden/decsensvar/analyses/charrier")
 
 charrier <- 
-read_excel("/Users/jauerbach/Dropbox/Wolkovich/desynchronization/ghcnd/Charrier data/Forcing_walnut_2008.xlsx") %>%
+read_excel("Forcing_walnut_2008.xlsx") %>%
   mutate(response.time = as.numeric(`Time to break bud (BBCH 10)`),
          forceday = Temperature) %>%
   #filter(Bud_Type == "b") %>%
