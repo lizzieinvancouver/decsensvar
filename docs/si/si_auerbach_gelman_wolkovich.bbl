@@ -1,0 +1,64 @@
+\begin{thebibliography}{6}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi: }
+\providecommand{\ArXivprefix}{arXiv: }
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid: }
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\BIBand}{and}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\undefined \def\xfnm[#1]{\unskip,\space#1}\fi
+\makeatletter\def\@biblabel#1{#1.}\makeatother
+%Type = Book
+\bibitem[{Gut(2006)}]{gut2006probability}
+\bibinfo{author}{Gut, A.} (\bibinfo{year}{2006}). \bibinfo{title}{Probability:
+  a graduate course}. \bibinfo{publisher}{Springer}.
+%Type = Book
+\bibitem[{Gut(2009)}]{gut2009stopped}
+\bibinfo{author}{Gut, A.} (\bibinfo{year}{2009}). \bibinfo{title}{Stopped
+  random walks}. \bibinfo{publisher}{Springer}.
+\newblock \URLprefix \url{https://isbnsearch.org/isbn/9780387878348}.
+%Type = Article
+\bibitem[{Lai and Siegmund(1977)}]{lai1977nonlinear}
+\bibinfo{author}{Lai, T.L.}, and \bibinfo{author}{Siegmund, D.}
+  (\bibinfo{year}{1977}). \bibinfo{title}{{A nonlinear renewal theory with
+  applications to sequential analysis I}}.
+\newblock \bibinfo{journal}{The Annals of Statistics} pp.
+  \bibinfo{pages}{946--954}.
+%Type = Article
+\bibitem[{Charrier et~al.(2011)Charrier, Bonhomme, Lacointe and
+  Am{\'e}glio}]{Charrier:2011aa}
+\bibinfo{author}{Charrier, G.}, \bibinfo{author}{Bonhomme, M.},
+  \bibinfo{author}{Lacointe, A.}, and \bibinfo{author}{Am{\'e}glio, T.}
+  (\bibinfo{year}{2011}). \bibinfo{title}{Are budburst dates, dormancy and cold
+  acclimation in walnut trees (juglans regia l.) under mainly genotypic or
+  environmental control?}
+\newblock \bibinfo{journal}{International journal of biometeorology}
+  \emph{\bibinfo{volume}{55}}, \bibinfo{pages}{763--774}. \URLprefix
+  \url{http://link.springer.com/article/10.1007%2Fs00484-011-0470-1}.
+%Type = Article
+\bibitem[{Guillaume et~al.(2018)Guillaume, Isabelle, Marc and
+  Thierry}]{guillaume2018assessing}
+\bibinfo{author}{Guillaume, C.}, \bibinfo{author}{Isabelle, C.},
+  \bibinfo{author}{Marc, B.}, and \bibinfo{author}{Thierry, A.}
+  (\bibinfo{year}{2018}). \bibinfo{title}{Assessing frost damages using dynamic
+  models in walnut trees: exposure rather than vulnerability controls frost
+  risks}.
+\newblock \bibinfo{journal}{Plant, Cell \& Environment}
+  \emph{\bibinfo{volume}{41}}, \bibinfo{pages}{1008--1021}.
+%Type = Article
+\bibitem[{Thrasher et~al.(2022)Thrasher, Wang, Michaelis, Melton, Lee and
+  Nemani}]{thrasher2022nasa}
+\bibinfo{author}{Thrasher, B.}, \bibinfo{author}{Wang, W.},
+  \bibinfo{author}{Michaelis, A.}, \bibinfo{author}{Melton, F.},
+  \bibinfo{author}{Lee, T.}, and \bibinfo{author}{Nemani, R.}
+  (\bibinfo{year}{2022}). \bibinfo{title}{Nasa global daily downscaled
+  projections, cmip6}.
+\newblock \bibinfo{journal}{Scientific data} \emph{\bibinfo{volume}{9}},
+  \bibinfo{pages}{262}.
+
+\end{thebibliography}

@@ -1,0 +1,221 @@
+\begin{thebibliography}{23}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi: }
+\providecommand{\ArXivprefix}{arXiv: }
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid: }
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\BIBand}{and}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\undefined \def\xfnm[#1]{\unskip,\space#1}\fi
+\makeatletter\def\@biblabel#1{#1.}\makeatother
+%Type = Book
+\bibitem[{Larcher(1980)}]{larcher1980}
+\bibinfo{author}{Larcher, W.} (\bibinfo{year}{1980}). \bibinfo{title}{Plant
+  Physiological Ecology}. \bibinfo{publisher}{Springer-Verlag}.
+%Type = Book
+\bibitem[{Quetelet(1849)}]{quetelet1849letters}
+\bibinfo{author}{Quetelet, A.} (\bibinfo{year}{1849}). \bibinfo{title}{Letters
+  addressed to HRH the Grand Duke of Saxe Coburg and Gotha: On the theory of
+  probabilities, as applied to the moral and political sciences}.
+  \bibinfo{publisher}{C. \& E. Layton}.
+%Type = Article
+\bibitem[{Chuine and Regniere(2017)}]{chuinearees}
+\bibinfo{author}{Chuine, I.}, and \bibinfo{author}{Regniere, J.}
+  (\bibinfo{year}{2017}). \bibinfo{title}{Process-based models of phenology for
+  plants and animals}.
+\newblock \bibinfo{journal}{Annual Review of Ecology, Evolution, and
+  Systematics} \emph{\bibinfo{volume}{48}}, \bibinfo{pages}{159--182}.
+%Type = Book
+\bibitem[{Schwartz(2024)}]{schwartzbook}
+\bibinfo{editor}{Schwartz, M.D.}, ed. (\bibinfo{year}{2024}).
+  \bibinfo{title}{Phenology: An Integrative Environmental Science}.
+  \bibinfo{address}{New York}: \bibinfo{publisher}{Springer}.
+%Type = Book
+\bibitem[{P{\"o}rtner et~al.(2022)P{\"o}rtner, Roberts, Tignor, Poloczanska,
+  Mintenbeck, Alegr{\'\i}a, Craig, Langsdorf, L{\"o}schke, M{\"o}ller, Okem and
+  Rama}]{ipcc2022}
+\bibinfo{author}{P{\"o}rtner, H.O.}, \bibinfo{author}{Roberts, D.C.},
+  \bibinfo{author}{Tignor, M.}, \bibinfo{author}{Poloczanska, E.S.},
+  \bibinfo{author}{Mintenbeck, K.}, \bibinfo{author}{Alegr{\'\i}a, A.},
+  \bibinfo{author}{Craig, M.}, \bibinfo{author}{Langsdorf, S.},
+  \bibinfo{author}{L{\"o}schke, S.}, \bibinfo{author}{M{\"o}ller, V.},
+  \bibinfo{author}{Okem, A.}, and \bibinfo{author}{Rama, B.}
+  (\bibinfo{year}{2022}). \bibinfo{title}{Climate Change 2022: Impacts,
+  Adaptation and Vulnerability. Contribution of Working Group II to the Sixth
+  Assessment Report of the Intergovernmental Panel on Climate Change}.
+  \bibinfo{publisher}{Cambridge University Press}.
+%Type = Article
+\bibitem[{Fu et~al.(2015)Fu, Zhao, Piao, Peaucelle, Peng, Zhou, Ciais, Huang,
+  Menzel, Pe{\~n}uelas et~al.}]{fu2015declining}
+\bibinfo{author}{Fu, Y.H.}, \bibinfo{author}{Zhao, H.}, \bibinfo{author}{Piao,
+  S.}, \bibinfo{author}{Peaucelle, M.}, \bibinfo{author}{Peng, S.},
+  \bibinfo{author}{Zhou, G.}, \bibinfo{author}{Ciais, P.},
+  \bibinfo{author}{Huang, M.}, \bibinfo{author}{Menzel, A.},
+  \bibinfo{author}{Pe{\~n}uelas, J.} et~al. (\bibinfo{year}{2015}).
+  \bibinfo{title}{Declining global warming effects on the phenology of spring
+  leaf unfolding}.
+\newblock \bibinfo{journal}{Nature} \emph{\bibinfo{volume}{526}},
+  \bibinfo{pages}{104--107}.
+%Type = Article
+\bibitem[{Vitasse et~al.(2018)Vitasse, Signarbieux and Fu}]{vitasse2018global}
+\bibinfo{author}{Vitasse, Y.}, \bibinfo{author}{Signarbieux, C.}, and
+  \bibinfo{author}{Fu, Y.H.} (\bibinfo{year}{2018}). \bibinfo{title}{Global
+  warming leads to more uniform spring phenology across elevations}.
+\newblock \bibinfo{journal}{Proceedings of the National Academy of Sciences}
+  \emph{\bibinfo{volume}{115}}, \bibinfo{pages}{1004--1008}.
+%Type = Article
+\bibitem[{Stemkovski et~al.(2023)Stemkovski, Bell, Ellwood, Inouye, Kobori,
+  Lee, Lloyd-Evans, Primack, Templ and Pearse}]{stemkovski2023disorder}
+\bibinfo{author}{Stemkovski, M.}, \bibinfo{author}{Bell, J.R.},
+  \bibinfo{author}{Ellwood, E.R.}, \bibinfo{author}{Inouye, B.D.},
+  \bibinfo{author}{Kobori, H.}, \bibinfo{author}{Lee, S.D.},
+  \bibinfo{author}{Lloyd-Evans, T.}, \bibinfo{author}{Primack, R.B.},
+  \bibinfo{author}{Templ, B.}, and \bibinfo{author}{Pearse, W.D.}
+  (\bibinfo{year}{2023}). \bibinfo{title}{Disorder or a new order: how climate
+  change affects phenological variability}.
+\newblock \bibinfo{journal}{Ecology} \emph{\bibinfo{volume}{104}},
+  \bibinfo{pages}{e3846}.
+%Type = Article
+\bibitem[{Chuine et~al.(2025)Chuine, Garcia~de Cortazar-Atauri, Jean and
+  Van~Reeth}]{chuine2025living}
+\bibinfo{author}{Chuine, I.}, \bibinfo{author}{Garcia~de Cortazar-Atauri, I.},
+  \bibinfo{author}{Jean, F.}, and \bibinfo{author}{Van~Reeth, C.}
+  (\bibinfo{year}{2025}). \bibinfo{title}{Living things are showing increasing
+  anomalies in their seasonal activity, which could disrupt the dynamics of
+  biodiversity and ecosystems}.
+\newblock \bibinfo{journal}{Scientific Reports} \emph{\bibinfo{volume}{15}},
+  \bibinfo{pages}{32860}.
+%Type = Article
+\bibitem[{Wolkovich et~al.(2021)Wolkovich, Auerbach, Chamberlain, Buonaiuto,
+  Ettinger, Morales-Castilla and Gelman}]{wolkovich2021simple}
+\bibinfo{author}{Wolkovich, E.}, \bibinfo{author}{Auerbach, J.},
+  \bibinfo{author}{Chamberlain, C.}, \bibinfo{author}{Buonaiuto, D.},
+  \bibinfo{author}{Ettinger, A.}, \bibinfo{author}{Morales-Castilla, I.}, and
+  \bibinfo{author}{Gelman, A.} (\bibinfo{year}{2021}). \bibinfo{title}{A simple
+  explanation for declining temperature sensitivity with warming}.
+\newblock \bibinfo{journal}{Global Change Biology} \emph{\bibinfo{volume}{27}},
+  \bibinfo{pages}{4947--4949}.
+%Type = Article
+\bibitem[{Gao et~al.(2024)Gao, Richardson, Friedl, Moon and
+  Gray}]{gao2024thermal}
+\bibinfo{author}{Gao, X.}, \bibinfo{author}{Richardson, A.D.},
+  \bibinfo{author}{Friedl, M.A.}, \bibinfo{author}{Moon, M.}, and
+  \bibinfo{author}{Gray, J.M.} (\bibinfo{year}{2024}). \bibinfo{title}{Thermal
+  forcing versus chilling? misspecification of temperature controls in spring
+  phenology models}.
+\newblock \bibinfo{journal}{Global Ecology and Biogeography}
+  \emph{\bibinfo{volume}{33}}, \bibinfo{pages}{e13932}.
+%Type = Article
+\bibitem[{Schwartz et~al.(2014)Schwartz, Hanes and
+  Liang}]{schwartz2014separating}
+\bibinfo{author}{Schwartz, M.D.}, \bibinfo{author}{Hanes, J.M.}, and
+  \bibinfo{author}{Liang, L.} (\bibinfo{year}{2014}).
+  \bibinfo{title}{Separating temperature from other factors in phenological
+  measurements}.
+\newblock \bibinfo{journal}{International journal of biometeorology}
+  \emph{\bibinfo{volume}{58}}, \bibinfo{pages}{1699--1704}.
+%Type = Article
+\bibitem[{Peaucelle et~al.(2022)Peaucelle, Penuelas and
+  Verbeeck}]{peaucelle2022accurate}
+\bibinfo{author}{Peaucelle, M.}, \bibinfo{author}{Penuelas, J.}, and
+  \bibinfo{author}{Verbeeck, H.} (\bibinfo{year}{2022}).
+  \bibinfo{title}{Accurate phenology analyses require bud traits and energy
+  budgets}.
+\newblock \bibinfo{journal}{Nature Plants} \emph{\bibinfo{volume}{8}},
+  \bibinfo{pages}{915--922}.
+%Type = Article
+\bibitem[{van~der Schoot et~al.(2014)van~der Schoot, Paul and
+  Rinne}]{vanderschoot2014}
+\bibinfo{author}{van~der Schoot, C.}, \bibinfo{author}{Paul, L.K.}, and
+  \bibinfo{author}{Rinne, P.L.H.} (\bibinfo{year}{2014}). \bibinfo{title}{The
+  embryonic shoot: a lifeline through winter}.
+\newblock \bibinfo{journal}{Journal of Experimental Botany}
+  \emph{\bibinfo{volume}{65}}, \bibinfo{pages}{1699--1712}.
+%Type = Article
+\bibitem[{Pan et~al.(2023)Pan, Li, Du, Zhao, Xin, Wang, Liu, Lin, Fang, Yang
+  et~al.}]{pan2023epigenetic}
+\bibinfo{author}{Pan, W.}, \bibinfo{author}{Li, J.}, \bibinfo{author}{Du, Y.},
+  \bibinfo{author}{Zhao, Y.}, \bibinfo{author}{Xin, Y.}, \bibinfo{author}{Wang,
+  S.}, \bibinfo{author}{Liu, C.}, \bibinfo{author}{Lin, Z.},
+  \bibinfo{author}{Fang, S.}, \bibinfo{author}{Yang, Y.} et~al.
+  (\bibinfo{year}{2023}). \bibinfo{title}{{Epigenetic silencing of callose
+  synthase by VIL1 promotes bud-growth transition in lily bulbs}}.
+\newblock \bibinfo{journal}{Nature Plants} \emph{\bibinfo{volume}{9}},
+  \bibinfo{pages}{1451--1467}.
+%Type = Article
+\bibitem[{Vitasse et~al.(2022)Vitasse, Baumgarten, Zohner, Rutishauser,
+  Pietragalla, Gehrig, Dai, Wang, Aono and Sparks}]{vitasse2022great}
+\bibinfo{author}{Vitasse, Y.}, \bibinfo{author}{Baumgarten, F.},
+  \bibinfo{author}{Zohner, C.}, \bibinfo{author}{Rutishauser, T.},
+  \bibinfo{author}{Pietragalla, B.}, \bibinfo{author}{Gehrig, R.},
+  \bibinfo{author}{Dai, J.}, \bibinfo{author}{Wang, H.}, \bibinfo{author}{Aono,
+  Y.}, and \bibinfo{author}{Sparks, T.} (\bibinfo{year}{2022}).
+  \bibinfo{title}{The great acceleration of plant phenological shifts}.
+\newblock \bibinfo{journal}{Nature Climate Change} \emph{\bibinfo{volume}{12}},
+  \bibinfo{pages}{300--302}.
+%Type = Article
+\bibitem[{Rosemartin et~al.(2015)Rosemartin, Denny, Weltzin, Lee~Marsh, Wilson,
+  Mehdipoor, Zurita-Milla and Schwartz}]{rosemartin2015lilac}
+\bibinfo{author}{Rosemartin, A.H.}, \bibinfo{author}{Denny, E.G.},
+  \bibinfo{author}{Weltzin, J.F.}, \bibinfo{author}{Lee~Marsh, R.},
+  \bibinfo{author}{Wilson, B.E.}, \bibinfo{author}{Mehdipoor, H.},
+  \bibinfo{author}{Zurita-Milla, R.}, and \bibinfo{author}{Schwartz, M.D.}
+  (\bibinfo{year}{2015}). \bibinfo{title}{Lilac and honeysuckle phenology data
+  1956--2014}.
+\newblock \bibinfo{journal}{Scientific Data} \emph{\bibinfo{volume}{2}},
+  \bibinfo{pages}{1--8}.
+%Type = Misc
+\bibitem[{Switzer et~al.(2025)Switzer, Chamberlain, Marsh, Wong and
+  Scott}]{switzer_etall:2025}
+\bibinfo{author}{Switzer, J.}, \bibinfo{author}{Chamberlain, S.},
+  \bibinfo{author}{Marsh, L.}, \bibinfo{author}{Wong, K.}, and
+  \bibinfo{author}{Scott, E.R.} (\bibinfo{year}{2025}).
+\newblock \bibinfo{title}{rnpn: Interface to the national 'phenology' network
+  'api'}. .
+\newblock \URLprefix \url{http://usa-npn.github.io/rnpn/}.
+  \DOIprefix\doi{10.32614/CRAN.package.rnpn}.
+%Type = Article
+\bibitem[{Hastie and Tibshirani(1986)}]{hastie1986generalized}
+\bibinfo{author}{Hastie, T.}, and \bibinfo{author}{Tibshirani, R.}
+  (\bibinfo{year}{1986}). \bibinfo{title}{Generalized additive models}.
+\newblock \bibinfo{journal}{Statistical science} \emph{\bibinfo{volume}{1}},
+  \bibinfo{pages}{297--310}.
+%Type = Book
+\bibitem[{Wood(2017)}]{wood2017generalized}
+\bibinfo{author}{Wood, S.N.} (\bibinfo{year}{2017}).
+  \bibinfo{title}{Generalized additive models: an introduction with R}.
+  \bibinfo{publisher}{chapman and hall/CRC}.
+%Type = Article
+\bibitem[{Kovaleski(2021)}]{kovaleskipreprint}
+\bibinfo{author}{Kovaleski, A.} (\bibinfo{year}{2021}). \bibinfo{title}{Woody
+  species do not differ in dormancy progression: differences in time to
+  budbreak due to forcing and cold hardiness}.
+\newblock \bibinfo{journal}{bioRxiv}.
+%Type = Article
+\bibitem[{Charrier et~al.(2011)Charrier, Bonhomme, Lacointe and
+  Am{\'e}glio}]{Charrier:2011aa}
+\bibinfo{author}{Charrier, G.}, \bibinfo{author}{Bonhomme, M.},
+  \bibinfo{author}{Lacointe, A.}, and \bibinfo{author}{Am{\'e}glio, T.}
+  (\bibinfo{year}{2011}). \bibinfo{title}{Are budburst dates, dormancy and cold
+  acclimation in walnut trees (juglans regia l.) under mainly genotypic or
+  environmental control?}
+\newblock \bibinfo{journal}{International journal of biometeorology}
+  \emph{\bibinfo{volume}{55}}, \bibinfo{pages}{763--774}. \URLprefix
+  \url{http://link.springer.com/article/10.1007%2Fs00484-011-0470-1}.
+%Type = Article
+\bibitem[{Thrasher et~al.(2022)Thrasher, Wang, Michaelis, Melton, Lee and
+  Nemani}]{thrasher2022nasa}
+\bibinfo{author}{Thrasher, B.}, \bibinfo{author}{Wang, W.},
+  \bibinfo{author}{Michaelis, A.}, \bibinfo{author}{Melton, F.},
+  \bibinfo{author}{Lee, T.}, and \bibinfo{author}{Nemani, R.}
+  (\bibinfo{year}{2022}). \bibinfo{title}{Nasa global daily downscaled
+  projections, cmip6}.
+\newblock \bibinfo{journal}{Scientific data} \emph{\bibinfo{volume}{9}},
+  \bibinfo{pages}{262}.
+
+\end{thebibliography}

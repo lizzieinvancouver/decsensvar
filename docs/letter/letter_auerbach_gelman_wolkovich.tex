@@ -1,0 +1,172 @@
+\documentclass{article}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+\usepackage[margin=1in]{geometry}
+\usepackage{natbib}
+\usepackage{xcolor}
+
+\begin{document}
+
+\thispagestyle{empty}
+Dear Dr. Maderspacher, \hfill 31 October 2026   \newline \vspace{-.75em}
+
+We thank the reviewers for their insightful comments. We have revised the manuscript, and we believe our revision addresses all concerns and is much stronger as a result.
+
+In this letter, we summarize the major changes to the manuscript. Following the letter, we reproduce all comments in black and provide a point by point explanation of how we address each concern in red.
+
+The main change is that we now discuss model fit. We show predictions from both models are strongly correlated with the actual measurements (.8 with the observational data and .975 with the experimental data). Additional discussion is provided in a new section of the Supplemental Information, SI.3. 
+
+We also add a second new section to the Supplemental Information, SI.1, that introduces the statistical analysis of first hitting times with additional references should readers seek additional guidance. We aim to provide intuition with little or no mathematical notation. The next section SI.2 uses the appropriate notation and provides a proof. We are happy to revise this explanation as necessary. 
+
+We also made some minor changes such as clarifications to the text and small edits to the images as mentioned below.
+
+Thank you again for your consideration,
+
+Jonathan Auerbach, E.M. Wolkovich, and Andrew Gelman
+
+
+\section{REVIEWER COMMENTS}
+
+\subsection{Reviewer \#1: } This manuscript proposes a new framework that views the phenological thermal accumulation process as a stopped random walk model, whose properties were then analyzed to inform phenological variations. The authors focused on two widely observed phenological pattern: the declining phenological sensitivity to temperature and the declining synchrony among phenological events. I think this framework is interesting and may be helpful, but this manuscript in the current version lacks many details and clarifications, especially for scientists who are not in the phenology field.
+
+First, the "declining sensitivity" has been discussed extensively in the field. Key papers include Clark et al., 2014, Wolkovich et al., 2021, Keenan et al., 2020. Although previous papers did not view the process as a stopped random walk, the underlying logic seems to be the same: the linear temperature sensitivity is not a good metric b/c the process is non-linear. That said, I'd like to read more on how this new framework moves our understanding forward, and what its relationship with previous work on this problem.
+
+\textcolor{red}{*We have revised the manuscript to cite these key papers and more clearly explain that the contribution of our paper is to explain the reason why a hitting time produces non-linearity.}
+
+Second, I think there are some missing details/connections that prevent me from understanding the "scatter spring". Specifically, since both winter warming and spring warming regimes predict decreased variance, how does "warming regime shift" induce increased variance? If current "baseline" variance lies between the L104 equation and the L015 equation, holding all variables constant but $\alpha$ or $\beta$, how does the future variance increase not decrease? Do you mean it's not about their variance equations but their relative variance magnitudes? If that's the case, as it seems to be in Fig. 2b, will the increasing variance only happen when mean winter temperature exceeds 10 °C? The answers may be in L115-120, but I found it hard to connecting the dots by reading these sentences.
+
+\textcolor{red}{*We have revised the manuscript to clarify the scattered spring mechanism. As the reviewer points out, the variance decreases as alpha or beta increase \emph{within} a regime, but \emph{across} a regime the variance increases.}
+
+Third, I found the experimental data part not convincing. The experimental data seems to not have variation in chilling/photoperiod, so Fig. 3's non-linear responses are not resulted from chilling/photoperiod modifying the threshold of forcing, right? Although I also tend to not believe that previous studies' suggestions on the chilling-forcing mechanisms, the analysis presented here cannot support the claim (L147-148) that "these additional factors are unnecessary by applying our framework to rare experimental data in which photoperiod and chilling are held fixed but forcing temperatures vary." Experimental data with varying chilling conditions but not forcing variations are needed. Otherwise, even if chilling modified the forcing threshold, the effect will not show up in this analysis. If I misunderstood anything, other readers would likely do, so please clarify.
+
+\textcolor{red}{*We have revised the manuscript to clarify the significance of the experimental data. Our argument is that if chilling and photoperiod completely explained the nonlinear relationship between temperature and bloom date, then the nonlinear relationship should disappear when these are held constant. This is not the case since, as Fig. 3 shows, the nonlinear relationship is still evident even when the same chilling and photoperiod levels are used for all buds. If we understand the comment correctly, we agree that we had accidentally overstated our claim in the previous version of the manuscript: It may be that allowing chilling and photoperiod to vary produces additional nonlinearities in the data, and thus in that sense, chilling and photoperiod explain nonlinearity in the data.}
+
+
+Some specific comments
+
+L40-41. So, what about the "decreased variance"? Can your framework also explain that? And, do you also want to include some discussion on that?
+
+\textcolor{red}{*We have revised the manuscript to explain that decreased variation is explained by warming temperatures within regime, while increased variation is explained by warming temperatures across regime.}
+
+L46-48. Although no direct evaluation on the thermal-sum model/mechanism, I think Clark et al., 2014, Wolkovich et al., 2021, and Keenan et al., 2020 have already proved that the declining sensitivity thing is an artifact, or expected by the thermal-sum theory.
+
+L49. I think some readers would appreciate some background on the "stopped random walk" model.
+
+\textcolor{red}{We have revised the manuscript to add a new section to to Supplemental Information, SI.1, explaining stopped random walks.}
+
+L126-132. What are the spatial and temporal distribution of the lilac bloom dates data? How well can your model fit the data?
+
+\textcolor{red}{*We now show the spatial and temporal distribution of the lilac data in section SI.5. We have also revised the manuscript to add a new section to the Supplemental Information, SI.3, characterizing the spatial and temporal distribution of the data and model fit. To characterize the spatial and temporal distribution, we fit a nonparametric spatio-temporal model (generalized additive model using spatial tensor product splines for each year). We show our generalized additive model that only uses winter temperatures $\alpha$ and spring warming $\beta$ explains the same amount of variation as a nonparametric spatial model, despite using only a small fraction of the parameters.}
+
+L144-146. I may not think the data you analyzed here, as described in SI L50-54, can test this. Experimental data with varying conditions of chilling/photoperiod but not forcing are needed.
+
+\textcolor{red}{*We have revised the manuscript as explain above to clarify that our goal is not to reject the hypothesis that varying chilling and photoperiod produce nonlinearities in the data, but to demonstrate that nonlinearity is a statistical artifact of the hitting time, and thus persists even when chilling and photoperiod are constant. We have also revised the manuscript to propose that a future experiment consider how chilling and photoperiod change the nonlinear relationship produced by the hitting. We believe this would require much more extensive experimental data than currently available.}
+
+L153. What were the "weights" used?
+
+\textcolor{red}{*We have revised the manuscript to clarify that our mathematical derivation indicate that the variance is not constant (heteroskedasticity) and thus we weight inversely proportional to the variance.}
+
+Fig. 4. I think these figures should be improved. For example, divergent color scheme should be used so that data below and above zero can have different colors. Do you want to discuss the regions with increased mean and decreased variance? Btw, how did you make these maps? Fitting the thermal-sum model to the observational data for each region, then estimated the forcing threshold, and using that to predict future? I would appreciate details here.
+
+\textcolor{red}{*We have changed the color scheme and added additional information on how the maps were made in the Supplemental Information.}
+
+L195. Similarly, readers would appreciate some introduction on the "Gaussian location-scale model".
+
+\textcolor{red}{*We have added the figure number}
+
+The Results and Discussion section. It is surprising to me that there's almost no discussion on the process-based phenology models.
+
+\textcolor{blue}{Lizzie to address.}
+
+SI L67. Missing figure number reference?
+
+\textcolor{red}{*We have added the figure number}
+
+SI Fig. 7. What are the labels of the axes?
+
+\textcolor{red}{*We have added labels to the axes}
+
+
+References
+
+- Clark, J. S., Melillo, J., Mohan, J., \& Salk, C. (2014). The seasonal timing of warming that controls onset of the growing season. \emph{Global Change Biology},  20 (4), 1136-1145. https://doi.org/10.1111/gcb.12420
+
+- Wolkovich, E. M., Auerbach, J., Chamberlain, C. J., Buonaiuto, D. M., Ettinger, A. K., Morales‐Castilla, I., \& Gelman, A. (2021). A simple explanation for declining temperature sensitivity with warming. \emph{Global Change Biology}, 27 (20), 4947-4949. https://doi.org/10.1111/gcb.15746
+
+- Keenan, T. F., Richardson, A. D., \& Hufkens, K. (2020). On quantifying the apparent temperature sensitivity of plant phenology. \emph{New Phytologist}, 225 (2), 1033-1040. https://doi.org/10.1111/nph.16114
+
+
+\subsection{Reviewer \#2 } General comments:
+This study uses mathematical theory, observational data, experimental data, and simulations to show that the standard thermal sum model used for temperate phenological events can explain previous reports of both declining temperature sensitivity and increasing asynchrony of phenological events. Although the connections between statistical and biological concepts are difficult to make at times, the writing is generally clear and the explanations thorough. This will be recognized as a key (and perhaps controversial) paper in the phenology/climate change literature, and it builds very nicely on the previous work by Wolkovich et al. Global Change Biology 2021 (https://onlinelibrary.wiley.com/doi/10.1111/gcb.15746).
+
+The connection between thermal sum models and stopped random walks seems to be a highly original insight. However, a short appendix (or supplemental material) presenting a non-technical overview of "Stopped random walks in a nutshell" would be helpful for readers not familiar with the concept.
+
+\textcolor{red}{We have revised the manuscript to add a new section to to Supplemental Information, SI.1, explaining stopped random walks.}
+
+I do not entirely agree with the conclusion that this work "challenges an extensive body of work that has attempted to revise the thermal sum model by adding additional factors or mechanisms." I think there has been evidence showing that, for example, a day-of-year (or photoperiod) threshold that triggers the timing of the onset of degree-day accumulation can improve on a model where that accumulation begins Dec. 21 or Jan. 1 (see, for example, Melaas et al. Global Change Biology 2016 (DOI 10.1111/gcb.13122). Rather, a more reasonable conclusion might be that declining temperature sensitivity does not need to be invoked to explain recently-observed phenological trends. This is just a comment; the authors themselves should decide what they think the main take-away message is.
+
+\textcolor{red}{*As mentioned in the comments to the first reviewer, we have revised the manuscript to clarify that our contribution is not to rule out the importance of photoperiod and chilling, among other factors, but to explain the nonlinear relationship that holds when these are held fixed. We agree that we did not vary photoperiod and chilling and thus cannot conclude that these are not important.}
+
+Specific comments:
+Summary -
+- Line 19: Maybe "observational" instead of "real-world" data.
+
+\textcolor{red}{*We have made this change.}
+
+- Line 22: This last sentence is catchy, but it could be followed up with a "why?" sentence. What are the consequences for ecosystems and society of asynchronous flowering across much of the American South? Why are these results important?
+
+\textcolor{blue}{Lizzie to address.}
+
+Introduction -
+
+- The authors could do a better job in the introduction by explaining the random walk analogy and its limitations. One thing I am wondering is whether the theory for stopped random walks can accommodate walks that proceed in only one direction. With growing degree days, forward progress towards the threshold is (Tair - Tbase) if Tair > Tbase but 0 if Tair < Tbase. So, growing degree days are always increasing. With a random walk, backwards steps seem to me to be equally likely as forward steps.
+
+\textcolor{red}{As mentioned above, we have revised the manuscript to add a new section to to Supplemental Information, SI.3, explaining stopped random walks. We now clarify that the steps in the walk must be independent or weakly dependent (i.e., a central limit theorem must hold) but can otherwise have an arbitrary distribution. For example, the steps may always be positive.}
+
+- Some of the new terminology introduced by the authors seems unnecessary-for example, why do we need "scattered spring" when the authors could just refer to "asynchronous flowering"?
+
+\textcolor{blue}{Lizzie to address. I personally like scattered spring, but I am also ok with switching to asynchronous flowering if it's not worth pushing back. One argument for scattered spring is that the phenomenon is not specific to flowers.}
+
+Results and discussion -
+
+- Line 93: Including the derivations for these results in supplementary material SI.1 would be helpful.
+
+\textcolor{red}{Section SI.2 (formerly Section SI.1) gave an admittedly technical overview of how to derive the mean and variance under each regime. We have made some edits that we hope clarify the derivation. We believe the new Section SI.1 provides more guidance, but we are open to additional edits as necessary.}  
+
+- Line 98: Is reference six to a "recent" paper? It was published over a decade ago.
+
+\textcolor{blue}{Lizzie to address.}
+
+- Line 131: It is not clear how the GAM described here is related to the thermal sum model, or how results from the GAM provide support for the thermal sum model. A sentence to explain this would help.
+
+\textcolor{red}{*We have revised the manuscript to clarify that the GAM is simply an curve-fitting exercise in which we estimate the conditional mean of the data (i.e., remove the ``noise'') while imposing as few assumptions as possible. We then confirm that the pattern in the data is as predicted from the model. The problem with fitting the model implied by the thermal sum model is that we are using the assumptions we seek to verify.}
+
+- Figures two and three are visually appealing and easy to comprehend and the captions explain both in detail. However, it appears that the take-aways from both conflict. In figure two, variance in date increases as winter temperature increases. In figure three, the reverse is true: variance in date decreases as winter temperature increases. The figure three result is also in conflict with the statement in lines 136-137 that "Warming in the winter regime only (increasing $\alpha$ and holding $\beta$ fixed) returns greater variance (higher standard deviation, declining synchrony)". This needs to be addressed or clarified (if the interpretation is incorrect).
+
+\textcolor{red}{*We have revised the manuscript to clarify that Figure 2 shows the headline result as predicted by the theory: When temperatures increase induces a regime shift, the variance increases. We are unfortunately unable to verify this phenomenon with experimental data since we are unaware of any experiment in which temperatures are increased day over day as in the spring. We only have experimental data in which temperatures are held fixed, which corresponds with the winter regime. We now clarify that \emph{within} regime, the model predicts that the variance decreases as temperatures increase, which is exactly what we see in Figure 3.}
+
+- Line 144: Reference 21 could be changed to the peer-reviewed article instead of using the pre-print: https://doi.org/10.1073/pnas.2112250119
+
+\textcolor{red}{*We have made this change.}
+
+- Line 145: Which researchers? A citation would help.
+
+\textcolor{blue}{Lizzie to address.}
+
+- Line 160: One or two additional supporting references would be appreciated.
+
+\textcolor{blue}{Lizzie to address.}
+
+- Figure two caption: In "while the standard deviation increase when", add "s" to end of "increase".
+
+\textcolor{red}{*We have made this change.}
+
+- In figure 4, the color palettes could be more intuitive if lighter areas denote smaller changes and darker areas denote larger changes.
+
+\textcolor{red}{*We have made this change.}
+
+\newpage 
+\bibliographystyle{apalike}
+\bibliography{letter_auerbach_gelman_wolkovich}
+
+\end{document}
