@@ -4,6 +4,10 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{natbib}
 \usepackage{xcolor}
+\usepackage{lineno}
+\usepackage{xr-hyper}
+\externaldocument{auerbach_gelman_wolkovich}
+\newcommand{\lr}[1]{line~\lineref{#1}}
 
 \begin{document}
 
@@ -14,9 +18,10 @@ We thank the reviewers for their insightful comments. We have revised the manusc
 
 In this letter, we summarize the major changes to the manuscript. Following the letter, we reproduce all comments in black and provide a point by point explanation of how we address each concern in red.
 
-The main change is that we now discuss model fit. We show predictions from both models are strongly correlated with the actual measurements (.8 with the observational data and .975 with the experimental data). Additional discussion is provided in a new section of the Supplemental Information, SI.3. 
+%emwOct -- edits to make it sounds like you did more than just below ... (after the call, I think you don't need these!)
+One major change is that we now discuss model fit. We show predictions from both models are strongly correlated with the actual measurements (0.8 with the observational data and 0.975 with the experimental data). Additional discussion is provided in a new section of the Supplemental Information, SI.3. 
 
-We also add a second new section to the Supplemental Information, SI.1, that introduces the statistical analysis of first hitting times with additional references should readers seek additional guidance. We aim to provide intuition with little or no mathematical notation. The next section SI.2 uses the appropriate notation and provides a proof. We are happy to revise this explanation as necessary. 
+We also add a second new section to the Supplemental Information, SI.1, that introduces the statistical analysis of first hitting times with additional references should readers seek additional guidance. We aim to provide intuition with little or no mathematical notation. The next section SI.2 uses the appropriate notation and provides a proof. We believe this should address the reviewers' concerns, but are of course happy to revise this explanation as necessary. 
 
 We also made some minor changes such as clarifications to the text and small edits to the images as mentioned below.
 
@@ -56,17 +61,20 @@ L49. I think some readers would appreciate some background on the "stopped rando
 
 L126-132. What are the spatial and temporal distribution of the lilac bloom dates data? How well can your model fit the data?
 
-\textcolor{red}{*We now show the spatial and temporal distribution of the lilac data in section SI.5. We have also revised the manuscript to add a new section to the Supplemental Information, SI.3, characterizing the spatial and temporal distribution of the data and model fit. To characterize the spatial and temporal distribution, we fit a nonparametric spatio-temporal model (generalized additive model using spatial tensor product splines for each year). We show our generalized additive model that only uses winter temperatures $\alpha$ and spring warming $\beta$ explains the same amount of variation as a nonparametric spatial model, despite using only a small fraction of the parameters.}
+\textcolor{red}{*We now show the spatial and temporal distribution of the lilac data in section SI.5. We have also revised the manuscript to add a new section to the Supplemental Information, SI.3, characterizing the spatial and temporal distribution of the data and model fit. To characterize the spatial and temporal distribution, we fit a nonparametric spatio-temporal model (generalized additive model using spatial tensor product splines for each year). We show our generalized additive model that only uses winter temperatures $\alpha$ and spring warming $\beta$ explains the same amount of variation as a nonparametric spatial model, despite using only a small fraction of the parameters.} % ewmOct23 -- I might explain this last sentence more. 
 
 L144-146. I may not think the data you analyzed here, as described in SI L50-54, can test this. Experimental data with varying conditions of chilling/photoperiod but not forcing are needed.
 
-\textcolor{red}{*We have revised the manuscript as explain above to clarify that our goal is not to reject the hypothesis that varying chilling and photoperiod produce nonlinearities in the data, but to demonstrate that nonlinearity is a statistical artifact of the hitting time, and thus persists even when chilling and photoperiod are constant. We have also revised the manuscript to propose that a future experiment consider how chilling and photoperiod change the nonlinear relationship produced by the hitting. We believe this would require much more extensive experimental data than currently available.}
+% ewmOct23 -- people are offended by statistical artifact, see edit
+\textcolor{red}{*We have revised the manuscript as explained above to clarify that our goal is not to reject the hypothesis that varying chilling and photoperiod produce nonlinearities in the data, but to demonstrate that nonlinearity is a statistical outcome of the hitting time, and thus persists even when chilling and photoperiod are constant. We have also revised the manuscript to propose that a future experiment consider how chilling and photoperiod change the nonlinear relationship produced by the hitting. We believe this would require much more extensive experimental data than currently available.}
 
 L153. What were the "weights" used?
 
 \textcolor{red}{*We have revised the manuscript to clarify that our mathematical derivation indicate that the variance is not constant (heteroskedasticity) and thus we weight inversely proportional to the variance.}
 
 Fig. 4. I think these figures should be improved. For example, divergent color scheme should be used so that data below and above zero can have different colors. Do you want to discuss the regions with increased mean and decreased variance? Btw, how did you make these maps? Fitting the thermal-sum model to the observational data for each region, then estimated the forcing threshold, and using that to predict future? I would appreciate details here.
+
+% emwOct: I think they want a DIVERGING color palette, so you could use RdBu ? See https://www.datanovia.com/blog/r-color-palettes and https://datavizs25.classes.andrewheiss.com/resource/colors.html#diverging
 
 \textcolor{red}{*We have changed the color scheme and added additional information on how the maps were made in the Supplemental Information.}
 
@@ -76,7 +84,8 @@ L195. Similarly, readers would appreciate some introduction on the "Gaussian loc
 
 The Results and Discussion section. It is surprising to me that there's almost no discussion on the process-based phenology models.
 
-\textcolor{blue}{Lizzie to address.}
+We now cite the \emph{Annual Review} on process-based modeling on \lr{alreadycited1}, \lr{scatteredspring3}, and \lr{alreadycited2}. % emwOct: only `scatteredspring3' is a new addition of the citation. I didn't really see a good place to add a discussion of process-based modeling. Process-based modeling usually just means models that are have MANY parameters to predict leafout based on chilling, forcing and photoperiod functions so it's sort of embedded everywhere (they do have a thermal sum model for forcing usually) ... my guess is this reviewer thinks they are somehow special and different but they're not. So maybe you can take what I offered here just about citations and make it sound friendlier? 
+Additionally, many of our citations leverage process-based models within them. 
 
 SI L67. Missing figure number reference?
 
@@ -115,7 +124,7 @@ Summary -
 
 - Line 22: This last sentence is catchy, but it could be followed up with a "why?" sentence. What are the consequences for ecosystems and society of asynchronous flowering across much of the American South? Why are these results important?
 
-\textcolor{blue}{Lizzie to address.}
+We have edited this sentence to explain potential consequences; see line \lr{why}. % I also cut stuff to make come closer to 150 words; up to you how to handle this. 
 
 Introduction -
 
@@ -125,7 +134,15 @@ Introduction -
 
 - Some of the new terminology introduced by the authors seems unnecessary-for example, why do we need "scattered spring" when the authors could just refer to "asynchronous flowering"?
 
-\textcolor{blue}{Lizzie to address. I personally like scattered spring, but I am also ok with switching to asynchronous flowering if it's not worth pushing back. One argument for scattered spring is that the phenomenon is not specific to flowers.}
+%emwOct: edit as you like! 
+This is a good point as our previous manuscript did appear to apply only to flowering where `asynchronous flowering,' but our intention is actually a far wider reach. We have adjusted the text on \lr{scatteredspring3} and \lr{scatteredspring4} to clarify that our results apply to a suite of plant and animal events that rely on the thermal sum model and occur in the spring, and pinpoint our focus on plant data (\lr{scatteredspring2}). 
+
+\iffalse
+\lr{scatteredspring1} % text we already have -- not cited above, but could also mention, this seems to me pretty clearly beyond plants text ....
+\lr{scatteredspring2} % clarifying it's plants
+\lr{scatteredspring3} % "In contrast to predictions from current models of biological events for many plants and animals," 
+\lr{scatteredspring4} % "and buds within plants, alongside many other plant and animal organisms"
+\fi 
 
 Results and discussion -
 
@@ -135,7 +152,8 @@ Results and discussion -
 
 - Line 98: Is reference six to a "recent" paper? It was published over a decade ago.
 
-\textcolor{blue}{Lizzie to address.}
+% We cited this as the original reference that generated a body of work continuing over the last decade, and gave a 2021 reference alongside, but we can understand the concern ...
+We have now removed ``in recent papers" on \lr{nomorerecent}. 
 
 - Line 131: It is not clear how the GAM described here is related to the thermal sum model, or how results from the GAM provide support for the thermal sum model. A sentence to explain this would help.
 
@@ -151,17 +169,17 @@ Results and discussion -
 
 - Line 145: Which researchers? A citation would help.
 
-\textcolor{blue}{Lizzie to address.}
+Good point, we have added citations on \lr{addedcites1}.
 
 - Line 160: One or two additional supporting references would be appreciated.
 
-\textcolor{blue}{Lizzie to address.}
+Done, see \lr{morecites2} .
 
 - Figure two caption: In "while the standard deviation increase when", add "s" to end of "increase".
 
 \textcolor{red}{*We have made this change.}
 
-- In figure 4, the color palettes could be more intuitive if lighter areas denote smaller changes and darker areas denote larger changes.
+- In figure 4, the color palettes could be more intuitive if lighter areas denote smaller changes and darker areas denote larger changes. %emwOct: I made suggestions about this above. 
 
 \textcolor{red}{*We have made this change.}
 
